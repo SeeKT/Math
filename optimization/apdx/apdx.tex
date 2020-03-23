@@ -1,0 +1,72 @@
+\documentclass[dvipdfmx]{jsreport}
+\input{../preamble.tex}
+\begin{document}
+\chapter{付録}
+この付録には，補題や定理の証明を記載する．
+
+\begin{proof}[補題\ref{lemm:convex}の証明]
+  項が2つのとき，つまり，$X_1, X_2 \subseteq \mathbb{R}^n$が凸集合ならば，$X_1 \cap X_2$も凸集合である(*)
+  を証明する．$\forall \bm{x}^1, \bm{x}^2 \in X_1 \cap X_2$に対し，$\bm{x}^1$と$\bm{x}^2$を結ぶ線分は，$\bm{x}^1 \in X_1, \bm{x}^2 \in X_1$より$X_1$に含まれる($\because$ $X_1$は凸集合)．同様に$X_2$にも含まれる．
+  よって，$\bm{x}^1$と$\bm{x}^2$を結ぶ線分は，$X_1 \cap X_2$に含まれる．つまり，$X_1 \cap X_2$は凸集合である．補題\ref{lemm:convex}は，(*)を繰り返し用いることで示される．\qed
+\end{proof}
+
+補題\ref{lemm:hyperplane1}の証明には，定理\ref{theo:projection}，補題\ref{lemm:proj}を用いる．
+
+\begin{theo}[射影定理]\label{theo:projection}
+  $X$をHilbert空間\footnote{距離(ノルム)を持つ集合をノルム空間という．内積を持つ線形空間を内積空間という．ノルム空間$X$内の任意のコーシー列が収束するとき，$X$は完備であるといい，完備性を持つノルム空間$X$をBanach空間という．また，内積空間$X$上の点$\bm{u} \in X$に対し，$\|\bm{u}\| = \sqrt{(\bm{u}, \bm{u})}$を内積から誘導されるノルムと呼ぶ．内積から誘導されるノルム空間$X$がBanach空間であるとき，$X$をHilbert空間という．実数空間$\mathbb{R}^n$は完備性を持つ．}とし，$L \subset X$を閉部分空間とする．このとき，
+  \begin{equation}
+    \bm{u} \in X \, (\mathrm{given}) \Rightarrow \exists! \bm{v} \in L \; s.t. \; (\bm{u} - \bm{v}, \bm{w}) = 0, \, \forall \bm{w} \in L \nonumber
+  \end{equation}
+  が成立する(射影が一意に存在する)．
+\end{theo}
+
+\begin{lemm}\label{lemm:proj}
+    定理\ref{theo:projection}の$X$が$X = \mathbb{R}^n$であり，$L \subseteq \mathbb{R}^n$が空でない閉凸集合とする．$\bm{u} \in \mathbb{R}^n$の$L$への射影を$\bm{v}$とする．このとき，$\forall \bm{w} \in L$に対して，
+  \begin{equation}\label{eq:proj}
+    (\bm{u} - \bm{v})^{\mathrm{T}} (\bm{w} - \bm{v}) \leq 0
+  \end{equation}
+  が成立する．
+\end{lemm}
+
+\begin{proof}[定理\ref{theo:projection}の証明]
+
+\end{proof}
+
+\begin{proof}[補題\ref{lemm:proj}の証明]
+  $\bm{u}$の$L$への射影$\bm{v}$と任意の点$\bm{w} \in L$を結ぶ線分上の点
+  $\bm{x}_{\lambda} = (1 - \lambda)\bm{v} + \lambda \bm{w}, \, 0 < \lambda < 1$
+  を考える．$L$は凸より，$\bm{x}_{\lambda}$も$L$に含まれる．
+  $\bm{v}$の定義より，
+  \begin{equation}\label{eq:prj_min}
+    \|\bm{v} - \bm{u}\|^2 \leq \|((1 - \lambda)\bm{v} + \lambda \bm{w}) - \bm{u} \|^2
+  \end{equation}
+  (\ref{eq:prj_min})式を整理すると，
+  \begin{align}
+    (\bm{v}- \bm{u}, \bm{v}- \bm{u}) &\leq \|(\bm{v} - \bm{u}) + \lambda(\bm{w} - \bm{v}) \|^2 \nonumber \\
+    &\leq (\bm{v}- \bm{u}, \bm{v}- \bm{u}) + 2\lambda(\bm{v} - \bm{u})(\bm{w} - \bm{v}) + \lambda^2(\bm{w} - \bm{v}, \bm{w} - \bm{v}) \nonumber
+  \end{align}
+  いま，$\lambda \neq 0, \lambda > 0$であり，$L \subseteq \mathbb{R}^n$であるから，
+  \begin{equation}
+    2(\bm{u} - \bm{v})(\bm{w} - \bm{v}) \leq \lambda \|\bm{w} - \bm{v}\|^2 \nonumber
+  \end{equation}
+  よって，$\lambda \rightarrow 0$とすると，(\ref{eq:proj})式を得る．\qed
+\end{proof}
+
+\begin{proof}[補題\ref{lemm:hyperplane1}の証明]
+  $\bm{y}$の$X$への射影を$\bar{\bm{y}}$とする．$\bm{y} \notin X$より，$\bm{y} \neq \bar{\bm{y}}$である．
+  よって，
+  \begin{equation}\label{eq:norm}
+    \|\bar{\bm{y}} - \bm{y}\|^2 = (\bar{\bm{y}} - \bm{y})^{\mathrm{T}}(\bar{\bm{y}} - \bm{y}) > 0
+  \end{equation}
+  である．また，補題\ref{lemm:proj}より，
+  \begin{equation}\label{eq:prj}
+    (\bm{y} - \bar{\bm{y}})^{\mathrm{T}}(\bm{x} - \bar{\bm{y}}) \leq 0, \; x \in X
+  \end{equation}
+  が成立する．(\ref{eq:norm})式，(\ref{eq:prj})式より，
+  \begin{equation}
+    (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bm{x} \geq (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bar{\bm{y}} > (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bm{y}, \; x \in X \nonumber
+  \end{equation}
+  を得る．ここで，$\bm{a} = \bar{\bm{y}} - \bm{y}, \, b = (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bar{\bm{y}}$と置くと補題\ref{lemm:hyperplane1}が示される．\qed
+\end{proof}
+
+\end{document}

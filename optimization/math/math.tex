@@ -1,0 +1,207 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+\chapter{数学的準備}
+\section{諸定義}
+$n$次元実数空間$\mathbb{R}^n$を考える．
+\begin{itemize}
+  \item $\varepsilon$-近傍
+  \begin{itemize}
+    \item $B(x, \varepsilon) = \{\bm{y} \in \mathbb{R}^n \, | \, \|\bm{y} - \bm{x} \| < \varepsilon\}$
+    \item ただし，$\|\cdot\|$はユークリッドノルムであり，
+    $\|\bm{x}\| = (\bm{x}^{\mathrm{T}}\bm{x})^{1/2}$である．
+  \end{itemize}
+  \item $X \subseteq \mathbb{R}^n$が開集合(open set)である
+  \begin{itemize}
+    \item $\forall \bm{x} \in X, \, \exists \varepsilon > 0; \, B(\bm{x}, \varepsilon) \subseteq X$
+  \end{itemize}
+  \item $X \subseteq \mathbb{R}^n$が閉集合(closed set)である
+  \begin{itemize}
+    \item $X$の補集合$X^\mathrm{c}$が開集合である．
+  \end{itemize}
+  \item $\bm{x}$が$X \subseteq \mathbb{R}^n$の内点(interior point)である
+  \begin{itemize}
+    \item $\bm{x} \in X \subseteq \mathbb{R}^n$に対して，
+    $\exists \varepsilon > 0; \, B(\bm{x}, \varepsilon) \subseteq X$が成立する．
+  \end{itemize}
+  \item $X$の内部(interior)，$\mathrm{Int}(X)$
+  \begin{itemize}
+    \item $X \subseteq \mathbb{R}^n$の内点の集合．
+  \end{itemize}
+  \item $\bm{x}$が$X \subseteq \mathbb{R}^n$の触点(contact point)である
+  \begin{itemize}
+    \item $\bm{x} \in X \subseteq \mathbb{R}^n$に対して，$\forall \varepsilon > 0; \, B(\bm{x}, \varepsilon) \cap X \neq \emptyset$が成立する．
+  \end{itemize}
+  \item $X$の閉包(closure)，$\mathrm{Cl}(X)$
+  \begin{itemize}
+    \item $X \subseteq \mathbb{R}^n$の触点の集合．
+    \item $X$を含む最小の閉集合．
+  \end{itemize}
+  \item $X$の境界(boundary)，$\mathrm{Bd}(X)$
+  \begin{itemize}
+    \item $\mathrm{Bd}(X) = \mathrm{Cl}(X) \setminus \mathrm{Int}(X)$．
+  \end{itemize}
+  \item $\bm{x}$は$X$の集積点である
+  \begin{itemize}
+    \item 任意の$\varepsilon > 0$に対して，$B(\bm{x}, \varepsilon) \cap X$が$\bm{x}$と異なる要素を含む．
+  \end{itemize}
+  \item 孤立点(isolated point)
+  \begin{itemize}
+    \item $X$の集積点でない$X$の触点
+  \end{itemize}
+  \item $X$が有界である(bounded)
+  \begin{itemize}
+    \item $\exists \varepsilon > 0; \, X \subseteq B(\bm{0}, \varepsilon)$．
+  \end{itemize}
+  \item 収束
+  \begin{itemize}
+    \item 点列$\{\bm{x}^i\}, \, i = 1, 2, \ldots$を考える．
+    $\forall \varepsilon > 0, \, \exists I_{\varepsilon}; \; \|\bm{x}^i - \bm{x}\| < \varepsilon, \, i \geq I_{\varepsilon}$となる点$\bm{x}$が存在するとき，$\bm{x}$は点列$\{\bm{x}^i\}$の極限(limit)といい，点列$\{\bm{x}^i\}$は$\bm{x}$に収束する(converge)という．
+  \end{itemize}
+  \item 点列$\{\bm{x}^i\}$の集積点
+  \begin{itemize}
+    \item $\{\bm{x}^i\}$の部分点列$\{\bm{x}^{l_i}\}$が点$\bm{x}$に収束するとき，点$\bm{x}$を点列$\{\bm{x}^i\}$の集積点という．
+  \end{itemize}
+\end{itemize}
+
+有界閉集合$X \subseteq \mathbb{R}^n$について，$\{\bm{x}^i\} \subseteq X$なる無限点列は少なくとも1つの集積点をもつ．
+
+\section{関数}
+\begin{itemize}
+  \item 連続性
+  \begin{itemize}
+    \item 関数$\bm{f}: X \rightarrow \mathbb{R}^m$を考える($X \subseteq R^n$)．
+    \begin{equation}
+      \forall \epsilon > 0, \exists \delta > 0; \, \|\bm{x} - \bm{x}\| < \delta \Rightarrow \|\bm{f}(\bm{x}) - \bm{f}(\bm{x}^0) \| < \varepsilon \nonumber
+    \end{equation}
+    が成立するとき，$\bm{f}$は点$\bm{x}^0$で連続(continuous)であるという．
+    \item 任意の$\bm{x} \in X$で連続となるとき，関数$\bm{f}$は$X$で連続という．
+  \end{itemize}
+  \item 実数値関数
+  \begin{itemize}
+    \item 値域が実数集合の関数$f: X \rightarrow \mathbb{R}$．
+  \end{itemize}
+  \item 実数値関数のクラス
+  \begin{itemize}
+    \item $f: X \rightarrow \mathbb{R}$($X \subseteq \mathbb{R}^n$は開集合)を考える．
+    \item $f$が連続であるとき，$X$上で$C^0$級と呼ばれ，$f \in C^0$と記す．
+    \item $f \in C^0$で，$\partial f(\bm{x}) / \partial x_i, \, i = 1, 2, \ldots, n$が存在し，連続であれば，$f$は$X$上で$C^1$級と呼ばれ，$f \in C^1$と表す．
+    \item $f \in C^1$で，$\partial^2 f(\bm{x}) / \partial x_i \partial x_j, \, i,j = 1, 2, \ldots, n$が存在し，連続であれば，$f$は$X$上で$C^2$級と呼ばれ，$f \in C^2$と表す．
+    \item 以後$C^k$級も同様に定義される．
+  \end{itemize}
+  \item 勾配ベクトル$\nabla f(\bm{x})$
+    \begin{equation}
+      \nabla f(\bm{x}) = \left(\frac{\partial f(\bm{x})}{\partial x_1}, \frac{\partial f(\bm{x})}{\partial x_2}, \cdots, \frac{\partial f(\bm{x})}{\partial x_n}\right) \nonumber
+    \end{equation}
+  \item ヘッセ行列$H(\bm{x}) = \nabla^2 f(\bm{x})$
+  \begin{equation}
+    \nabla^2 f(\bm{x}) = \left(
+    \begin{array}{cccc}
+      \displaystyle \frac{\partial^2 f(\bm{x})}{{\partial x_1}^2} & \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_1 \partial x_2} & \displaystyle \cdots & \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_1 \partial x_n} \\
+      \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_2 \partial x_1} & \displaystyle \frac{\partial^2 f(\bm{x})}{{\partial x_2}^2} & \displaystyle \cdots & \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_2 \partial x_n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_n \partial x_1} & \displaystyle \frac{\partial^2 f(\bm{x})}{\partial x_n \partial x_2} & \displaystyle \cdots & \displaystyle \frac{\partial^2 f(\bm{x})}{{\partial x_n}^2}
+    \end{array}
+    \right) \nonumber
+  \end{equation}
+\end{itemize}
+
+\paragraph{Weierstrassの定理}
+有界閉集合$X \subseteq \mathbb{R}^n$上の連続な実数値関数$f(\bm{x})$は$X$内の点で最大値，最小値をとる．
+
+\paragraph{平均値の定理}
+$f: X \rightarrow \mathbb{R} \, (X \subseteq \mathbb{R}^n), \, f \in C^1, \, \bm{x}^1, \bm{x}^2 \in X$に対して，
+\begin{equation}
+  f(\bm{x}^1) = f(\bm{x}^2) + \nabla f(\theta \bm{x}^1 + (1 - \theta) \bm{x}^2)^{\mathrm{T}}(\bm{x}^1 - \bm{x}^2) \nonumber
+\end{equation}
+を満たす$\theta \in (0, 1)$が存在する．
+
+(注)関数$f: I \rightarrow \mathbb{R} \, (I \subseteq \mathbb{R}), \, f \in C^1, \, x_1, x_2 \in I$に対しては，
+\begin{equation}
+  f(x_1) = f(x_2) + f^{\prime}(\theta x_1 + (1-\theta)x_2)(x_1 - x_2) \nonumber
+\end{equation}
+を満たす$\theta \in (0, 1)$が存在する．これは，点$x_1, x_2 \in I$を結ぶ線分内に，$f(x_1), f(x_2)$を結ぶ直線と同じ傾きとなる接線を持つ点$c = \theta x_1 + (1-\theta)x_2, \, \theta \in (0, 1)$が存在することに相当する．
+
+\paragraph{Taylorの定理}
+$f: X \rightarrow \mathbb{R} \, (X \subseteq \mathbb{R}^n), \, f \in C^2, \, \bm{x}^1, \bm{x}^2 \in X$に対して，
+\begin{equation}
+  f(\bm{x}^1) = f(\bm{x}^2) + \nabla f(\bm{x}^2)^{\mathrm{T}} (\bm{x}^1 - \bm{x}^2)^{\mathrm{T}} + \frac{1}{2} (\bm{x}^1 - \bm{x}^2)^{\mathrm{T}} \nabla^2 f(\bm{x}^2) (\bm{x}^1 - \bm{x}^2) + o(\|\bm{x}^1 - \bm{x}^2 \|^2) \nonumber
+\end{equation}
+が成立する．ただし，$o$は$\lim\limits_{t \rightarrow 0} o(t) / t = 0$なる関数である．
+同様に，$f \in C^1$に対して，
+\begin{equation}
+    f(\bm{x}^1) = f(\bm{x}^2) + \nabla f(\bm{x}^2)^{\mathrm{T}} (\bm{x}^1 - \bm{x}^2)^{\mathrm{T}} + o(\|\bm{x}^1 - \bm{x}^2 \|^1) \nonumber
+\end{equation}
+が成立する．
+
+(注)関数$f: I \rightarrow \mathbb{R} \, (I \subseteq \mathbb{R}), \, f \in C^1, \, x_1, x_2 \in I$に対しては，
+\begin{equation}
+  f(x_1) = f(x_2) + f^{\prime}(x_2)(x_1 - x_2) + \frac{f^{\prime \prime}(x_2)}{2}(x_1 - x_2)^2 + o((x_1 - x_2)^2) \nonumber
+\end{equation}
+\begin{equation}
+  f(x_1) = f(x_2) + f^{\prime}(x_2)(x_1 - x_2) + o(x_1 - x_2) \nonumber
+\end{equation}
+が成立する．$o$を用いずに表すと，
+\begin{equation}
+  f(x_1) = f(x_2) + f^{\prime}(x_2)(x_1 - x_2) + \frac{f^{\prime \prime}(x_2)}{2}(x_1 - x_2)^2 + \cdots + \frac{f^{(n - 1)}(x_2)}{(n - 1)!}(x_1 - x_2)^{n - 1} + R_n \nonumber
+\end{equation}
+\begin{equation}
+  R_n \coloneqq \frac{f^{(n)}(\theta x_1 + (1 - \theta)x_2)}{n!}(x_1 - x_2)^n \nonumber
+\end{equation}
+を満たす$\theta \in (0, 1)$が存在する．$n = 1$のときは平均値の定理．つまり，Taylorの定理は平均値の定理の一般化と考えることができる．
+
+\paragraph{陰関数の定理}
+$h_i: \mathbb{R}^n \rightarrow \mathbb{R}, \, \bm{x}^0 = (x_1^0, x_1^0, \ldots, x_n^0)^{\mathrm{T}} \in \mathbb{R}^n$の近傍で，$h_i \in C^p \, (p \geq 1)$
+\begin{equation}
+  h_i(\bm{x}^0) = 0, \, i = 1, 2, \ldots, m \nonumber
+\end{equation}
+が成立するとする．このとき，ヤコビ行列(Jacobian matrix)
+\begin{equation}
+  J(\bm{x}^0) = \left(
+  \begin{array}{ccc}
+    \displaystyle \frac{\partial h_1(\bm{x}^0)}{\partial x_1} & \cdots & \displaystyle \frac{\partial h_1(\bm{x}^0)}{\partial x_m} \\
+    \vdots & \vdots & \vdots \\
+    \displaystyle \frac{\partial h_m(\bm{x}^0)}{\partial x_1} & \cdots & \displaystyle \frac{\partial h_m(\bm{x}^0)}{\partial x_m}
+  \end{array}
+  \right) \nonumber
+\end{equation}
+が正則ならば，ある$\varepsilon > 0$に対して$\hat{\bm{x}}^0 = (x_{m + 1}^0, \ldots, x_n^0)^{\mathrm{T}} \in \mathbb{R}^{n - m}$の近傍$U = B(\hat{\bm{x}}^0, \varepsilon)$が存在し，$\hat{\bm{x}} \in U$に対して，
+\begin{enumerate}
+  \item $\phi_i \in C^p, \, i = 1, 2, \ldots, m$
+  \item $x_i = \phi(\hat{\bm{x}}), \, i = 1, 2, \ldots, m$
+  \item $h_i(\phi_1(\hat{\bm{x}}), \phi_2(\hat{\bm{x}}), \ldots, \phi_m(\hat{\bm{x}}), \hat{\bm{x}}) = 0, i = 1, 2, \ldots, m$
+\end{enumerate}
+となる陰関数(implicit function)$\phi_i, \, i = 1, 2, \ldots, m$が存在する\footnote{解析学の教科書では，陰関数が唯一存在すると記されている．}．
+
+(注) 2変数関数を考える．関数$f: \Omega \rightarrow \mathbb{R} \, (\Omega \subseteq \mathbb{R}^2), \, f \in C^p, \, p \geq 1, \, (x_1, x_2) \in \Omega$とする．$f(x_1, x_2) = 0$のとき，$x = x_1$を含む開区間$I$および$I$上で定義された$C^p$級の関数$\phi$がただ1つ存在し，$\phi(x_1) = x_2$および
+\begin{equation}
+  u(x) \coloneqq f(x, \phi(x)) = 0 \; \; (\forall x \in I) \nonumber
+\end{equation}
+が成立する．
+
+\section{凸集合}
+$X \subseteq \mathbb{R}^n$とする．$\forall \bm{x}^1, \bm{x}^2 \in X, \, \forall \lambda \in [0, 1]$に対して，$\lambda \bm{x}^1 + (1 - \lambda)\bm{x}^2 \in X$が成立するとき，$X$は凸集合(convex set)である
+\footnote{2点$\bm{x}^1, \bm{x}^2$を結ぶ線分上の任意の内分点は，$x_{\lambda} = \lambda \bm{x}^1 + (1 - \lambda)\bm{x}^2, \, \lambda \in [0, 1]$と書ける．}．
+
+\begin{lemm}\label{lemm:convex}
+  $X_1, X_2, \ldots \subseteq \mathbb{R}^n$を凸集合とすると，$\bigcap \limits_{i = 1, 2, \ldots} X_i$も凸集合となる．
+\end{lemm}
+
+\begin{lemm}[分離超平面の存在]\label{lemm:hyperplane1}
+  $X \subseteq \mathbb{R}^n$を空でない閉凸集合，$\bm{y} \notin X$とする．このとき，
+  \begin{equation}
+    \bm{a}^{\mathrm{T}}\bm{x} \geq b > \bm{a}^{\mathrm{T}}\bm{y}, \; \forall x \in X \nonumber
+  \end{equation}
+  となる分離超平面(separating hyperplane)$\{\bm{x} \in \mathbb{R}^n \, | \, \bm{a}^{\mathrm{T}} \bm{x} = b\} \; (\bm{a} \neq \bm{0})$が存在する．
+\end{lemm}
+
+
+\begin{lemm}\label{lemm:hyperplane2}
+  $X \subseteq \mathbb{R}^n$を空でない凸集合，$\bm{y} \in \mathrm{Bd}(X)$とする．このとき，
+  \begin{equation}
+    \bm{a}^{\mathrm{T}} \bm{x} \geq \bm{a}^{\mathrm{T}} \bm{y}, \, \forall \bm{x} \in X \nonumber
+  \end{equation}
+  なる$\bm{a} \neq \bm{0}$が存在する．
+\end{lemm}
+
+\end{document}
