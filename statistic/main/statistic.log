@@ -1,10 +1,10 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2019.9.11)  23 MAR 2020 23:37
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2019.9.11)  23 MAR 2020 23:48
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
  %&-line parsing enabled.
-**optimization.tex
-(./optimization.tex
+**statistic.tex
+(./statistic.tex
 pLaTeX2e <2019-04-06> (based on LaTeX2e <2018-12-01>)
 (/usr/local/texlive/2019/texmf-dist/tex/platex/jsclasses/jsreport.cls
 Document Class: jsreport 2019/07/25 jsclasses (okumura, texjporg)
@@ -394,9 +394,8 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldmincho=\mathgroup12
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
-))
-(./optimization.aux)
-\openout1 = `optimization.aux'.
+)) (./statistic.aux)
+\openout1 = `statistic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -481,85 +480,38 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 23.90964pt on input line 11.
 
-(./optimization.toc
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 3.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 3.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 3.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 3.
-)
+(./statistic.toc)
 \tf@toc=\write3
-\openout3 = `optimization.toc'.
+\openout3 = `statistic.toc'.
 
- [1
+ (../measure/measure.tex [1
 
 ]
 第1章
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 15.
+(Font)              scaled to size 19.9311pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 15.
+(Font)              scaled to size 19.9311pt on input line 4.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 15.
+(Font)              scaled to size 19.9311pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 15.
-(../math/math.tex [2
+(Font)              scaled to size 19.9311pt on input line 4.
+) (../probability/probability.tex [2
 
 ]
 第2章
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 5.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 5.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 5.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 5.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 10.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 10.
- [3
+) [3
 
-] [4] [5]
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 174.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 174.
-)
-(../apdx/apdx.tex [6]
-第3章
-[7
+] [4
 
-]) [8]
-Underfull \hbox (badness 1253) in paragraph at lines 27--28
-[][]\JY1/mc/m/n/10 オペレ ーシ ョンズ ・ リサ ーチとは\OT1/cmr/m/n/10 . \JY1/mc
-/m/n/10 公益社団法人日本オペレ ーシ ョンズ ・ リサ ーチ学会\OT1/cmr/m/n/10 .
- []
-
-[9
-
-] (./optimization.aux) ) 
+] (./statistic.aux) ) 
 Here is how much of TeX's memory you used:
- 6976 strings out of 493216
- 101605 string characters out of 6143982
- 192695 words of memory out of 5000000
- 10808 multiletter control sequences out of 15000+600000
- 27630 words of font info for 127 fonts, out of 8000000 for 9000
+ 6904 strings out of 493216
+ 100693 string characters out of 6143982
+ 182695 words of memory out of 5000000
+ 10751 multiletter control sequences out of 15000+600000
+ 20448 words of font info for 92 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 38i,11n,38p,567b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,38p,273b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on optimization.dvi (10 pages, 32668 bytes).
+Output written on statistic.dvi (5 pages, 2232 bytes).
