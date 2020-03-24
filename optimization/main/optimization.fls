@@ -229,6 +229,12 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
+INPUT ../problem/problem.tex
+INPUT ../problem/problem.tex
+INPUT ../nonlinear/nonlinear.tex
+INPUT ../nonlinear/nonlinear.tex
+INPUT ../linear/linear.tex
+INPUT ../linear/linear.tex
 INPUT ../apdx/apdx.tex
 INPUT ../apdx/apdx.tex
 INPUT optimization.aux

@@ -1,12 +1,15 @@
 # Fdb version 3
-["dvipdf"] 1584974260 "optimization.dvi" "optimization.pdf" "optimization" 1584974261
-  "optimization.dvi" 1584974260 32668 07dd1638ac679fc5f836579f5b0811cb "latex"
+["dvipdf"] 1585045713 "optimization.dvi" "optimization.pdf" "optimization" 1585045714
+  "optimization.dvi" 1585045713 52596 7bb19ec84869b3e00aa0c5f4bcae263c "latex"
   (generated)
   "optimization.pdf"
-["latex"] 1584974260 "optimization.tex" "optimization.dvi" "optimization" 1584974261
-  "../apdx/apdx.tex" 1584974259 4675 0349fda65ef1525514c3ded0ddbfdb66 ""
-  "../math/math.tex" 1584974173 12208 cd4e314bb01296c4e5d6f5f1e272d2be ""
+["latex"] 1585045713 "optimization.tex" "optimization.dvi" "optimization" 1585045714
+  "../apdx/apdx.tex" 1585008890 5066 d7af0a2aeb569c9674a07d8737f4815d ""
+  "../linear/linear.tex" 1585006461 132 1305ba457036b495a8c26a4dcc78b870 ""
+  "../math/math.tex" 1585034590 18013 e32a8be4514508fcfad13ed3daf3b05d ""
+  "../nonlinear/nonlinear.tex" 1585045713 1115 aac812e680ee8da8bc6eee112b5f9c58 ""
   "../preamble.tex" 1584970877 1046 361f181256bd64788f342e21a45965f2 ""
+  "../problem/problem.tex" 1585045434 4097 a366819bf7bb1c37da99ef36db2069e7 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -117,11 +120,11 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1566248362 39543 a0bd1f17d0daea30a3905c0b020d0959 ""
   "/usr/local/texlive/2019/texmf-var/web2c/eptex/platex.fmt" 1568199141 4530234 2ca35ff528b1a03e7a70d96d1fafc7fc ""
   "/usr/local/texlive/2019/texmf.cnf" 1568199101 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "optimization.aux" 1584974260 1789 4c94d3d66e54a2501ae497509568371e "latex"
-  "optimization.tex" 1584972438 1359 6b86bf7c8788f2e403dcd30e7300548b ""
-  "optimization.toc" 1584974260 660 78c95f0134d4823225771290d1301e53 "latex"
+  "optimization.aux" 1585045713 2945 dc88d0c7eb9d22283e295584aa6424d6 "latex"
+  "optimization.tex" 1585006418 1720 09ec18112362b88d8060462a7ea90e53 ""
+  "optimization.toc" 1585045713 1133 cda0554ce1943fbe7f58861801a2b668 "latex"
   (generated)
-  "optimization.dvi"
+  "optimization.aux"
   "optimization.toc"
   "optimization.log"
-  "optimization.aux"
+  "optimization.dvi"

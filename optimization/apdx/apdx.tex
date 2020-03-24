@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 \begin{document}
 \chapter{証明}
-この付録には，補題や定理の証明を記載する．
+この章には，補題や定理の証明を記載する．
 
 \begin{proof}[補題\ref{lemm:convex}の証明]
   項が2つのとき，つまり，$X_1, X_2 \subseteq \mathbb{R}^n$が凸集合ならば，$X_1 \cap X_2$も凸集合である(*)
@@ -53,7 +53,7 @@
 \end{proof}
 
 \begin{proof}[補題\ref{lemm:hyperplane1}の証明]
-  $\bm{y}$の$X$への射影を$\bar{\bm{y}}$とする．$\bm{y} \notin X$より，$\bm{y} \neq \bar{\bm{y}}$である．
+  $\bm{y} \in \mathbb{R}^n$の$X$への射影を$\bar{\bm{y}}$とする．定理\ref{theo:projection}より，$\bar{\bm{y}}$は$\bm{y}$に対して一意に存在する．$\bm{y} \notin X$より，$\bm{y} \neq \bar{\bm{y}}$である．
   よって，
   \begin{equation}\label{eq:norm}
     \|\bar{\bm{y}} - \bm{y}\|^2 = (\bar{\bm{y}} - \bm{y})^{\mathrm{T}}(\bar{\bm{y}} - \bm{y}) > 0
@@ -66,7 +66,7 @@
   \begin{equation}
     (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bm{x} \geq (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bar{\bm{y}} > (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bm{y}, \; x \in X \nonumber
   \end{equation}
-  を得る．ここで，$\bm{a} = \bar{\bm{y}} - \bm{y}, \, b = (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bar{\bm{y}}$と置くと補題\ref{lemm:hyperplane1}が示される．\qed
+  を得る．ここで，$\bm{a} = \bar{\bm{y}} - \bm{y}, \, b = (\bar{\bm{y}} - \bm{y})^{\mathrm{T}} \bar{\bm{y}}$と置くと，$\bar{\bm{y}}$の一意性より補題\ref{lemm:hyperplane1}が示される．\qed
 \end{proof}
 
 \begin{proof}[補題\ref{lemm:hyperplane2}の証明]
@@ -74,6 +74,22 @@
 \end{proof}
 
 \begin{proof}[補題\ref{lemm:hyperplane3}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:epi}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:quasi}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:convex}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:convex2}の証明]
 
 \end{proof}
 

@@ -1,0 +1,66 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+
+\chapter{最適化問題の定式化}
+本章では，一般の最適化問題について定式化を行い，用語の定義を行う．
+\section{最適化問題}
+最適化問題を口語的に定義すると，「与えられた条件の下で何らかの関数を最小化，もしくは最大化する問題」である．最適化問題は以下のように定義される．ここでは，最小化問題を最適化問題とする．
+
+基礎となる空間$X$，$S \subseteq \mathbb{R}^n$，$X$上で定義された関数$f: X \rightarrow \mathbb{R}$が与えられたとき，$f$を最小にする解$\bm{x} \in X \cap X$を求める問題を最適化問題(optimization problem)，あるいは計画問題(programming problem)という．つまり，最適化問題は，(\ref{eq:opt})式で定義される問題である．
+\begin{align}\label{eq:opt}
+  \mathrm{minimize} &: f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} &: \bm{x} \in S \cap X
+\end{align}
+例えば$X$として，$\mathbb{R}^n$や離散集合などが考えられる．
+通常，$S$は関数$g_i: \mathbb{R}^n \rightarrow \mathbb{R}, \, i = 1, 2, \ldots, m$による不等式および等式制約を用いて，
+\begin{equation}\label{eq:const}
+  S = \{\bm{x} \in \mathbb{R}^n \, | \, g_i(\bm{x}) \leq 0, \, i = 1, 2, \ldots, l, \; g_i(\bm{x}) = 0, \, i = l + 1, \ldots, m\}
+\end{equation}
+と表現される．
+
+\section{用語}
+\begin{description}
+  \item[$S \cap X$] 実行可能領域(feasible region)
+  \begin{itemize}
+    \item $S \cap X \neq \emptyset$ならば，実行可能(feasible)
+    \item $S \cap X = \emptyset$ならば，実行不能(infeasible)
+  \end{itemize}
+  \item[$\bm{x} \in S \cap X$] 実行可能解(feasible solution)
+\end{description}
+
+実行可能解$\bm{x} \in S \cap X$のうち，目的関数値を最小にする解を最適解(optimal solution)という．つまり，最適化問題\ref{eq:opt}の最適解$\bm{x}^*$は，$\forall \bm{x} \in S \cap X, \, f(\bm{x}^*) \leq f(\bm{x})$を満たす$\bm{x}^* \in S \cap X$である．
+
+最適化問題(\ref{eq:opt})において，最適解は常に存在するわけではない．実行不能であるとき，あるいはいくらでも目的関数値を小さくできる場合などでは，最適解は存在しない\footnote{実行不能であるとき，この問題を非有界(unbounded)であるといい，いくらでも目的関数値を小さくできる場合，この問題は発散する(divergent)という．}．
+
+最適化問題は，基礎となる空間$X$，目的関数$f$，制約式(\ref{eq:const})における$g_i$により次のように分類される．
+\begin{itemize}
+  \item 非線形計画問題(nonlinear programming problem)
+  \begin{itemize}
+    \item $X = \mathbb{R}^n$
+    \item $f$や$S$を定義する$g_i$に制限を置かない．
+  \end{itemize}
+  \item 線形計画問題(linear programming problem)
+  \begin{itemize}
+    \item $f, g_i$がすべて線形(1次関数)．
+  \end{itemize}
+  \item 整数計画問題(integer programming problem)
+  \begin{itemize}
+    \item $X = \mathbb{Z}^n$
+    \item $f, g_i$が線形．
+    \item すべての変数が整数変数の全整数計画問題(all-integer programming problem)，整数変数と実数変数が混在する混合整数計画問題(mixed-integer programming problem)に分類される．
+  \end{itemize}
+  \item 組合せ最適化問題(combinatorial optimization problem)
+  \begin{itemize}
+    \item 離散集合$X$に対する最適化問題．
+    \item グラフ理論など．
+  \end{itemize}
+\end{itemize}
+
+最適化問題(\ref{eq:opt})は，
+\begin{equation}
+  f^* = \inf_{\bm{x} \in S \cap X} f(\bm{x}) \nonumber
+\end{equation}
+を求める問題と解釈できる．$f^*$を最適値(optimal value)という．最適値$f^*$は常に定義され，最小化問題については，実行不能ならば$f^* = \infty$，発散するならば$f^* = -\infty$であり，最適解$\bm{x}^*$が存在するならば$f^* = f(\bm{x}^*)$である．
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+
+\chapter{非線形計画問題とアルゴリズム}
+この章では，非線形計画問題の最適性条件および最適化問題を解くアルゴリズムを述べる．
+\section{非線形計画問題の最適性条件}
+非線形計画問題においては，最適性の定義を次のように緩めることが多い．
+\begin{itemize}
+  \item $\bm{x}^*$は局所最小解(locally minimal solution)である．
+  \begin{itemize}
+    \item $\bm{x}^* \in S$に対し，ある近傍$B$が存在し，任意の$\bm{x} \in S \cap B$に対して$f(\bm{x}^*) \leq f(\bm{x})$が成立する．
+  \end{itemize}
+  \item $\bm{x}^*$は局所最大解(locally maximum solution)である．
+  \begin{itemize}
+    \item $\bm{x}^* \in S$に対し，ある近傍$B$が存在し，任意の$\bm{x} \in S \cap B$に対して$f(\bm{x}^*) \geq f(\bm{x})$が成立する．
+  \end{itemize}
+\end{itemize}
+
+ここでは，最小化問題を基本としているので，局所最小解を局所最適解(locally optimal solution)ともいう．
+
+
+\end{document}

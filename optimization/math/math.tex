@@ -72,7 +72,7 @@ $n$次元実数空間$\mathbb{R}^n$を考える．
   \begin{itemize}
     \item 関数$\bm{f}: X \rightarrow \mathbb{R}^m$を考える($X \subseteq R^n$)．
     \begin{equation}
-      \forall \epsilon > 0, \exists \delta > 0; \, \|\bm{x} - \bm{x}\| < \delta \Rightarrow \|\bm{f}(\bm{x}) - \bm{f}(\bm{x}^0) \| < \varepsilon \nonumber
+      \forall \epsilon > 0, \exists \delta > 0; \, \|\bm{x} - \bm{x}^0\| < \delta \Rightarrow \|\bm{f}(\bm{x}) - \bm{f}(\bm{x}^0) \| < \varepsilon \nonumber
     \end{equation}
     が成立するとき，$\bm{f}$は点$\bm{x}^0$で連続(continuous)であるという．
     \item 任意の$\bm{x} \in X$で連続となるとき，関数$\bm{f}$は$X$で連続という．
@@ -214,6 +214,82 @@ $X \subseteq \mathbb{R}^n$とする．$\forall \bm{x}^1, \bm{x}^2 \in X, \, \for
 \end{lemm}
 
 \section{凸関数}
+$X \subseteq \mathbb{R}^n$を空でない凸集合とする．関数$f: X \rightarrow \mathbb{R}$を考える．任意の$\bm{x}^1, \bm{x}^2 \in X$，任意の$\lambda \in [0, 1]$に対して，
+\begin{equation}
+  f(\lambda \bm{x}^1 + (1 - \lambda)\bm{x}^2) \leq \lambda f(\bm{x}^1) + (1 - \lambda)f(\bm{x}^2) \nonumber
+\end{equation}
+が成立するとき，$f$は凸関数(convex function)であるという．また，任意の$\bm{x}^1, \bm{x}^2 \in X \, (\bm{x}^1 \neq \bm{x}^2)$，任意の$\lambda \in (0, 1)$に対して，
+\begin{equation}
+  f(\lambda \bm{x}^1 + (1 - \lambda)\bm{x}^2) < \lambda f(\bm{x}^1) + (1 - \lambda)f(\bm{x}^2) \nonumber
+\end{equation}
+が成立するとき，$f$は強意の凸関数(strictly convex function)であるという．さらに，任意の$\bm{x}^1, \bm{x}^2 \in X$，任意の$\lambda \in [0, 1]$に対して，
+\begin{equation}
+  f(\lambda\bm{x}^1 + (1 - \lambda)\bm{x}^2) \leq \max(f(\bm{x}^1), f(\bm{x}^2)) \nonumber
+\end{equation}
+が成立するとき，$f$は準凸関数(quasi-convex function)であるという．また，任意の$\bm{x}^1, \bm{x}^2 \in X \, (\bm{x}^1 \neq \bm{x}^2)$，任意の$\lambda \in (0, 1)$に対して，
+\begin{equation}
+  f(\lambda\bm{x}^1 + (1 - \lambda)\bm{x}^2) < \max(f(\bm{x}^1), f(\bm{x}^2)) \nonumber
+\end{equation}
+が成立するとき，$f$は強意の準凸関数(strictly quasi-convex function)であるという．
+$-f$が凸関数，強意の凸関数，準凸関数，強意の準凸関数であるとき，それぞれ，$f$は凹関数(concave function)，強意の凹関数，準凹関数，強意の準凹関数であるという．
 
+\begin{theo}\label{theo:epi}
+  $X \subseteq \mathbb{R}^n$を空でない凸集合とする．関数$f: X \rightarrow \mathbb{R}$が凸関数であるための必要十分条件は，$\mathbb{R}^{n + 1}$の部分集合，
+  \begin{equation}
+    \mathrm{epi}f = \{(\bm{x}, r) \, | \, \bm{x} \in X, r \geq f(\bm{x}), r \in \mathbb{R}\} \nonumber
+  \end{equation}
+  が凸集合となることである．$\mathrm{epi}f$を関数$f$のエピグラフ(epigraph)という．
+\end{theo}
+
+\begin{theo}\label{theo:quasi}
+  $X \subseteq \mathbb{R}^n$を空でない凸集合とする．関数$f: X \rightarrow \mathbb{R}$が準凸関数であるための必要十分条件は，$\mathbb{R}^{n}$の部分集合，
+  \begin{equation}
+    L(r) = \{\bm{x} \in \mathbb{R}^n \, | \, f(\bm{x}) \leq r \} \nonumber
+  \end{equation}
+  が任意の$r \in \mathbb{R}$に対して凸集合となることである．$L(r)$を関数$f$のレベル集合(level set)という．
+\end{theo}
+
+\begin{theo}\label{theo:convex}
+  $X \subseteq \mathbb{R}^n$を空でない開凸集合とする．関数$f: X \rightarrow \mathbb{R}$が微分可能とする．$f$が凸関数であるための必要十分条件は，
+  \begin{equation}
+    f(\bm{x}^2) \geq f(\bm{x}^1) + \nabla f(\bm{x}^1)^{\mathrm{T}}(\bm{x}^2 - \bm{x}^1), \; \forall \bm{x}^1, \bm{x}^2 \in X \nonumber
+  \end{equation}
+  が成立することである．また，$f$が強意の凸関数であるための必要十分条件は，
+  \begin{equation}
+    f(\bm{x}^2) > f(\bm{x}^1) + \nabla f(\bm{x}^1)^{\mathrm{T}}(\bm{x}^2 - \bm{x}^1), \; \forall \bm{x}^1, \bm{x}^2 \in X \; \mathrm{s. t.} \; \bm{x}^1 \neq \bm{x}^2 \nonumber
+  \end{equation}
+  が成立することである．
+\end{theo}
+(参考) $\bm{x} \in X$($X \subseteq \mathbb{R}^n$は開集合)，$\bm{d} \in \mathbb{R}^n$とする．$f: X \rightarrow \mathbb{R}$に対して，方向微分係数(directional derivative)は，
+\begin{equation}
+  f^{\prime}(\bm{x}; \bm{d}) = \lim_{r \rightarrow +0} \frac{f(\bm{x} + r\bm{d}) - f(\bm{x})}{r} \nonumber
+\end{equation}
+と定められる．$f$が微分可能なとき，$f^{\prime}(\bm{x}; \bm{d}) = \nabla f(\bm{x})^{\mathrm{T}}\bm{d}$が成立する
+\footnote{$f$が微分可能のとき，Taylorの定理より，$f(\bm{x} + r\bm{d}) = f(\bm{x}) + r \nabla f(\bm{x})^{\mathrm{T}} \bm{d} + o(r\|\bm{d}\|)$である．さらに，$\lim \limits_{r \rightarrow +0} o(r\|\bm{d}\|) / r = 0$より上式を得る．}．
+
+\begin{theo}\label{theo:convex2}
+  $X \subseteq \mathbb{R}^n$を空でない開凸集合とする．関数$f: X \rightarrow \mathbb{R}$が2階微分可能とする．
+  \begin{enumerate}
+    \item $f$が凸関数であるための必要十分条件は，$f$のヘッセ行列$H(\bm{x})$が任意の$\bm{x} \in X$に対して半正定(positive semi-definite)，すなわち，
+    \begin{equation}
+      \bm{y}^{\mathrm{T}} H(\bm{x}) \bm{y} \geq 0, \; \forall \bm{y} \in \mathbb{R}^n \nonumber
+    \end{equation}
+    が成立することである．
+    \item $f$が強意の凸関数であるための十分条件は，$f$のヘッセ行列$H(\bm{x})$が任意の$\bm{x} \in X$に対して正定(positive definite)，すなわち，
+    \begin{equation}
+      \bm{y}^{\mathrm{T}} H(\bm{x}) \bm{y} > 0, \; \forall \bm{y} \in \mathbb{R}^n, \; \bm{y} \neq \bm{0} \nonumber
+    \end{equation}
+    が成立することである\footnote{この逆は一般に成立しない．}．
+  \end{enumerate}
+\end{theo}
+
+\begin{description}
+  \item[(凸関数の連続性)] $X \subseteq \mathbb{R}^n$を空でない凸集合とする．関数$f: X \rightarrow \mathbb{R}$が凸関数であれば，$f$は$X$の任意の内点で連続である．
+  \item[Taylorの公式] $f: X \rightarrow \mathbb{R} \, (X \subseteq \mathbb{R}^n)$が$\bar{\bm{x}} \in X$の近傍で2階微分可能なとき，
+  \begin{equation}
+    f(\bm{x}) = f(\bar{\bm{x}}) + \nabla f(\bar{\bm{x}})^{\mathrm{T}} (\bm{x} - \bar{\bm{x}}) + \frac{1}{2} (\bm{x} - \bar{\bm{x}})^{\mathrm{T}} H((1 - \lambda)\bar{\bm{x}} + \lambda \bm{x})(\bm{x} - \bar{\bm{x}}) \nonumber
+  \end{equation}
+  なる$\lambda \in (0, 1)$が存在する．
+\end{description}
 
 \end{document}
