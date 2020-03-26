@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2019.9.11)  25 MAR 2020 22:55
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2019.7.26)  26 MAR 2020 17:24
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -289,7 +289,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2019/07/31 v1.22 mathematical typesetting tools
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
@@ -349,10 +349,10 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \c@proof=\count133
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2019/09/01 v3.3d Customizing captions (AR)
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen165
 \captionmargin@=\dimen166
@@ -378,7 +378,7 @@ ing \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip }.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 \c@subfigure=\count136
 \c@subtable=\count137
 )
@@ -568,12 +568,12 @@ Underfull \hbox (badness 1253) in paragraph at lines 35--36
 
 ] (./optimization.aux) ) 
 Here is how much of TeX's memory you used:
- 7000 strings out of 493216
- 101983 string characters out of 6143982
- 192722 words of memory out of 5000000
- 10820 multiletter control sequences out of 15000+600000
+ 6988 strings out of 493216
+ 101794 string characters out of 6143982
+ 192341 words of memory out of 5000000
+ 10808 multiletter control sequences out of 15000+600000
  28126 words of font info for 129 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  38i,11n,38p,567b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on optimization.dvi (18 pages, 58744 bytes).
+Output written on optimization.dvi (18 pages, 64532 bytes).

@@ -30,7 +30,7 @@
 
 問題(\ref{eq:opt_nonl_nonc})の最適性の必要条件として，次の2つの定理を示す．
 \begin{theo}\label{theo:opt_nonl_nonc_h_1}
-  $f \in C^{1}$のとき，$\bar{\bm{x}} \in \mathbb{R}$が問題(\ref{eq:opt_nonl_nonc})の局所最適解であるための必要条件は，
+  $f \in C^{1}$のとき，$\bar{\bm{x}} \in \mathbb{R}^n$が問題(\ref{eq:opt_nonl_nonc})の局所最適解であるための必要条件は，
   \begin{equation}
     \nabla f(\bar{\bm{x}}) = \bm{0} \nonumber
   \end{equation}
@@ -62,6 +62,36 @@
   が成立することである．
 \end{theo}
 
+\subsection{等式制約問題の最適性条件}
+本節では，最適化問題として，(\ref{eq:opt_nonl_eq})を考える．
+\begin{align}\label{eq:opt_nonl_eq}
+  \mathrm{minimize} : \; &f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} : \; &g_i(\bm{x}) = 0, \; i = 1, 2, \ldots, m \nonumber \\
+  &\bm{x} \in \mathbb{R}^n
+\end{align}
+
+等式制約問題(\ref{eq:opt_nonl_eq})における主要な結果は，目的関数$f(\bm{x})$の代わりにLagrange関数(Lagrangian function)
+\begin{equation}\label{eq:lag}
+  L(\bm{x}, \bm{u}) = f(\bm{x}) + \bm{u}^{\mathrm{T}} \bm{g}(\bm{x})
+\end{equation}
+を用いると，前節の定理\ref{theo:opt_nonl_nonc_h_1}，定理\ref{theo:opt_nonl_nonc_h_2}を自然に拡張できるという点にある．
+ただし，$\bm{u} \in \mathbb{R}^m, \, \bm{g}(\bm{x}) = (g_1(\bm{x}), g_2(\bm{x}), \ldots, g_m(\bm{x}))^{\mathrm{T}}$である．
+
+\paragraph{等式条件のペナルティ関数}
+問題(\ref{eq:opt_nonl_eq})とパラメータ$k = 1, 2, \ldots$から次の関数を定義する．
+\begin{equation}\label{eq:penalty}
+  F^k(\bm{x}) = f(\bm{x}) + \frac{k}{2}\|\bm{g}(\bm{x})\|^2 + \frac{\alpha}{2}\|\bm{x} - \bar{\bm{x}}\|^2
+\end{equation}
+ただし，$\bar{\bm{x}}$は，問題(\ref{eq:opt_nonl_eq})の局所最適解である．また，$\alpha > 0$
+とする．
+(\ref{eq:penalty})式において，第2項は，等式制約の違反に対するペナルティと解釈することができる．第3項は，$\bm{g}(\bm{x}) = \bm{0}$を満たす解$\bm{x}$を考えるとき，$\bar{\bm{x}}$が近傍内で$F^k(\bm{x})$の唯一の局所最適解となるように導入されたものである．
+
+$\bar{\bm{x}}$は局所最適解であるので，適当な$\varepsilon > 0$を選べば，$\bar{\bm{x}}$の近傍の閉包
+\begin{equation}
+  \bar{B}(\bar{\bm{x}}, \varepsilon) = \{\bm{x} \in \mathbb{R}^n \, | \, \|\bm{x} - \bar{\bm{x}}\| \leq \varepsilon\}
+\end{equation}
+
+\paragraph{等式制約問題の最適性十分条件}
 
 
 

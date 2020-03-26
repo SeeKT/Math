@@ -126,15 +126,47 @@
 \end{proof}
 
 \begin{proof}[定理\ref{theo:opt_nonl_nonc_h_1}の証明]
-
+  $\bm{d} \in \mathbb{R}^n, \, \varepsilon > 0$を考える．$\varepsilon$が十分小さければ，局所最適性より，
+  \begin{equation}
+    f(\bar{\bm{x}} + \varepsilon \bm{d}) \geq f(\bar{\bm{x}}), \; f(\bar{\bm{x}} - \varepsilon \bm{d}) \geq f(\bar{\bm{x}}) \nonumber
+  \end{equation}
+  が成立する．Taylorの定理より，
+  \begin{align}
+    f(\bar{\bm{x}} + \varepsilon \bm{d}) &= f(\bar{\bm{x}}) + \varepsilon \nabla f(\bar{\bm{x}})^{\mathrm{T}}\bm{d} + o(\varepsilon\|\bm{d}\|) \geq f(\bar{\bm{x}}) \nonumber \\
+    f(\bar{\bm{x}} - \varepsilon \bm{d}) &= f(\bar{\bm{x}}) - \varepsilon \nabla f(\bar{\bm{x}})^{\mathrm{T}}\bm{d} + o(\varepsilon\|\bm{d}\|) \geq f(\bar{\bm{x}}) \nonumber
+  \end{align}
+  なので，
+  \begin{equation}
+    |\nabla f(\bar{\bm{x}})\bm{d}| = \frac{o(\varepsilon \|\bm{d}\|)}{\varepsilon} \rightarrow 0 \; (\varepsilon \rightarrow 0) \nonumber
+  \end{equation}
+  より，$\nabla f(\bar{\bm{x}}) = 0$ \qed
 \end{proof}
 
 \begin{proof}[定理\ref{theo:opt_nonl_nonc_h_2}の証明]
-
+  定理\ref{theo:opt_nonl_nonc_h_1}より，$\nabla f(\bar{\bm{x}}) = 0$．任意の$\bm{d} \in \mathbb{R}^n, \, \varepsilon > 0$に対して，
+  \begin{equation}
+    f(\bar{\bm{x}} + \varepsilon \bm{d}) \geq f(\bar{\bm{x}}) \; (\because \bar{\bm{x}}が局所最適解)\nonumber
+  \end{equation}
+  Taylorの定理と$\nabla f(\bar{\bm{x}}) = 0$より，
+  \begin{equation}
+    \frac{1}{2} \bm{d}^{\mathrm{T}} {\nabla}^2 f(\bar{\bm{x}}) \bm{d} + \frac{o({\varepsilon}^2 \|\bm{d}\|^2)}{{\varepsilon}^2} \geq 0 \nonumber
+  \end{equation}
+  が成立する．よって，$\varepsilon \rightarrow 0$として$\bm{d}^{\mathrm{T}} H(\bar{\bm{x}}) \bm{d} \geq 0$を得る．\qed
 \end{proof}
 
 \begin{proof}[定理\ref{theo:opt_nonl_nonc_j}の証明]
-
+  $f(\bar{\bm{x}} + \varepsilon \bm{d})$に対して，Taylorの定理より，
+  \begin{equation}
+    f(\bar{\bm{x}} + \varepsilon \bm{d}) - f(\bar{\bm{x}}) = \varepsilon \nabla f(\bar{\bm{x}})^{\mathrm{T}}\bm{d} + \frac{{\varepsilon}^2}{2} \bm{d}^{\mathrm{T}} {\nabla}^2 f(\bar{\bm{x}}) \bm{d} + o({\varepsilon}^2 \|\bm{d}\|^2) \nonumber
+  \end{equation}
+  $\nabla f(\bar{\bm{x}}) = 0$を代入し，両辺を${\varepsilon}^2$で割ると，右辺は，
+  \begin{equation}\label{eq:onnj}
+    \frac{1}{2} \bm{d}^{\mathrm{T}} {\nabla}^2 f(\bar{\bm{x}}) \bm{d} + \frac{o({\varepsilon}^2 \|\bm{d}\|^2)}{{\varepsilon}^2}
+  \end{equation}
+  $H(\bar{\bm{x}})$が正定値であり，$\varepsilon \rightarrow 0$であれば，第二項は$0$に収束する．
+  よって，$\varepsilon$が十分小さく，$\varepsilon \neq 0$であれば，(\ref{eq:onnj})式は正となる．
+  $\varepsilon = 0$を含めて，
+  $f(\bar{\bm{x}} + \varepsilon \bm{d}) \geq f(\bar{\bm{x}})$が成立する．つまり，$\bar{\bm{x}}$は局所最適解である．\qed
 \end{proof}
 
 \end{document}
