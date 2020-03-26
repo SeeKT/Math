@@ -70,11 +70,43 @@
 \end{proof}
 
 \begin{proof}[補題\ref{lemm:hyperplane2}の証明]
-
+  $\bm{y}$は$X$の内点でないので，$\bm{y}$の近傍
+  $B_k = \{\bm{x} \in \mathbb{R}^n \, | \, \|\bm{x} - \bm{y}\| < \varepsilon_k\}$
+  はある点$\bm{x}^k \notin \mathrm{Cl}(X)$を含む．
+  $k \rightarrow \infty$に伴い，$\varepsilon_k \rightarrow 0$とすると，
+  点列$\{\bm{x}^k\}$は$\mathrm{Cl}(X)$の外部から$\bm{y}$に収束する．
+  $\bm{x}^k \notin \mathrm{Bd}(X)$から，補題\ref{lemm:hyperplane1}より
+  \begin{equation}
+    (\bm{a}^k)^{\mathrm{T}} \bm{x} > (\bm{a}^k)^{\mathrm{T}} \bm{x}^k, \, \forall \bm{x} \in X \nonumber
+  \end{equation}
+  なる$\bm{a}^k \in \mathbb{R}^n$が存在する．$\bm{a}^k \neq \bm{0}$より，$\|\bm{a}^k\| = 1$を仮定する．
+  点列$\{\bm{a}^k\}$の極限点を$\bm{a}$とすると，
+  \begin{equation}
+    \bm{a}^{\mathrm{T}} \bm{x} \geq \bm{a}^{\mathrm{T}} \bm{y}, \, \forall \bm{x} \in X \nonumber
+  \end{equation}
+  である．$\|\bm{a}\| = 1$より，$\bm{a} \neq \bm{0}$である．\qed
 \end{proof}
 
 \begin{proof}[補題\ref{lemm:hyperplane3}の証明]
-
+  集合$X, Y$から集合$S = \{\bm{z} \in \mathbb{R}^n \, | \, \bm{z} = \bm{x} - \bm{y}, \, \bm{x} \in X, \bm{y} \in Y\}$
+  を定義すると，$S$も凸集合である\footnote{2点$\bm{z}^1 = \bm{x}^1 - \bm{y}^1, \bm{z}^2 = \bm{x}^2 - \bm{y}^2 \in S, \; \bm{x}^1, \bm{x}^2 \in X, \bm{y}^1, \bm{y}^2 \in Y$
+  を結ぶ線分上の点を考えると，
+  \begin{align}
+    (1 - \lambda)\bm{z}^1 + \lambda\bm{z}^2 &= (1 - \lambda)(\bm{x}^1 - \bm{y}^1) + \lambda(\bm{x}^2 - \bm{y}^2) \nonumber \\
+    &= ((1 - \lambda)\bm{x}^1 + \lambda\bm{x}^2) - ((1 - \lambda)\bm{y}^1 + \lambda\bm{y}^2) \nonumber
+  \end{align}
+  と書けるため，$X$と$Y$の凸性より，やはり$S$に属するから．
+  }．
+  $X \cap Y = \emptyset$より，$\bm{0}$ベクトルは$\bm{0} \notin S$である．
+  補題\ref{lemm:hyperplane1}，補題\ref{lemm:hyperplane2}より，
+  \begin{equation}
+    \bm{a}^{\mathrm{T}} \bm{z} \geq \bm{0}, \, \forall \bm{z} \in S \nonumber
+  \end{equation}
+  を満たす$\bm{a} \neq \bm{0}$が存在する．よって，$S$の定義より，
+  \begin{equation}
+    \bm{a}^{\mathrm{T}}\bm{x} \geq \bm{a}^{\mathrm{T}}\bm{y}, \, \forall \bm{x} \in X, \forall \bm{y} \in Y \nonumber
+  \end{equation}
+  を得る．よって，$b = \inf_{\bm{x} \in X} \bm{a}^{\mathrm{T}}\bm{x}$とおくと，(\ref{eq:hyperplane3})式を得る．\qed
 \end{proof}
 
 \begin{proof}[定理\ref{theo:epi}の証明]
@@ -90,6 +122,18 @@
 \end{proof}
 
 \begin{proof}[定理\ref{theo:convex2}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:opt_nonl_nonc_h_1}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:opt_nonl_nonc_h_2}の証明]
+
+\end{proof}
+
+\begin{proof}[定理\ref{theo:opt_nonl_nonc_j}の証明]
 
 \end{proof}
 

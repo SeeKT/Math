@@ -17,7 +17,52 @@
   \end{itemize}
 \end{itemize}
 
-ここでは，最小化問題を基本としているので，局所最小解を局所最適解(locally optimal solution)ともいう．
+ここでは，最小化問題を基本としているので，局所最小解を局所最適解(locally optimal solution)ともいう．また，本来の最適解を大域最適解(globally optimal solution)という．
+まず，局所最適解の必要条件，十分条件について述べ，局所最適解が大域最適解になる場合について述べる．
+
+\subsection{制約なし問題の最適性条件}
+最適化問題として，(\ref{eq:opt_nonl_nonc})を考える．
+\begin{align}\label{eq:opt_nonl_nonc}
+  \mathrm{minimize} &: f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} &: \bm{x} \in \mathbb{R}^n
+\end{align}
+ただし，$f$は任意の非線形関数であり，適当な微分可能性を仮定する．
+
+問題(\ref{eq:opt_nonl_nonc})の最適性の必要条件として，次の2つの定理を示す．
+\begin{theo}\label{theo:opt_nonl_nonc_h_1}
+  $f \in C^{1}$のとき，$\bar{\bm{x}} \in \mathbb{R}$が問題(\ref{eq:opt_nonl_nonc})の局所最適解であるための必要条件は，
+  \begin{equation}
+    \nabla f(\bar{\bm{x}}) = \bm{0} \nonumber
+  \end{equation}
+  となることである．
+\end{theo}
+
+\begin{theo}\label{theo:opt_nonl_nonc_h_2}
+  $f \in C^2$のとき，$\bar{\bm{x}}$が問題(\ref{eq:opt_nonl_nonc})の局所最適解であるための必要条件は，
+  \begin{equation}
+    \nabla f(\bar{\bm{x}}) = \bm{0} \nonumber
+  \end{equation}
+  かつ，$\bar{\bm{x}}$におけるヘッセ行列$H(\bar{\bm{x}})$が半正定値，すなわち，
+  \begin{equation}
+    \bm{d}^{\mathrm{T}} H(\bar{\bm{x}}) \bm{d} \geq 0, \; \forall \bm{d} \in \mathbb{R}^n \nonumber
+  \end{equation}
+  が成立することである．
+\end{theo}
+
+さらに，局所最適解の十分条件は，定理\ref{theo:opt_nonl_nonc_j}で与えられる．
+\begin{theo}\label{theo:opt_nonl_nonc_j}
+  $f \in C^2$のとき，$\bar{\bm{x}}$が問題(\ref{eq:opt_nonl_nonc})の局所最適解であるための十分条件は，
+  \begin{equation}
+    \nabla f(\bar{\bm{x}}) = \bm{0} \nonumber
+  \end{equation}
+  かつヘッセ行列$H(\bar{\bm{x}})$が正定値，すなわち，
+  \begin{equation}
+    \bm{d}^{\mathrm{T}} H(\bar{\bm{x}}) \bm{d} > 0, \; \forall \bm{d} \in \mathbb{R}^n, \; \bm{d} \neq \bm{0} \nonumber
+  \end{equation}
+  が成立することである．
+\end{theo}
+
+
 
 
 \end{document}

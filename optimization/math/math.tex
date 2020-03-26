@@ -187,7 +187,7 @@ $X \subseteq \mathbb{R}^n$とする．$\forall \bm{x}^1, \bm{x}^2 \in X, \, \for
   $X_1, X_2, \ldots \subseteq \mathbb{R}^n$を凸集合とすると，$\bigcap \limits_{i = 1, 2, \ldots} X_i$も凸集合となる．
 \end{lemm}
 
-\begin{lemm}[分離超平面の存在]\label{lemm:hyperplane1}
+\begin{lemm}\label{lemm:hyperplane1}
   $X \subseteq \mathbb{R}^n$を空でない閉凸集合，$\bm{y} \notin X$とする．このとき，
   \begin{equation}
     \bm{a}^{\mathrm{T}}\bm{x} \geq b > \bm{a}^{\mathrm{T}}\bm{y}, \; \forall x \in X \nonumber
@@ -206,9 +206,9 @@ $X \subseteq \mathbb{R}^n$とする．$\forall \bm{x}^1, \bm{x}^2 \in X, \, \for
 
 \begin{lemm}\label{lemm:hyperplane3}
   $X, Y \subseteq \mathbb{R}^n$を空でない凸集合，$X \cap Y = \emptyset$とする．このとき，
-  \begin{align}
+  \begin{align}\label{eq:hyperplane3}
     \bm{a}^{\mathrm{T}}\bm{x} &\geq b, \; \forall \bm{x} \in X, \nonumber \\
-    \bm{a}^{\mathrm{T}}\bm{y} &\leq b, \; \forall \bm{y} \in Y \nonumber
+    \bm{a}^{\mathrm{T}}\bm{y} &\leq b, \; \forall \bm{y} \in Y
   \end{align}
   なる$\bm{a} \neq \bm{0}, \, b$が存在する．
 \end{lemm}
