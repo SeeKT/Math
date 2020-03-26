@@ -90,6 +90,40 @@ $\bar{\bm{x}}$は局所最適解であるので，適当な$\varepsilon > 0$を�
 \begin{equation}
   \bar{B}(\bar{\bm{x}}, \varepsilon) = \{\bm{x} \in \mathbb{R}^n \, | \, \|\bm{x} - \bar{\bm{x}}\| \leq \varepsilon\}
 \end{equation}
+において，そこに属す任意の実行可能解$\bm{x}$に対して，$f(\bar{\bm{x}}) \leq f(\bm{x})$である最適化問題
+\begin{align}\label{eq:opt_penal}
+  \mathrm{minimize} &: F^k(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} &: \bm{x} \in \bar{B}(\bar{\bm{x}}, \varepsilon)
+\end{align}
+を定義する．$\bar{B}(\bar{\bm{x}}, \varepsilon)$は有界閉集合より，Weierstrassの定理から最小解が存在する．
+最小解$\bm{x}^k$による点列$\{\bm{x}^k\}$が$\bar{\bm{x}}$に収束することを示す．
+
+任意の$k$に対し，$\bm{x}^k$の最適性より，
+\begin{align}\label{eq:opt_penal_cond}
+  F^k(\bm{x}^k) &= f(\bm{x}^k) + \frac{k}{2}\|g(\bm{x}^k)\|^2 + \frac{\alpha}{2}\|\bm{x}^k - \bar{\bm{x}}\|^2 \nonumber \\
+  &\leq F^k(\bar{\bm{x}}) = f(\bar{\bm{x}})
+\end{align}
+より，$\lim \limits_{k \rightarrow \infty} \|\bm{g}(\bm{x}^k)\| = 0$でなければならない\footnote{これを満たさなければ，$k \rightarrow \infty$で発散する．}．
+従って，$\{\bm{x}^k\}$の任意の極限点$\bar{\bar{\bm{x}}}$は，$\bm{g}(\bar{\bar{\bm{x}}}) = 0$を満たすので，最適化問題(\ref{eq:opt_nonl_eq})の実行可能解である．
+(\ref{eq:opt_penal_cond})式から，
+\begin{equation}
+  f(\bar{\bar{\bm{x}}}) + \frac{\alpha}{2}\|\bar{\bar{\bm{x}}} - \bar{\bm{x}}\|^2 \leq f(\bar{\bm{x}}) \nonumber
+\end{equation}
+を得る．また，$\bar{\bar{\bm{x}}}$が，元の問題(\ref{eq:opt_nonl_eq})の実行可能解であることから，
+$f(\bar{\bm{x}}) \leq f(\bar{\bar{\bm{x}}})$．これと上式を合わせて，
+\begin{equation}
+  \|\bar{\bar{\bm{x}}} - \bar{\bm{x}}\|^2 = 0 \; \therefore \bar{\bar{\bm{x}}} = \bar{\bm{x}} \nonumber
+\end{equation}
+
+つまり，点列$\{\bm{x}^k\}$は$\bar{\bm{x}}$に収束する．点$\bar{\bm{x}}$は問題(\ref{eq:opt_penal})の実行可能領域の内点である．また，$k$が十分大きければ，$\bm{x}^k$も内点である．
+したがって，$\bm{x}^k$は制約なしの最適化問題
+\begin{align}\label{eq:opt_penal_non}
+  \mathrm{minimize} &: F^k(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} &: \bm{x} \in \mathbb{R}^n
+\end{align}
+の局所最適解でもある．
+
+
 
 \paragraph{等式制約問題の最適性十分条件}
 
