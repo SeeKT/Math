@@ -233,8 +233,6 @@ INPUT ../problem/problem.tex
 INPUT ../problem/problem.tex
 INPUT ../nonlinear/nonlinear.tex
 INPUT ../nonlinear/nonlinear.tex
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT ../linear/linear.tex
 INPUT ../linear/linear.tex
 INPUT ../apdx/apdx.tex

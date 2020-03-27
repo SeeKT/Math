@@ -3,7 +3,7 @@
 \begin{document}
 \chapter{証明}
 この章には，補題や定理の証明を記載する．
-
+\section{2章の証明}
 \begin{proof}[補題\ref{lemm:convex}の証明]
   項が2つのとき，つまり，$X_1, X_2 \subseteq \mathbb{R}^n$が凸集合ならば，$X_1 \cap X_2$も凸集合である(*)
   を証明する．$\forall \bm{x}^1, \bm{x}^2 \in X_1 \cap X_2$に対し，$\bm{x}^1$と$\bm{x}^2$を結ぶ線分は，$\bm{x}^1 \in X_1, \bm{x}^2 \in X_1$より$X_1$に含まれる($\because$ $X_1$は凸集合)．同様に$X_2$にも含まれる．
@@ -125,6 +125,7 @@
 
 \end{proof}
 
+\section{4章の証明}
 \begin{proof}[定理\ref{theo:opt_nonl_nonc_h_1}の証明]
   $\bm{d} \in \mathbb{R}^n, \, \varepsilon > 0$を考える．$\varepsilon$が十分小さければ，局所最適性より，
   \begin{equation}
@@ -167,6 +168,10 @@
   よって，$\varepsilon$が十分小さく，$\varepsilon \neq 0$であれば，(\ref{eq:onnj})式は正となる．
   $\varepsilon = 0$を含めて，
   $f(\bar{\bm{x}} + \varepsilon \bm{d}) \geq f(\bar{\bm{x}})$が成立する．つまり，$\bar{\bm{x}}$は局所最適解である．\qed
+\end{proof}
+
+\begin{proof}[定理\ref{theo:opt_nonl_eq_h}の証明]
+
 \end{proof}
 
 \end{document}
