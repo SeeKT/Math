@@ -3,4 +3,226 @@
 \begin{document}
 
 \chapter{線形計画問題}
+本章では，線形計画問題の定式化，最適性，およびアルゴリズムについて述べる．
+\section{線形計画問題の例}
+線形計画問題の例として，しばしば生産計画問題が挙げられる．例えば，次のような問題である．
+\begin{description}
+  \item[生産計画問題]
+  A社では，2種類の製品$P_1, \, P_2$を同じ原料から生産している．$P_1$ 1トン生産するのに要する原料は2.5トン，電力は5kwh，労力は3人時，$P_2$ 1トン生産するのに要する原料は5トン，電力は6kwh，労力は2人時である．1日の原料，電力，労力の使用可能量は，それぞれ350トン，450kwh，240人時である．$P_1, \, P_2$ 1トン当たりの粗利益は，それぞれ，4万円，5万円である．このとき，総粗利益を最大にするには，$P_1, \, P_2$を何トンずつ生産すればよいか．
+\end{description}
+
+$P_1, \, P_2$の1日の生産量(トン)をそれぞれ$x_1, \, x_2$とする．この問題は表\ref{tab:product_plan}のように表される．
+\begin{table}[htb]
+  \centering
+    \caption{生産計画問題}
+    \begin{tabular}{c|c|c|c}
+       & $P_1$ & $P_2$ &  \\ \hline
+      原料 & $2.5x_1$ & $5x_2$ & $350$ \\ \hline
+      電力 & $5x_1$ & $6x_2$ & $450$ \\ \hline
+      労力 & $3x_1$ & $2x_2$ & $240$ \\ \hline
+      粗利益 & $4x_1$ & $5x_2$ & \\
+    \end{tabular}
+    \label{tab:product_plan}
+\end{table}
+
+以上より，この生産計画問題は次の線形計画問題となる．
+\begin{align}\label{eq:product_plan}
+  \mathrm{maximize} \; \; &4x_1 + 5x_2 \nonumber \\
+  \mathrm{subject \; to} \; \; &2.5x_1 + 5x_2 \leq 350 \nonumber \\
+  &5x_1 + 6x_2 \leq 450 \\
+  &3x_1 + 2x_2 \leq 240 \nonumber \\
+  &x_1, x_2 \geq 0 \nonumber
+\end{align}
+
+\section{線形計画問題の最適解}
+\ref{sec:convex_prob}節で述べたように，線形計画問題の実行可能領域は凸多面体であり，目的関数も線形(凸関数)であるので，線形計画問題は凸計画問題である．よって，任意の局所最適解は大域最適解である．
+
+線形計画問題の最適解は，実行可能領域の多面体の頂点に存在する．この事実を確認する．
+一般に多面体$X$は，すべての頂点からなる集合$V = \{\bm{v}_1, \bm{v}_2, \ldots, \bm{v}_p\}$を用いて，次のように表すことができる．
+\begin{equation}
+  X = \left\{\bm{x} \in \mathbb{R}^n \, | \, \bm{x} = \sum_{i = 1}^p k_i \bm{v}_i , \, \sum_{i = 1}^p k_i = 1, \, k_i \geq 0, \, i = 1, 2, \ldots, p \right\} \nonumber
+\end{equation}
+
+また，線形計画問題の目的関数は，$\bm{c}^{\mathrm{T}}\bm{x}$と表される．実行可能解$\bm{x} \in X$を考えると，$\sum_{i = 1}^p k_i = 1, \, k_i \geq 0, \, i = 1, 2, \ldots, p$を満たす$(k_1, k_2, \ldots, k_p)^{\mathrm{T}}$が存在して，
+\begin{equation}
+  \bm{x} = \sum_{i = 1}^p k_i \bm{v}_i \nonumber
+\end{equation}
+と表される．両辺に左から$\bm{c}^{\mathrm{T}}$を掛けると，
+\begin{equation}
+  \bm{c}^{\mathrm{T}} \bm{x} = \bm{c}^{\mathrm{T}} \left(\sum_{i = 1}^p k_i \bm{v}_i \right) = \sum_{i = 1}^p k_i \bm{c}^{\mathrm{T}} \bm{v}_i \nonumber
+\end{equation}
+となる．$\sum_{i = 1}^p k_i = 1, \, k_i \geq 0, \, i = 1, 2, \ldots, p$より，
+\begin{equation}
+  \min_{i = 1, 2, \ldots, p} \bm{c}^{\mathrm{T}} \bm{v}_i \leq \bm{c}^{\mathrm{T}} \bm{x} \leq \max_{i = 1, 2, \ldots, p} \bm{c}^{\mathrm{T}} \bm{v}_i \nonumber
+\end{equation}
+となる．$i = 1, 2, \ldots, p$について，$\bm{v}_i \in X$より，実行可能領域$X$での$\bm{c}^{\mathrm{T}}\bm{x}$の最大値および最小値を与える解の1つは，頂点集合$V$内にある．
+
+\section{標準形の線形計画問題}
+\subsection{線形計画問題の標準形}
+変数が非負で等式制約条件しかもたない最小化問題を標準形(standard form)の線形計画問題という．すなわち，線形計画問題の標準形は，
+\begin{align}\label{eq:standard}
+  \mathrm{minimize} \; \; &\bm{c}^{\mathrm{T}}\bm{x} \nonumber \\
+  \mathrm{subject \; to} \; \; &A\bm{x} = \bm{b} \\
+  &\bm{x} \geq \bm{0} \nonumber
+\end{align}
+である．ただし，$\bm{c} = (c_1, c_2, \ldots, c_n)^{\mathrm{T}}, \, \bm{b} = (b_1, b_2, \ldots, b_m)^{\mathrm{T}}$はそれぞれ$n$次元，$m$次元の実数定ベクトルである．$A$は$m \times n \, (m \leq n)$の実数定行列である．$\bm{x} = (x_1, x_2, \ldots, x_n)^{\mathrm{T}}$は$n$次元の実数変数ベクトルであり，決定変数ベクトルと呼ばれる．
+
+\subsection{標準形への変形}
+\begin{description}
+  \item[最大化問題の場合]
+  線形計画問題が最大化問題の場合，つまり，
+  \begin{equation}
+    \mathrm{maximize} \; \; \bm{c}^{\mathrm{T}}\bm{x} \nonumber
+  \end{equation}
+  の場合，$\bm{d} = -\bm{c}$とすると，
+  \begin{equation}
+    \mathrm{maximize} \; \; \bm{c}^{\mathrm{T}}\bm{x} \Leftrightarrow \mathrm{minimize} \; \; \bm{d}^{\mathrm{T}}\bm{x} \nonumber
+  \end{equation}
+  と最小化問題に変形できる．
+  \item[不等式条件$\leq$の場合]
+  制約条件の1つが，
+  \begin{equation}
+    \bm{a}_i^{\mathrm{T}}\bm{x} \leq b_i \nonumber
+  \end{equation}
+  である場合，スラック変数(slack variable) $s \, (s \geq 0)$を導入して，
+  \begin{equation}
+    \bm{a}_i^{\mathrm{T}}\bm{x} \leq b_i \Leftrightarrow \bm{a}_i^{\mathrm{T}}\bm{x} + s = b_i, \; s \geq 0 \nonumber
+  \end{equation}
+  と等式条件に変形される．
+  \item[不等号条件$\geq$の場合]
+  制約条件の1つが，
+  \begin{equation}
+    \bm{a}_j^{\mathrm{T}}\bm{x} \geq b_j \nonumber
+  \end{equation}
+  である場合，サープラス変数(surplus variable) $t \, (t \geq 0)$を導入して，
+  \begin{equation}
+    \bm{a}_j^{\mathrm{T}}\bm{x} \leq b_j \Leftrightarrow \bm{a}_j^{\mathrm{T}}\bm{x} - t = b_j, \; t \geq 0 \nonumber
+  \end{equation}
+  と等式条件に変形される．
+  \item[自由変数(非負条件の無い変数)が存在する場合]
+  $x_k$に対して，$x_k \geq 0$という条件が存在せず，負の値も取る場合は，$x_k$を次の条件を満たす2つの変数$x_k^{+}$と$x_k^{-}$に分解して取り扱われる．
+  \begin{equation}
+    x_k = x_k^{+} - x_k^{-}, \; x_k^{+} \geq 0, x_k^{-} \geq 0 \nonumber
+  \end{equation}
+\end{description}
+
+例えば，最適化問題(\ref{eq:product_plan})を標準形の線形計画問題に変形すると，(\ref{eq:product_plan_stand})になる．
+\begin{align}\label{eq:product_plan_stand}
+  \mathrm{minimize} \; \; &-4x_1 - 5x_2 \nonumber \\
+  \mathrm{subject \; to} \; \; &2.5x_1 + 5x_2 + x_3 = 350 \nonumber \\
+  &5x_1 + 6x_2 + x_4 = 450 \\
+  &3x_1 + 2x_2 + x_5 = 240 \nonumber \\
+  &x_1, x_2, x_3, x_4, x_5 \geq 0 \nonumber
+\end{align}
+
+\section{基底解と最適解}
+\subsection{用語}
+\begin{description}
+  \item[基底行列]
+  基底行列(basic matrix) $B$とは，制約条件の係数行列$A$の$m$個(制約条件数)の列ベクトルから作られる$m \times m$の正則行列のことをいう($|B| \neq 0$)．
+  \item[基底解]
+  線形計画問題の基底解(basic solution)とは，ある基底行列$B$で選ばれなかった$(n - m)$個の列に対応する変数(非基底変数(nonbasic variable))を0とおき，選ばれた$m$個の変数(基底変数(basic variable))に対する正則な連立方程式
+  \begin{equation}\label{eq:basic}
+    B \left(
+    \begin{array}{c}
+      x_1^{B} \\
+      x_2^{B} \\
+      \vdots \\
+      x_m^{B}
+    \end{array}
+    \right) = \bm{b}
+  \end{equation}
+  を解くことにより得られる一意的なベクトル$B^{-1}\bm{b}$のことをいう．
+  \item[実行可能基底解]
+  実行可能解であり，基底解である解を実行可能基底解(basic feasible solution)という．基底行列を$B$とすると，$B^{-1}\bm{b} \geq \bm{0}$のときに基底行列$B$に対応する基底解は実行可能基底解となる．
+  \item[退化]
+  基底解では，$m$個の基底変数のみが正の値を取りうるが，この$m$個の基底変数の内少なくとも1つが0となる基底解は，退化しているという．
+\end{description}
+
+\subsection{線形計画問題の基本定理}
+標準形の線形計画問題(\ref{eq:standard})において，次の定理が成立する．
+\begin{theo}[線形計画問題の基本定理]\label{theo:linear_th}
+  標準形の線形計画問題(\ref{eq:standard})が与えられたとき，次の1, 2が成立する．
+  \begin{enumerate}
+    \item 実行可能解が存在するならば，必ず実行可能基底解が存在する．
+    \item 最適解が存在するならば，実行可能基底解の中に最適解が存在する．
+  \end{enumerate}
+\end{theo}
+定理\ref{theo:linear_th}より，線形計画問題の最適解を求めるには，基底解の中で，実行可能かつ最適なものを見つければよい\footnote{実行可能領域の端点を辿っていけば最適解に到達する．後述のシンプレックス法はこの考えに基づいている．}．
+
+\subsection{基底形式}
+標準形の線形計画問題
+\begin{align}\label{eq:standard_re}
+  \mathrm{minimize} \; \; &z = \bm{c}^{\mathrm{T}}\bm{x} \nonumber \\
+  \mathrm{subject \; to} \; \; &A\bm{x} = \bm{b} \\
+  &\bm{x} \geq \bm{0} \nonumber
+\end{align}
+において，$m \times n$行列$A$から$m$個の列を選び基底行列$B$とする．ただし，$B$は正則行列とする．残りの列からなる行列を$N$とする．列の順番と変数の順番を適当に変えることにより，
+$A = (B, N), \bm{x} = (\bm{x}_B^{\mathrm{T}}, \bm{x}_{N}^{\mathrm{T}})^{\mathrm{T}}, \bm{c} = (\bm{c}_B^{\mathrm{T}}, \bm{c}_N^{\mathrm{T}})^{\mathrm{T}}$
+と表すと，式(\ref{eq:standard_re})は，
+\begin{align}\label{eq:standard_re_basic}
+  \mathrm{minimize} \; \; &z = \bm{c}_B^{\mathrm{T}}\bm{x}_B + \bm{c}_N^{\mathrm{T}}\bm{x}_N \nonumber \\
+  \mathrm{subject \; to} \; \; &B\bm{x}_B + N\bm{x}_N = \bm{b} \\
+  &\bm{x}_B, \bm{x}_N \geq \bm{0} \nonumber
+\end{align}
+と表される．$\bm{x}_B$は基底変数ベクトル，$\bm{x}_N$は非基底変数ベクトル，
+$\bm{x}_B$の各成分$x_j^B$は基底変数，
+$\bm{x}_N$の各成分$x_j^N$は非基底変数と呼ばれる．$B$は正則より，目的関数から$\bm{x}_B$を消去すると，(\ref{eq:standard_re_basic})の問題は，
+\begin{align}\label{eq:standard_re_equal}
+  \mathrm{minimize} \; \; &z = \bm{c}_B^{\mathrm{T}}B^{-1}\bm{b} + (\bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N)\bm{x}_N \nonumber \\
+  \mathrm{subject \; to} \; \; &\bm{x}_B + B^{-1}N\bm{x}_N = B^{-1}\bm{b} \\
+  &\bm{x}_B, \bm{x}_N \geq \bm{0} \nonumber
+\end{align}
+と等価になる．(\ref{eq:standard_re_equal})の一部
+\begin{align}\label{eq:basic_form}
+  &z = \bm{c}_B^{\mathrm{T}}B^{-1}\bm{b} + (\bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N)\bm{x}_N \nonumber \\
+  &\bm{x}_B + B^{-1}N\bm{x}_N = B^{-1}\bm{b}
+\end{align}
+は，基底形式(basic form)あるいは正準形(cannoncial form)と呼ばれる．このとき，基底行列は$B$であり，対応する基底解は
+\begin{equation}\label{eq:basic_sol}
+  \bm{x} = \left(
+  \begin{array}{c}
+    \bm{x}_B \\
+    \bm{x}_N
+  \end{array}
+  \right) = \left(
+  \begin{array}{c}
+    B^{-1}\bm{b} \\
+    \bm{0}
+  \end{array}
+  \right)
+\end{equation}
+となる．
+以後，$\bar{\bm{c}}^{\mathrm{T}} = \bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N, \, \bar{N} = B^{-1}N, \, \bar{\bm{b}} = B^{-1}\bm{b}$と定める．
+また，$\bm{c}_N^{\mathrm{T}}, \, \bar{N}, \, \bar{\bm{b}}$の各成分をそれぞれ，
+$\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
+
+(\ref{eq:standard_re_equal})式において，
+\begin{equation}\label{eq:feasible_b}
+  \bar{\bm{b}} = B^{-1}\bm{b} \geq \bm{0} \; \; (実行可能性)
+\end{equation}
+が成立すれば，(\ref{eq:basic_sol})式の基底解は実行可能解となる．(\ref{eq:feasible_b})が満たされると仮定する．
+
+基底形式(\ref{eq:basic_form})のある非基底変数$x_r^N$の係数$\bar{c}_r$が負であれば，この非基底変数に正の値を取らせることにより，目的関数が改善できる\footnote{$\bar{c}_r < 0$ならば，$x_r^N > 0$を取ることで，実行可能性を維持したまま(\ref{eq:basic_form})式の$z$の値を小さくすることができる．}．逆に，すべての非基底変数$x_j^N$の係数$\bar{c}_j$が正，すなわち，
+\begin{equation}\label{eq:opt_con}
+  \bar{\bm{c}}^{\mathrm{T}} = \bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N \geq \bm{0}^{\mathrm{T}} \; \; (最適性)
+\end{equation}
+が成立すれば，この実行可能基底解は最適解の1つである．
+
+次に，$\bar{c}_r$が負であるとき，実行可能性を維持する，つまり，$x_r^N$に正の値を取らせることが可能であるかどうかを考える．ここで，$x_r^N$以外の非基底変数$x_j^N$の値を0に固定する．このとき，
+\begin{equation}
+  \bm{x}_B = \bar{\bm{b}} -
+  \left(
+  \begin{array}{c}
+    \bar{a}_{1r} \\
+    \bar{a}_{2r} \\
+    \vdots \\
+    \bar{a}_{mr}
+  \end{array}
+  \right)x_r^N
+\end{equation}
+を満たせば，制約条件の最初の等式条件$\bm{x}_B + B^{-1}N\bm{x}_N = B^{-1}\bm{b}$を満足する\footnote{
+このとき，
+}．
+
 \end{document}

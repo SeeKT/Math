@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 \begin{document}
 \chapter{証明}
-この章には，補題や定理の証明を記載する．
+この章には，補題や定理の証明(一部)を記載する．
 \section{2章の証明}
 \begin{proof}[補題\ref{lemm:convex}の証明]
   項が2つのとき，つまり，$X_1, X_2 \subseteq \mathbb{R}^n$が凸集合ならば，$X_1 \cap X_2$も凸集合である(*)
@@ -28,9 +28,6 @@
   が成立する．
 \end{lemm}
 
-\begin{proof}[定理\ref{theo:projection}の証明]
-
-\end{proof}
 
 \begin{proof}[補題\ref{lemm:proj}の証明]
   $\bm{u}$の$L$への射影$\bm{v}$と任意の点$\bm{w} \in L$を結ぶ線分上の点
@@ -109,22 +106,6 @@
   を得る．よって，$b = \inf_{\bm{x} \in X} \bm{a}^{\mathrm{T}}\bm{x}$とおくと，(\ref{eq:hyperplane3})式を得る．\qed
 \end{proof}
 
-\begin{proof}[定理\ref{theo:epi}の証明]
-
-\end{proof}
-
-\begin{proof}[定理\ref{theo:quasi}の証明]
-
-\end{proof}
-
-\begin{proof}[定理\ref{theo:convex}の証明]
-
-\end{proof}
-
-\begin{proof}[定理\ref{theo:convex2}の証明]
-
-\end{proof}
-
 \section{4章の証明}
 \begin{proof}[定理\ref{theo:opt_nonl_nonc_h_1}の証明]
   $\bm{d} \in \mathbb{R}^n, \, \varepsilon > 0$を考える．$\varepsilon$が十分小さければ，局所最適性より，
@@ -172,6 +153,85 @@
 
 \begin{proof}[定理\ref{theo:opt_nonl_eq_h}の証明]
 
+(1次の必要条件)
+
+ペナルティ関数$F^k(\bm{x})$に関する議論により，(\ref{eq:opt_penal_non})の局所最適解$\bm{x}^k$に定理\ref{theo:opt_nonl_nonc_h_1}を適用できる．
+\begin{align}
+  &F^k(\bm{x}) = f(\bm{x}) + \frac{k}{2} \|g(\bm{x})\|^2 + \frac{\alpha}{2} \|\bm{x} - \bar{\bm{x}}\|^2 \nonumber \\
+  &g(\bm{x}) = (g_1(\bm{x}), \ldots, g_m(\bm{x}))^{\mathrm{T}} \nonumber
+\end{align}
+より，
+\begin{equation}\label{eq:nabFk}
+  \nabla F^k(\bm{x}^k) = \nabla f(\bm{x}^k) + k \nabla g(\bm{x}^k)^{\mathrm{T}} g(\bm{x}^k) + \alpha (\bm{x} - \bar{\bm{x}}) = 0
+\end{equation}
+を得る．$\bar{\bm{x}}$は正則であるから，$k$が十分大きければ$\bm{x}^k$も正則．よって，
+\begin{equation}
+  \mathrm{rank}(\nabla g(\bm{x}^k)^{\mathrm{T}}) = m, \; \mathrm{rank}(\nabla g(\bm{x}^k)) = m \nonumber
+\end{equation}
+が成立する．よって，$m$次正方行列$\nabla g(\bm{x}^k) \nabla g(\bm{x}^k)^{\mathrm{T}}$も正則である．(\ref{eq:nabFk})の両辺に左から$(\nabla g(\bm{x}^k) \nabla g(\bm{x}^k)^{\mathrm{T}})\nabla g(\bm{x}^k)$を乗じて整理すると，
+\begin{equation}
+  k g(\bm{x}^k) = -(\nabla g(\bm{x}^k) \nabla g(\bm{x}^k)^{\mathrm{T}})^{-1} \nabla g(\bar{\bm{x}})(\nabla f(\bm{x}^k) + \alpha (\bm{x} - \bar{\bm{x}})) \nonumber
+\end{equation}
+を得る．$k \rightarrow \infty$とすると，$\{\bm{x}^k\}$は$\bar{\bm{x}}$に収束するので，点列$\{k g(\bm{x}^k)\}$は，$m$次元ベクトル
+\begin{equation}
+  \bm{u} = -(\nabla g(\bm{x}^k) \nabla g(\bm{x}^k)^{\mathrm{T}})^{-1} \nabla g(\bar{\bm{x}}) \nabla f(\bar{\bm{x}}) \nonumber
+\end{equation}
+に収束する．(\ref{eq:nabFk})において，$k \rightarrow \infty$とすると，
+\begin{equation}
+  \nabla f(\bar{\bm{x}}) + \nabla g(\bar{\bm{x}})^{\mathrm{T}} \bm{u} = \bm{0} \nonumber
+\end{equation}
+を得る．\qed
+
+(2次の必要条件)
+
+(\ref{eq:opt_penal_non})の局所最適解$\bm{x}^k$に定理\ref{theo:opt_nonl_nonc_h_2}を適用できる．
+\begin{equation}
+  \nabla^2 F^k(\bm{x}^k) = \nabla^2 f(\bm{x}^k) + k \nabla g(\bm{x}^k)^{\mathrm{T}} \nabla g(\bm{x}^k) + k \sum_{i = 1}^m g_i(\bm{x}^k) \nabla^2 g_i(\bm{x}^k) + \alpha I \nonumber
+\end{equation}
+は半正定値である．ただし，$I$は単位行列を示す．$\bm{y} \in V(\bar{\bm{x}})$を任意に選び，これに基づき，
+\begin{equation}\label{eq:yk}
+  \bm{y}^k = \bm{y} - \nabla g(\bm{x}^k)^{\mathrm{T}} (\nabla g(\bm{x}^k)\nabla g(\bm{x}^k)^{\mathrm{T}})^{-1} \nabla g(\bm{x}^k) \bm{y}
+\end{equation}
+とする．$\bm{y}^k$は，
+\begin{equation}
+  \nabla g(\bm{x}^k) \bm{y}^k = \bm{0} \nonumber
+\end{equation}
+を満たす\footnote{$\bm{y}^k$は$y$の空間$V(\bm{x}^k)$への射影点である．}．
+$k \rightarrow \infty$とすると，$\bm{x}^k \rightarrow \bar{\bm{x}}$であり，$\bm{y}$の定義より，$\nabla g(\bar{\bm{x}}) = \bm{0}$である．よって，(\ref{eq:yk})の第二項は$\bm{0}$に収束し，$\bm{y}^k \rightarrow \bm{y}$を得る．
+
+次に，$\nabla^2 F^k(\bm{x}^k)$の半正定値性と$\nabla g(\bm{x}^k)\bm{y}^k = \bm{0}$を用いて，
+\begin{equation}
+  (\bm{y}^k)^{\mathrm{T}} \nabla^2 F^k(\bm{x}^k) \bm{y}^k = (\bm{y}^k)^{\mathrm{T}} \left(\nabla^2 f(\bm{x}^k) + k \sum_{i = 1}^m g_i(\bm{x}^k) \nabla^2 g_i(\bm{x}^k) \right) \bm{y}^k + \alpha \|\bm{y}^k\|^2 \geq 0 \nonumber
+\end{equation}
+を得る．
+$k \rightarrow \infty$とすると，
+\begin{equation}
+  \bm{y}^k \rightarrow \bm{y}, \; \bm{x}^k \rightarrow \bar{\bm{x}}, \; kg_i(\bm{x}^k) \rightarrow u_i \nonumber
+\end{equation}
+となる．よって，
+\begin{equation}
+ (\bm{y})^{\mathrm{T}} \left(\nabla^2 f(\bar{\bm{x}}) + \sum_{i = 1}^m u_i \nabla^2 g_i(\bar{\bm{x}}) \right) \bm{y} + \alpha \|\bm{y}\|^2 \geq 0, \; \forall \bm{y} \in V(\bar{\bm{x}}) \nonumber
+\end{equation}
+となる．$\alpha > 0$は任意より，$\alpha \rightarrow 0$として，(\ref{eq:opt_nonl_eq_h_2})を得る．\qed
+\end{proof}
+
+\begin{proof}[定理\ref{theo:convex_problem}の証明]
+  局所最適解$\bm{x}^{\prime}$が大域最適解ではなく，それとは異なる大域最適解$\bar{\bm{x}}$が存在したとする．このとき，$f(\bar{\bm{x}}) < f(\bm{x}^{\prime})$を満たす．$\bm{x}^{\prime}$の任意の近傍$B$と$\bm{x}^{\prime}$と$\bar{\bm{x}}$を結ぶ線分上の点
+  $\bm{x}_{\alpha} =  (1 - \alpha)\bm{x}^{\prime} + \alpha \bar{\bm{x}}, \, 0 \leq \alpha \leq 1$を考えると，
+  実行可能領域の凸性より，$\bm{x}_{\alpha}$も実行可能解である．
+  十分小さな$\alpha > 0$では，$\bm{x}_{\alpha} \in B$が成立する．$f$の凸性より，
+  \begin{equation}
+    f(\bm{x}_{\alpha}) \leq (1 - \alpha)f(\bm{x}^{\prime}) + \alpha f(\bar{\bm{x}}) < f(\bm{x}^{\prime}) \nonumber
+  \end{equation}
+  である．これは，$\bm{x}^{\prime}$が局所最適解であることに矛盾する．
+
+  $f$が狭義凸関数であるとし，異なる大域最適解$\bar{\bm{x}}, \bar{\bar{\bm{x}}}$が存在することを仮定する．このとき，$f(\bar{\bm{x}}) = f(\bar{\bar{\bm{x}}})$である．
+  $\bar{\bm{x}}$と$\bar{\bar{\bm{x}}}$を結ぶ線分上の点
+  $\bm{x}_{\alpha} = (1 - \alpha)\bar{\bm{x}} + \alpha \bar{\bar{\bm{x}}}, \, 0 < \alpha < 1$を考えると，実行可能領域の凸性より，$\bm{x}_{\alpha}$も実行可能解．$f$の狭義凸性より，
+  \begin{equation}
+    f(\bm{x}_{\alpha}) < (1 - \alpha)f(\bar{\bm{x}}) + \alpha f(\bar{\bar{\bm{x}}}) = f(\bar{\bm{x}}) \nonumber
+  \end{equation}
+  これは，$\bar{\bm{x}}$が大域最適解であることに矛盾する．\qed
 \end{proof}
 
 \end{document}
