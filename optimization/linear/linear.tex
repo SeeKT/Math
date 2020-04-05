@@ -197,7 +197,12 @@ $\bm{x}_N$の各成分$x_j^N$は非基底変数と呼ばれる．$B$は正則よ
 また，$\bm{c}_N^{\mathrm{T}}, \, \bar{N}, \, \bar{\bm{b}}$の各成分をそれぞれ，
 $\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
 
-(\ref{eq:standard_re_equal})式において，
+(\ref{eq:basic_form})式を$\bar{\bm{c}}, \bar{N}, \bar{\bm{b}}$を用いて表すと，
+\begin{align}\label{eq:basic_form_re}
+  &z = \bm{c}_B^{\mathrm{T}}\bar{\bm{b}} + \bar{\bm{c}}^{\mathrm{T}}\bm{x}_N \nonumber \\
+  &\bm{x}_B + \bar{N}\bm{x}_N = \bar{\bm{b}}
+\end{align}
+となる．(\ref{eq:standard_re_equal})式において，
 \begin{equation}\label{eq:feasible_b}
   \bar{\bm{b}} = B^{-1}\bm{b} \geq \bm{0} \; \; (実行可能性)
 \end{equation}
@@ -221,8 +226,45 @@ $\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
   \end{array}
   \right)x_r^N
 \end{equation}
-を満たせば，制約条件の最初の等式条件$\bm{x}_B + B^{-1}N\bm{x}_N = B^{-1}\bm{b}$を満足する\footnote{
-このとき，
-}．
+を満たせば，制約条件の最初の等式条件$\bm{x}_B + \bar{N}\bm{x}_N = \bar{\bm{b}}$を満足する．
+実際，$\bm{x}_N = \left(0, \cdots, x_r^N, \cdots, 0 \right)^{\mathrm{T}}$
+のとき，
+\begin{equation}
+  \bar{N} \bm{x}_N = \left(
+  \begin{array}{ccccc}
+    \bar{a}_{11} & \cdots & \bar{a}_{1r} & \cdots & \bar{a}_{1 n-m} \\
+    \vdots & \ddots & \vdots & \ddots & \vdots \\
+    \bar{a}_{m1} & \cdots & \bar{a}_{mr} & \cdots & \bar{a}_{m n-m}
+  \end{array}
+  \right) \left(
+  \begin{array}{c}
+    0 \\
+    \vdots \\
+    x_r^N \\
+    \vdots \\
+    0
+  \end{array}
+  \right) = \left(
+  \begin{array}{c}
+    \bar{a}_{1r} \\
+    \bar{a}_{2r} \\
+    \vdots \\
+    \bar{a}_{mr}
+  \end{array}
+  \right)x_r^N \nonumber
+\end{equation}
+を満たす．さらに，非負条件を満たすには，$\bm{x}_B \geq \bm{0}$より，
+\begin{equation}\label{eq:notminus}
+  \bar{\bm{b}} -
+  \left(
+  \begin{array}{c}
+    \bar{a}_{1r} \\
+    \bar{a}_{2r} \\
+    \vdots \\
+    \bar{a}_{mr}
+  \end{array}
+  \right)x_r^N \geq \bm{0}
+\end{equation}
+が成立すればよい．
 
 \end{document}
