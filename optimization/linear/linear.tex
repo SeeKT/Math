@@ -35,9 +35,7 @@ $P_1, \, P_2$の1日の生産量(トン)をそれぞれ$x_1, \, x_2$とする．
 \end{align}
 
 \section{線形計画問題の最適解}
-\ref{sec:convex_prob}節で述べたように，線形計画問題の実行可能領域は凸多面体であり，目的関数も線形(凸関数)であるので，線形計画問題は凸計画問題である．よって，任意の局所最適解は大域最適解である．
-
-線形計画問題の最適解は，実行可能領域の多面体の頂点に存在する．この事実を確認する．
+\ref{sec:convex_prob}節で述べたように，線形計画問題の実行可能領域は凸多面体であり，目的関数も線形(凸関数)であるので，線形計画問題は凸計画問題である．線形計画問題の最適解は，実行可能領域の多面体の頂点に存在する．この事実を確認する．
 一般に多面体$X$は，すべての頂点からなる集合$V = \{\bm{v}_1, \bm{v}_2, \ldots, \bm{v}_p\}$を用いて，次のように表すことができる．
 \begin{equation}
   X = \left\{\bm{x} \in \mathbb{R}^n \, | \, \bm{x} = \sum_{i = 1}^p k_i \bm{v}_i , \, \sum_{i = 1}^p k_i = 1, \, k_i \geq 0, \, i = 1, 2, \ldots, p \right\} \nonumber
@@ -194,7 +192,7 @@ $\bm{x}_N$の各成分$x_j^N$は非基底変数と呼ばれる．$B$は正則よ
 \end{equation}
 となる．
 以後，$\bar{\bm{c}}^{\mathrm{T}} = \bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N, \, \bar{N} = B^{-1}N, \, \bar{\bm{b}} = B^{-1}\bm{b}$と定める．
-また，$\bm{c}_N^{\mathrm{T}}, \, \bar{N}, \, \bar{\bm{b}}$の各成分をそれぞれ，
+また，$\bar{\bm{c}}, \, \bar{N}, \, \bar{\bm{b}}$の各成分をそれぞれ，
 $\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
 
 (\ref{eq:basic_form})式を$\bar{\bm{c}}, \bar{N}, \bar{\bm{b}}$を用いて表すと，
@@ -215,7 +213,7 @@ $\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
 が成立すれば，この実行可能基底解は最適解の1つである．
 
 次に，$\bar{c}_r$が負であるとき，実行可能性を維持する，つまり，$x_r^N$に正の値を取らせることが可能であるかどうかを考える．ここで，$x_r^N$以外の非基底変数$x_j^N$の値を0に固定する．このとき，
-\begin{equation}
+\begin{equation}\label{eq:x_B}
   \bm{x}_B = \bar{\bm{b}} -
   \left(
   \begin{array}{c}
@@ -265,6 +263,271 @@ $\bar{c}_{j}, \, \bar{a}_{ij}, \, \bar{b}_i$と表す．
   \end{array}
   \right)x_r^N \geq \bm{0}
 \end{equation}
-が成立すればよい．
+が成立すればよい．もし，
+\begin{equation}\label{eq:a_minus}
+  \left(
+  \begin{array}{c}
+    \bar{a}_{1r} \\
+    \bar{a}_{2r} \\
+    \vdots \\
+    \bar{a}_{mr}
+  \end{array}
+  \right) \leq \bm{0}
+\end{equation}
+が成立すれば，(\ref{eq:notminus})式より，実行可能性を損なうことなく$x_r^N$をいくらでも正に大きくすることができる．このとき，目的関数値をいくらでも小さくすることができるので，この解は非有解(unbounded solution)である．すなわち，最適解は存在しない．
+
+一方，(\ref{eq:a_minus})式が成立しない場合，$\bar{a}_{ir}$のいくつかは正となる．(\ref{eq:notminus})式を満たすには，$\bar{a}_{ir} > 0$なるすべての$i \in \{1, 2, \ldots, m\}$に対して，
+\begin{equation}\label{eq:bax}
+  \bar{b}_i - \bar{a}_{ir} x_r^N \geq 0
+\end{equation}
+を満たせばよい．すなわち，
+\begin{equation}\label{eq:min_a}
+  x_r^N \leq \min_{i: \, \bar{a}_{ir} > 0} \frac{\bar{b}_i}{\bar{a}_{ir}}
+\end{equation}
+を満たせばよい．いま，$\bar{c_r} < 0$を考えているので，$x_r^N$が大きいほど目的関数値が小さくなる．よって，
+\begin{equation}\label{eq:min_a_eq}
+  x_r^N = \min_{i: \, \bar{a}_{ir} > 0} \frac{\bar{b}_i}{\bar{a}_{ir}}
+\end{equation}
+とおくと，現在の実行可能基底解よりも目的関数値が小さい実行可能解が得られる．右辺の最小値を与える$i$を$s$とおく，つまり，(\ref{eq:min_a_eq})式を満たす$i$を$i = s$とすると，$\bm{x}_B$の$s$番目の成分$x_s^B$の値は，(\ref{eq:x_B})式より，
+\begin{equation}
+  x_s^B = \bar{b}_s - \bar{a}_{sr} x_r^N = \bar{b}_s - \bar{a}_{sr} \min_{i: \, \bar{a}_{ir} > 0} \frac{\bar{b}_i}{\bar{a}_{ir}} = \bar{b}_s - \bar{a}_{sr} \frac{\bar{b}_s}{\bar{a}_{sr}} = 0
+\end{equation}
+となる．すなわち，基底変数$x_s^B$を非基底変数$x_r^N$で入れ替えた実行可能基底解に対応する．したがって，この入れ替えを行った基底形式を求め，同様の議論を続けていけば，最適解が見つかるか，もしくは非有界であるかがわかる．この基底の入れ替えを行った後の基底形式を(\ref{eq:standard_re_equal})式から求める計算法を与えるのがピボット演算である．
+
+\subsection{ピボット演算}
+(\ref{eq:standard_re_equal})式に対応する基底形式(\ref{eq:basic_form})は，$\bar{z} = \bm{c}_B^{\mathrm{T}}B^{-1}\bm{b}$とすると，次のように書き換えられる．
+\begin{align}
+  &z = \bar{z} + \left(
+  \begin{array}{ccc}
+    \bar{c}_1 & \cdots & \bar{c}_{n - m}
+  \end{array}
+  \right) \left(
+  \begin{array}{c}
+    x_1^N \\
+    \vdots \\
+    x_{n-m}^N
+  \end{array}
+  \right) \nonumber \\
+  &\left(
+  \begin{array}{c}
+    x_1^B \\
+    \vdots \\
+    x_m^B
+  \end{array}
+  \right) + \left(
+  \begin{array}{ccc}
+    \bar{a}_{11} & \cdots & \bar{a}_{1 n-m} \\
+    \vdots & & \vdots \\
+    \bar{a}_{m1} & \cdots & \bar{a}_{m n-m}
+  \end{array}
+  \right) \left(
+  \begin{array}{c}
+    x_1^N \\
+    \vdots \\
+    x_{n-m}^N
+  \end{array}
+  \right) = \left(
+  \begin{array}{c}
+    \bar{b}_1 \\
+    \vdots \\
+    \bar{b}_m
+  \end{array}
+  \right) \nonumber
+\end{align}
+つまり，
+\begin{equation}
+    \begin{alignedat}{9}
+      x_1^B \; &          & &           & &          & &+\bar{a}_{11}x_1^N & &+\bar{a}_{12}x_2^N & &+\cdots & &+\bar{a}_{1 n-m}x_{n-m}^N & &= \; & &\bar{b}_1   \\
+               & x_2^B \; & &           & &          & &+\bar{a}_{21}x_1^N & &+\bar{a}_{22}x_2^N & &+\cdots & &+\bar{a}_{2 n-m}x_{n-m}^N & &= \; & &\bar{b}_2   \\
+               &          & & \ddots \; & &          & &                   & &\cdots             & &\cdots  & &\cdots                    & &     & & \\
+               &          & &           & & x_m^B \; & &+\bar{a}_{m1}x_1^N & &+\bar{a}_{m2}x_2^N & &+\cdots & &+\bar{a}_{m n-m}x_{n-m}^N & &= \; & &\bar{b}_m  \\
+               &          & &           & & -z \;    & &+\bar{c}_{1}x_1^N  & &+\bar{c}_{2}x_2^N  & &+\cdots & &+\bar{c}_{n-m}x_{n-m}^N   & &= \; & &-\bar{z}
+    \end{alignedat}
+\end{equation}
+のように書き換えられる．ピボット演算は次の手順で行われる．ただし，$s$は(\ref{eq:min_a_eq})式を満たす$i$であり，$r$は基底形式(\ref{eq:basic_form})の係数ベクトル$\bar{\bm{c}} = \bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N$のうち，負の値を取る要素$\bar{c_r}$の添字である．
+\begin{itembox}[l]{ピボット操作}
+  \begin{description}
+    \item[手順1] $s$行を$\bar{a}_{sr}$で割る．
+    \item[手順2] 目的関数の行も含め，$i$行$j$列の元の係数$d_{ij}^{old}$，新しい係数を$d_{ij}^{new}$とすると，$i \neq s$に対して，
+    \begin{equation}
+      d_{ij}^{new} = d_{ij}^{old} - d_{sj}^{old} \frac{\bar{a}_{ir}}{\bar{a}_{sr}} \nonumber
+    \end{equation}
+    と更新する．
+  \end{description}
+\end{itembox}
+
+つまり，ピボット演算は$s$行$r$列の値を1に，$r$列の他の行の値が$0$になるように等価変換することに相当する．
+
+\section{シンプレックス法}
+線形計画問題を解くアルゴリズムであるシンプレックス法(simplex method)の基本形を与える．このアルゴリズムは，制約条件が定める凸多面体$X$の頂点(実行可能基底解)の1つから出発し，それに隣接する頂点の中でより目的関数値を小さくするものへ移動するという操作を反復して，最終的に最適解である頂点の1つに到達するか，あるいは発散を結論するアルゴリズムである．シンプレックス法は単体法とも呼ばれる．以下にシンプレックス法の手順を示す．
+
+\begin{itembox}[l]{アルゴリズム SIMPLEX}
+  \begin{description}
+    \item[Input] 標準形の問題(\ref{eq:standard_re})．ただし，$\bm{b} \geq \bm{0}$を仮定し，(\ref{eq:standard_re_equal})に等価変換する．
+    \item[Output] 最適解$\bar{\bm{x}}$，あるいは「発散」の結論．
+  \end{description}
+  \begin{enumerate}
+    \item 初期実行可能基底解$\bm{x}^{0}$を求める．$k \leftarrow 0$．
+    \item $\bar{\bm{c}}^{\mathrm{T}} \coloneqq \bm{c}_N^{\mathrm{T}} - \bm{c}_B^{\mathrm{T}}B^{-1}N$によって得られる$\bar{\bm{c}}$の要素$\bar{c}_j$を用いて，
+    \begin{equation}
+      \min_{1 \leq j \leq n - m} \bar{c}_j = \bar{c}_r \nonumber
+    \end{equation}
+    となる$r$を1つ選ぶ．$\bar{c}_r \geq 0$であれば，$\bar{\bm{x}} \leftarrow \bm{x}^k$として計算終了．\label{enu:roop}
+    \item $\bar{N} \coloneqq B^{-1}N (=(\bar{a}_{ij}))$に対して，第$r$列のすべての成分$\bar{a}_{ir}$が$\bar{a}_{ir} \leq 0$であれば，最小値が有界でない(問題が発散する)ことを結論して計算終了．
+    \item $\bar{a}_{ir}$に正のものがあれば，
+    \begin{equation}
+      \min_{i: \, \bar{a}_{ir} > 0} \frac{\bar{b}_i}{\bar{a}_{ir}} = \frac{\bar{b}_s}{\bar{a}_{sr}} \nonumber
+    \end{equation}
+    となる$s$を1つ選ぶ．
+    \item $\bar{a}_{sr}$に対するピボット操作により$x_s^B$の代わりに$x_r^N$を基底変数とする新しい実行可能基底解$\bm{x}^{k + 1}$を求める．$k \leftarrow k + 1$として\ref{enu:roop}.に戻る．
+  \end{enumerate}
+\end{itembox}
+通常，シンプレックスタブローを用いて問題(\ref{eq:standard_re})を解く．最適化問題(\ref{eq:product_plan_stand})を例に説明する．表\ref{tab:product_plan_sol}に問題(\ref{eq:product_plan_stand})のシンプレックスタブローを示す．
+
+\begin{table}[htb]
+  \centering
+    \caption{シンプレックスタブロー}
+    \begin{tabular}{c|c|ccccc|c}
+    サイクル & 基底   & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & 右辺  \\ \hline
+            & $x_3$ & $2.5$ & [$5$] & $1$   &       &       & $350$ \\
+       0    & $x_4$ & $5$   & $6$   &       & $1$   &       & $450$ \\
+            & $x_5$ & $3$   & $2$   &       &       &  $1$  & $240$ \\ \cline{2-8}
+            & $-z$  & $-4$  & $-5$  &       &       &       & $0$   \\ \hline
+
+            & $x_2$ & $0.5$ & $1$   & $0.2$ &       &       & $70$  \\
+       1    & $x_4$ & [$2$] &       & $-1.2$& $1$   &       & $30$  \\
+            & $x_5$ & $2$   &       & $-0.4$&       &  $1$  & $100$ \\ \cline{2-8}
+            & $-z$  & $-1.5$&       & $1$   &       &       & $350$ \\ \hline
+
+            & $x_2$ &       & $1$   & $-0.1$&$-0.25$&       & $62.5$\\
+       2    & $x_1$ & $1$   &       & $-0.6$& $0.5$ &       & $15$  \\
+            & $x_5$ &       &       & $0.8$ &$-0.5$ &  $1$  & $70$  \\ \cline{2-8}
+            & $-z$  &       &       & $0.1$ & $0.75$&       &$372.5$\\ \hline
+    \end{tabular}
+    \label{tab:product_plan_sol}
+\end{table}
+
+最適化問題(\ref{eq:product_plan_stand})において，決定変数ベクトルを$\bm{x} = (x_1, x_2, x_3, x_4, x_5)^{\mathrm{T}} \geq \bm{0}$
+とする．さらに，
+\begin{equation}
+  A = \left(
+  \begin{array}{ccccc}
+    2.5 & 5 & 1 & 0 & 0 \\
+    5   & 6 & 0 & 1 & 0 \\
+    3   & 2 & 0 & 0 & 1 \\
+  \end{array}
+  \right), \; \bm{b} = \left(
+  \begin{array}{c}
+    350 \\
+    450 \\
+    240
+  \end{array}
+  \right), \; \bm{c} = \left(
+  \begin{array}{c}
+    -4 \\
+    -5
+  \end{array}
+  \right) \nonumber
+\end{equation}
+とする．
+
+サイクル0では，基底変数ベクトルを$\bm{x}_B = (x_3, x_4, x_5)^{\mathrm{T}}$，非基底変数ベクトルを
+$\bm{x}_N = (x_1, x_2)^{\mathrm{T}}$としている．ただし，(\ref{eq:standard_re_basic})における$B$行列，$N$行列はそれぞれ，
+\begin{equation}
+  B = \left(
+  \begin{array}{ccc}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{array}
+  \right), \; N = \left(
+  \begin{array}{cc}
+    2.5 & 5 \\
+    5   & 6 \\
+    3   & 2
+  \end{array}
+  \right) \nonumber
+\end{equation}
+である．また，初期実行可能基底解は，$\bm{x}^0 = (x_1, x_2, x_3, x_4, x_5)^{\mathrm{T}} = (0, 0, 350, 450, 240)^{\mathrm{T}}$である．$k \leftarrow 0$とする．
+$\bar{\bm{c}}^{\mathrm{T}} = (-4, -5)$であり，
+\begin{equation}
+  \min_{1 \leq j \leq 2} \bar{c}_{j} = -5 = \bar{c}_2 \nonumber
+\end{equation}
+より，$r = 2$．$\bar{N} = B^{-1}N (= N)$の第$2$列の成分$\bar{a}_{i2}$のうち，
+\begin{equation}
+  \min_{i: \, \bar{a}_{i2} > 0} \frac{\bar{b}_i}{\bar{a}_{i2}} =  70 = \frac{\bar{b}_1}{\bar{a}_{12}} \nonumber
+\end{equation}
+より，$s = 1$．$\bar{a}_{12}$に対するピボット操作をし，非基底変数$x_2$を基底変数とする．
+実行可能基底解は，$\bm{x}^1 = (x_1, x_2, x_3, x_4, x_5)^{\mathrm{T}} = (0, 70, 0, 30, 100)^{\mathrm{T}}$である．$k \leftarrow 1$とする．サイクル1,2についても同様である．サイクル2では$\bar{c}_1 = 0.1 > 0$より，最適解は
+$\bar{\bm{x}} = \bm{x}^{2} = (\bar{x}_1, \bar{x}_2, \bar{x}_3, \bar{x}_4, \bar{x}_5)^{\mathrm{T}} = (15, 62.5, 0, 0, 70)^{\mathrm{T}}$である．
+
+\section{2段階法}
+上述のシンプレックス法では，実行可能基底解が得られてから最適解を得ることができる．しかし，初期実行可能基底解の求め方については述べていない．さらに，問題によっては$A$行列がランク落ちしている場合や実行可能解が存在しない場合もあり，問題が与えられても直ちにシンプレックス法を適用できるとは限らない．
+
+これらの問題点を克服する方法として，罰金法(penalty method)と2段階法(two phase method)がある．以下では2段階法について説明する．以後，線形計画問題(\ref{eq:standard_re})の制約条件の右辺値$b_i, \, i = 1, 2, \ldots, m$がすべて非負であると仮定する．そうでなければ，両辺を$(-1)$倍すればよい．
+
+2段階法では，線形計画問題(\ref{eq:standard_re})の各制約条件の左辺に非負の人為変数$\mu_i$を加える．まず，実行可能性をテストする問題を解いた後に，続けて求められた実行可能基底解を用いて線形計画問題(\ref{eq:standard_re})をシンプレックス法で解く2段階の解法である．
+
+線形計画問題(\ref{eq:standard_re})の実行可能性をテストする問題は，
+\begin{align}\label{eq:test}
+  \mathrm{minimize} \; \; &w = \sum_{i = 1}^m \mu_i \nonumber \\
+  \mathrm{subject \; to} \; \; &A\bm{x} + \left(
+  \begin{array}{c}
+    \mu_1 \\
+    \mu_2 \\
+    \vdots \\
+    \mu_m
+  \end{array}
+  \right) = \bm{b} \\
+  &\bm{x} \geq \bm{0}, \; \mu_i \geq 0, \; i = 1, 2, \ldots, m \nonumber
+\end{align}
+と書ける．線形計画問題(\ref{eq:standard_re})に実行可能解が存在すれば，この問題(\ref{eq:test})の最適値が$0$となる．逆に，問題(\ref{eq:test})の最適値が$0$となれば，線形計画問題(\ref{eq:standard_re})に実行可能基底解が存在する．線形計画問題(\ref{eq:test})において，初期実行可能解を
+\begin{equation}\label{eq:sol_f}
+  (x_1, x_2, \ldots, x_n, \mu_1, \mu_2, \ldots, \mu_m)^{\mathrm{T}} = (0, 0, \ldots, 0, b_1, b_2, \ldots, b_m)^{\mathrm{T}}
+\end{equation}
+としてシンプレックス法を適用する．問題(\ref{eq:test})の最適値が$0$であれば，$\mu_i = 0, \, i = 1, 2, \ldots, m$であるので，得られた最適解は元の線形計画問題の実行可能解である．
+
+このとき，
+\begin{enumerate}
+  \renewcommand{\labelenumi}{(\alph{enumi})}
+  \item $\mu_i = 0, \, i = 1, 2, \ldots, m$がすべて非基底変数．
+  \item $\mu_i$のいずれかは基底変数であるがその値が$0$となり退化している．
+\end{enumerate}
+の2通りが考えられる．
+
+(a)の場合，変数$\mu_i, \, i = 1, 2, \ldots, m$の関与する部分をすべて取り去れば，得られた最適解は元の問題(\ref{eq:standard_re})の実行可能基底解となる．つまり，基底形式が得られ，シンプレックス法により元の線形計画問題(\ref{eq:standard_re})の最適解を計算することができる．
+
+(b)の場合，求められた最適基底解のうち，$\mu_i$が基底に入り，その変数値が$0$となっている場合は，問題(\ref{eq:test})の得られた最適解の基底形式の目的関数の係数が正となっている非基底変数を$0$で固定しなければならない\footnote{この非基底変数が正の値を取れば，問題(\ref{eq:test})の目的関数値が正となり，問題(\ref{eq:standard_re})の実行可能解ではなくなるから．}．
+非基底変数を$0$で固定するには，これらの変数に関わる部分を以後削除すればよい．
+
+ここで，$\hat{\bm{y}} = (\bm{x}^{\mathrm{T}}, \mu_1, \mu_2, \ldots, \mu_m)^{\mathrm{T}}, \,
+\hat{\bm{c}} = (\bm{c}^{\mathrm{T}}, 0, \ldots, 0)^{\mathrm{T}}, \,
+\hat{\bm{d}} = (\bm{0}^{\mathrm{T}}, 1, \ldots, 1)^{\mathrm{T}}, \,
+\hat{A} = (A, I)$($I$は単位行列)と定めると，2段階法の手順は次のように統一的に記述される．
+
+\begin{itembox}[l]{アルゴリズム 2PHASE\_SIMPLEX}
+  \begin{description}
+    \item[Input] 標準形の問題(\ref{eq:standard_re})．ただし，$b_i, \, i = 1, 2, \ldots, m$をがすべて非負であることを仮定する(そうでなければ両辺を$-1$倍する)．
+    \item[Output] 最適解$\bar{\bm{x}}$，あるいは「実行不能」または「発散」の結論．
+  \end{description}
+  \begin{enumerate}
+    \item $\hat{\bm{y}}^0 = (\bm{0}^{\mathrm{T}},\bm{b}^{\mathrm{T}})^{\mathrm{T}}$初期実行可能基底解として，シンプレックス法により，次の線形計画問題の最適解を求める．
+    \begin{align}\label{eq:test_two}
+      \mathrm{minimize} \; \; &w = \hat{\bm{d}}^{\mathrm{T}} \hat{\bm{y}} \nonumber \\
+      \mathrm{subject \; to} \; \; &\hat{A}\hat{\bm{y}} = \bm{b} \\
+      &\hat{\bm{y}} \geq \bm{0} \nonumber
+    \end{align}
+    \item 問題(\ref{eq:test_two})の最適値が正の値であれば，元の線形計画問題に実行可能解は存在しない．実行不能であることを結論して計算終了．
+    \item 問題(\ref{eq:test_two})の最適値が$0$であれば，得られた最適基底解に対応する基底形式
+    \begin{align}\label{eq:two_basic}
+      &w = 0 + (\hat{\bm{d}}_N^{\mathrm{T}} - \hat{\bm{d}}_B^{\mathrm{T}}\bar{\hat{N}}) \hat{\bm{y}}_N \nonumber \\
+      &\hat{\bm{y}}_B + \bar{\hat{N}}\hat{\bm{y}}_N = \bar{\bm{b}}
+    \end{align}
+    を考え，$n$次元ベクトル$\bar{\hat{\bm{d}}}_N = (\bar{\hat{d}}_1, \bar{\hat{d}}_2, \ldots, \bar{\hat{d}}_n)^{\mathrm{T}} = (\hat{\bm{d}}_N^{\mathrm{T}} - \hat{\bm{d}}_B^{\mathrm{T}}\bar{\hat{N}})^{\mathrm{T}}$
+    を定める．$\bar{\hat{d}}_j > 0$であれば，対応する変数$\hat{y}_j^N$を以後無視する．また，
+
+  \end{enumerate}
+\end{itembox}
+
 
 \end{document}

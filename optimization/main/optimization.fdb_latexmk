@@ -1,16 +1,16 @@
 # Fdb version 3
-["dvipdf"] 1586099289 "optimization.dvi" "optimization.pdf" "optimization" 1586099289
-  "optimization.dvi" 1586099289 135352 548dc5d196c7b884ee008f949a19ad4d "latex"
+["dvipdf"] 1586158627 "optimization.dvi" "optimization.pdf" "optimization" 1586158627
+  "optimization.dvi" 1586158627 163884 d73d6a8e0afdf87d5b094c1fd2b80dae "latex"
   (generated)
   "optimization.pdf"
-["latex"] 1586099288 "optimization.tex" "optimization.dvi" "optimization" 1586099289
+["latex"] 1586158626 "optimization.tex" "optimization.dvi" "optimization" 1586158627
   "../apdx/apdx.tex" 1585905103 15658 7d44ccd1436a8b55a8249ecd990b16bf ""
   "../figure/KKT_1.pdf" 1585905103 93838 1764bd7c510bbd072e08b0bbffc8a614 ""
   "../figure/KKT_2.pdf" 1585905103 86498 42bbc5bf84672e4c0824560c326b919a ""
-  "../linear/linear.tex" 1586099285 14690 99a269fbacdc7834dfeeb9e9a8c6207a ""
+  "../linear/linear.tex" 1586158625 31322 a298de844b471c9234ff3ed1b1f828a7 ""
   "../math/math.tex" 1585905103 17973 ee94a211264d14958971da07a57820a8 ""
   "../nonlinear/nonlinear.tex" 1585905103 28727 74e4b53de08f9b46ab9cd632e2c9f5a1 ""
-  "../preamble.tex" 1585905103 1133 bb1eb540bb59cf527728c6f4ca7b3386 ""
+  "../preamble.tex" 1586133055 1153 e55887c5c027bace23b2c4472e9f7ef6 ""
   "../problem/problem.tex" 1585905103 4148 08f77eab1cf09d333dd34b228b58e9e5 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -37,6 +37,7 @@
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
+  "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/ascmac/ascgrp.tfm" 1520635638 448 9a1f3a95c3a7e2681aa6eefcf410b7ac ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm" 1136768653 1116 4e6ba9d7914baa6482fd69f67d126380 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -87,6 +88,8 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty" 1580683321 85660 baee036978c7a91f4e2bba43f05e5945 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty" 1523134290 4116 32e6abd27229755a83a8b7f18e583890 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty" 1523134290 2432 8ff93b1137020e8f21930562a874ae66 ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/ascmac.sty" 1579124881 590 834565f4a016952bf667fd346b7aee71 ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/tascmac.sty" 1579124881 11463 e16f2fec3bf4db0d4002a155e4cf4467 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty" 1580683321 5159 892429808d9e0e2b3548aaefd9a06ed0 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/latexsym.sty" 1580683321 2854 12555a1cadee722c56d2816ab5a895f5 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/base/ulasy.fd" 1580683321 2234 46373e8269e9960c9a311c7c046a0877 ""
@@ -130,11 +133,11 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1583018212 39451 6c50cbbc48279cc2d67f72e32ca48ad5 ""
   "/usr/local/texlive/2019/texmf-var/web2c/eptex/platex.fmt" 1585970141 10619550 30d37bd3ae7bb65bdeaaa369100e04fe ""
   "/usr/local/texlive/2019/texmf.cnf" 1585970121 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "optimization.aux" 1586099288 7512 7002c8aad9377e10a16fd7d30a9392d4 "latex"
+  "optimization.aux" 1586158627 8346 69fc95ce44407b91583178b406ac393f "latex"
   "optimization.tex" 1585905103 1720 09ec18112362b88d8060462a7ea90e53 ""
-  "optimization.toc" 1586099289 2528 7ee287b789e174e633d19622a0d26865 "latex"
+  "optimization.toc" 1586158627 2729 f390772e2fa22985a3fe3ceed0ffdc7c "latex"
   (generated)
   "optimization.aux"
-  "optimization.dvi"
-  "optimization.log"
   "optimization.toc"
+  "optimization.log"
+  "optimization.dvi"

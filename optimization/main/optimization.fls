@@ -113,6 +113,11 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/ascmac.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/ascmac.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/tascmac.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/ascmac/tascmac.sty
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/ascmac/ascgrp.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 INPUT optimization.aux
