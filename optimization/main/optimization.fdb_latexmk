@@ -1,13 +1,14 @@
 # Fdb version 3
-["dvipdf"] 1586158627 "optimization.dvi" "optimization.pdf" "optimization" 1586158627
-  "optimization.dvi" 1586158627 163884 d73d6a8e0afdf87d5b094c1fd2b80dae "latex"
+["dvipdf"] 1586220349 "optimization.dvi" "optimization.pdf" "optimization" 1586220350
+  "optimization.dvi" 1586220349 180740 2e95002ec678b44557d10e0a5fb691a6 "latex"
   (generated)
   "optimization.pdf"
-["latex"] 1586158626 "optimization.tex" "optimization.dvi" "optimization" 1586158627
+["latex"] 1586220348 "optimization.tex" "optimization.dvi" "optimization" 1586220350
   "../apdx/apdx.tex" 1585905103 15658 7d44ccd1436a8b55a8249ecd990b16bf ""
+  "../duality/duality.tex" 1586220347 122 fc415ea9ff37ea8c5a695d67d77a31a3 ""
   "../figure/KKT_1.pdf" 1585905103 93838 1764bd7c510bbd072e08b0bbffc8a614 ""
   "../figure/KKT_2.pdf" 1585905103 86498 42bbc5bf84672e4c0824560c326b919a ""
-  "../linear/linear.tex" 1586158625 31322 a298de844b471c9234ff3ed1b1f828a7 ""
+  "../linear/linear.tex" 1586220053 40932 2c2849ad21be595e166de0744bb2ea96 ""
   "../math/math.tex" 1585905103 17973 ee94a211264d14958971da07a57820a8 ""
   "../nonlinear/nonlinear.tex" 1585905103 28727 74e4b53de08f9b46ab9cd632e2c9f5a1 ""
   "../preamble.tex" 1586133055 1153 e55887c5c027bace23b2c4472e9f7ef6 ""
@@ -133,11 +134,11 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1583018212 39451 6c50cbbc48279cc2d67f72e32ca48ad5 ""
   "/usr/local/texlive/2019/texmf-var/web2c/eptex/platex.fmt" 1585970141 10619550 30d37bd3ae7bb65bdeaaa369100e04fe ""
   "/usr/local/texlive/2019/texmf.cnf" 1585970121 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "optimization.aux" 1586158627 8346 69fc95ce44407b91583178b406ac393f "latex"
-  "optimization.tex" 1585905103 1720 09ec18112362b88d8060462a7ea90e53 ""
-  "optimization.toc" 1586158627 2729 f390772e2fa22985a3fe3ceed0ffdc7c "latex"
+  "optimization.aux" 1586220349 9262 cd313c5b755ec07b0f7d83d592fb6447 "latex"
+  "optimization.tex" 1586220284 1827 b6d77b5cd487088764bff82fc306ebd2 ""
+  "optimization.toc" 1586220349 2892 8cd6fc6e23eb1c2ab436df7acd415299 "latex"
   (generated)
+  "optimization.dvi"
+  "optimization.log"
   "optimization.aux"
   "optimization.toc"
-  "optimization.log"
-  "optimization.dvi"
