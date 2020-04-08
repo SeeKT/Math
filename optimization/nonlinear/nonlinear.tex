@@ -23,8 +23,8 @@
 \section{制約なし問題の最適性条件}
 本節では最適化問題として，(\ref{eq:opt_nonl_nonc})を考える．
 \begin{align}\label{eq:opt_nonl_nonc}
-  \mathrm{minimize} &: f(\bm{x}) \nonumber\\
-  \mathrm{subject \; to} &: \bm{x} \in \mathbb{R}^n
+  \mathrm{minimize} \; \; &f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} \; \; &\bm{x} \in \mathbb{R}^n
 \end{align}
 ただし，$f$は任意の非線形関数であり，適当な微分可能性を仮定する．
 
@@ -81,8 +81,8 @@
 \section{等式制約問題の最適性条件}
 本節では最適化問題として，(\ref{eq:opt_nonl_eq})を考える．
 \begin{align}\label{eq:opt_nonl_eq}
-  \mathrm{minimize} : \; &f(\bm{x}) \nonumber\\
-  \mathrm{subject \; to} : \; &g_i(\bm{x}) = 0, \; i = 1, 2, \ldots, m \nonumber \\
+  \mathrm{minimize} \; \; &f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} \; \; &g_i(\bm{x}) = 0, \; i = 1, 2, \ldots, m \nonumber \\
   &\bm{x} \in \mathbb{R}^n
 \end{align}
 
@@ -108,8 +108,8 @@ $\bar{\bm{x}}$は局所最適解であるので，適当な$\varepsilon > 0$を�
 \end{equation}
 において，そこに属す任意の実行可能解$\bm{x}$に対して，$f(\bar{\bm{x}}) \leq f(\bm{x})$である最適化問題
 \begin{align}\label{eq:opt_penal}
-  \mathrm{minimize} &: F^k(\bm{x}) \nonumber\\
-  \mathrm{subject \; to} &: \bm{x} \in \bar{B}(\bar{\bm{x}}, \varepsilon)
+  \mathrm{minimize} \; \; &F^k(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} \; \; &\bm{x} \in \bar{B}(\bar{\bm{x}}, \varepsilon)
 \end{align}
 を定義する．$\bar{B}(\bar{\bm{x}}, \varepsilon)$は有界閉集合より，Weierstrassの定理から最小解が存在する．
 最小解$\bm{x}^k$による点列$\{\bm{x}^k\}$が$\bar{\bm{x}}$に収束することを示す．
@@ -197,8 +197,8 @@ $g(\bm{x}) = 0$の範囲内で微小量移動することは，$\nabla g(\bm{x})
 
 ここで，次の例題を解く．
 \begin{align}
-  \mathrm{minimize} : \; &f(\bm{x}) = -x_1 x_2 \nonumber\\
-  \mathrm{subject \; to} : \; &g(\bm{x}) = x_1^2 + x_2^2 - 1 = 0 \nonumber \\
+  \mathrm{minimize} \; \; &f(\bm{x}) = -x_1 x_2 \nonumber\\
+  \mathrm{subject \; to} \; \; &g(\bm{x}) = x_1^2 + x_2^2 - 1 = 0 \nonumber \\
   &\bm{x} \in \mathbb{R}^2 \nonumber
 \end{align}
 Lagrange関数を$L(\bm{x}, u)$とすると，
@@ -317,8 +317,8 @@ Lagrange関数を$L(\bm{x}, u)$とすると，
 \section{不等式制約問題の最適性条件}
 本節では最適化問題として，(\ref{eq:opt_nonl_f})を考える．
 \begin{align}\label{eq:opt_nonl_f}
-  \mathrm{minimize} : \; &f(\bm{x}) \nonumber\\
-  \mathrm{subject \; to} : \; &g_i(\bm{x}) \leq 0, \; i = 1, 2, \ldots, l \nonumber \\
+  \mathrm{minimize} \; \; &f(\bm{x}) \nonumber\\
+  \mathrm{subject \; to} \; \; &g_i(\bm{x}) \leq 0, \; i = 1, 2, \ldots, l \nonumber \\
   &g_i(\bm{x}) = 0, \; i = l+1, \ldots, m \nonumber \\
   &\bm{x} \in \mathbb{R}^n
 \end{align}
@@ -386,8 +386,8 @@ Lagrange関数(\ref{eq:lag})に基づく等式制約問題の最適性条件(定
 
 ここで，次の例題を解く．
 \begin{align}
-  \mathrm{minimize} : \; &f(\bm{x}) = 2x_1^2 + x_1 x_2 + x_2^2 + x_1 - 3x_2 + 3 \nonumber\\
-  \mathrm{subject \; to} : \; &g_1(\bm{x}) = x_1^2 + x_2^2 - 1 \leq 0 \nonumber \\
+  \mathrm{minimize} \; \; &f(\bm{x}) = 2x_1^2 + x_1 x_2 + x_2^2 + x_1 - 3x_2 + 3 \nonumber\\
+  \mathrm{subject \; to} \; \; &g_1(\bm{x}) = x_1^2 + x_2^2 - 1 \leq 0 \nonumber \\
   &g_2(\bm{x}) = -x_1 \leq 0 \nonumber \\
   &g_3(\bm{x}) = -x_2 \leq 0 \nonumber \\
   &\bm{x} \in \mathbb{R}^2 \nonumber
@@ -510,8 +510,8 @@ KKT条件は，ベクトル$-\nabla f(\bar{\bm{x}})$がこの領域内に入る�
 \begin{theo}\label{theo:convex_problem}
   最適化問題
   \begin{align}
-    \mathrm{minimize} &: f(\bm{x}) \nonumber\\
-    \mathrm{subject \; to} &: \bm{x} \in S \cap X \nonumber
+    \mathrm{minimize} \; \; &f(\bm{x}) \nonumber\\
+    \mathrm{subject \; to} \; \; &\bm{x} \in S \cap X \nonumber
   \end{align}
   が凸計画問題であれば，任意の局所最適解は大域最適解である．さらに，目的関数$f$が狭義凸関数のとき，大域最適解が存在すれば唯一である．
 \end{theo}

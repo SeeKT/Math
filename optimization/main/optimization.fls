@@ -262,6 +262,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.t
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT ../duality/duality.tex
 INPUT ../duality/duality.tex
+INPUT ../figure/KKT_3.pdf
+INPUT extractbb -B cropbox -O ../figure/KKT_3.pdf
 INPUT ../apdx/apdx.tex
 INPUT ../apdx/apdx.tex
 INPUT optimization.aux

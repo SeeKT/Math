@@ -666,5 +666,84 @@ Blandの巡回対策を用いると巡回から抜け出すことができる．
 一方，Blandの巡回対策では，巡回することはないと保証されているが，効率的ではない．
 現実には，通常のシンプレックス法で開始し，目的関数が一定回数変化しなければ，Blandの巡回対策に切り替え，目的関数が変化すればもとの方法に戻すといった方法がとられることが多い．
 
+\section{線形計画問題の双対性}
+標準形の線形計画問題
+\begin{align}\label{eq:linear_basic}
+  \mathrm{minimize} \; \; &\bm{c}^{\mathrm{T}} \bm{x} \nonumber\\
+  \mathrm{subject \; to} \; \; &A \bm{x} = \bm{b} \\
+  &\bm{x} \geq \bm{0} \nonumber
+\end{align}
+に対して，線形計画問題
+\begin{align}\label{eq:linear_basic_dual}
+  \mathrm{maximize} \; \; &\bm{b}^{\mathrm{T}} \bm{y} \nonumber \\
+  \mathrm{subject \; to} \; \; &A^{\mathrm{T}} \bm{y} \leq \bm{c}
+\end{align}
+は双対問題である．一般に，元の問題(主問題)を(P)，双対問題を(D)と記す．ここで，双対問題の変数ベクトル$\bm{y}$は双対変数ベクトル(dual variable vector)と呼ばれる．線形計画問題の主問題(\ref{eq:linear_basic})と双対問題(\ref{eq:linear_basic_dual})には次の弱双対定理が成立する．
+\begin{theo}[弱双対定理]\label{theo:weak_dual_lin}
+  $\bm{x}, \, \bm{y}$をそれぞれ主問題(\ref{eq:linear_basic})，双対問題(\ref{eq:linear_basic_dual})の実行可能解とすると，次の関係が成立する\footnote{
+  \begin{equation}
+    \bm{b}^{\mathrm{T}}\bm{y} = \bm{y}^{\mathrm{T}}\bm{b} = \bm{y}^{\mathrm{T}}A\bm{x} \leq \bm{c}^{\mathrm{T}}\bm{x} \nonumber
+  \end{equation}
+  より，定理が得られる．
+  }．
+  \begin{equation}\label{eq:dual_linear_weak}
+    \bm{b}^{\mathrm{T}} \bm{y} \leq \bm{c}^{\mathrm{T}}\bm{x}
+  \end{equation}
+\end{theo}
+
+問題(\ref{eq:linear_basic_dual})において，$\bm{c}^{\mathrm{T}}\bm{x}$は上界値であり，問題(\ref{eq:linear_basic})において，$\bm{b}^{\mathrm{T}}\bm{y}$は下界値である．
+つまり，主問題および双対問題に実行可能解が存在することがわかっているとき，主問題の実行可能解$\bm{x}$を見つければ，双対問題の最適値が$\bm{c}^{\mathrm{T}}\bm{x}$以下であることがわかり，双対問題の実行可能解$\bm{y}$を見つければ，主問題の最適値が$\bm{b}^{\mathrm{T}}\bm{y}$以上であることがわかる．
+
+\begin{coro}
+  主問題(\ref{eq:linear_basic})，双対問題(\ref{eq:linear_basic_dual})の実行可能解$\bm{x}, \bm{y}$について，
+  \begin{equation}\label{eq:coro_dual}
+    \bm{b}^{\mathrm{T}}\bm{y} = \bm{c}^{\mathrm{T}}\bm{x}
+  \end{equation}
+  が成立する時，$\bm{x}, \bm{y}$はそれぞれ主問題，双対問題の最適解となる．
+\end{coro}
+
+\begin{theo}[強双対定理(Strong Duality)]
+  \begin{enumerate}
+    \item 主問題(\ref{eq:linear_basic})および双対問題(\ref{eq:linear_basic_dual})のいずれにも実行可能解が存在すれば，いずれも最適解が存在し(非有界でない)，最適値は一致する．
+    \item 主問題が非有界であれば，双対問題に実行可能解が存在しない．逆に，双対問題が非有界であれば，主問題に実行可能解が存在しない．
+  \end{enumerate}
+\end{theo}
+\textbf{証明}
+
+
+
+
+
+
+以上の定理より，主問題と双対問題の最適解の存在，非有界，実行不能の組み合わせの可否をまとめる．
+\begin{table}[htb]
+  \centering
+    \caption{主問題と双対問題の関係}
+    \begin{tabular}{|c|c|c|c|}\hline
+      主問題 / 双対問題 & 最適解存在 & 非有界 & 実行不能  \\ \hline
+      最適解存在 & $\bigcirc$ & $\times$ & $\times$ \\ \hline
+      非有界 & $\times$ & $\times$ & $\bigcirc$ \\ \hline
+      実行不能 & $\times$ & $\bigcirc$ & $\bigcirc$ \\ \hline
+    \end{tabular}
+    \label{tab:exists_opt}
+\end{table}
+
+問題(\ref{eq:linear_basic})と(\ref{eq:linear_basic_dual})の非対称な組み合わせ以外に，次の互いに対称な2つの問題(\ref{eq:geq}), (\ref{eq:leq})も双対な関係にあることが知られている．
+\begin{align}\label{eq:geq}
+  \mathrm{minimize} \; \; &\bm{c}^{\mathrm{T}}\bm{x} \nonumber \\
+  \mathrm{subject \; to} \; \; &A\bm{x} \geq \bm{b} \\
+  &\bm{x} \geq \bm{0} \nonumber
+\end{align}
+\begin{align}\label{eq:leq}
+  \mathrm{maximize} \; \; &\bm{b}^{\mathrm{T}}\bm{y} \nonumber \\
+  \mathrm{subject \; to} \; \; &A^{\mathrm{T}}\bm{y} \leq \bm{c} \\
+  &\bm{y} \geq \bm{0} \nonumber
+\end{align}
+
+双対定理より，主問題を解くことと双対問題を解くことが等価であることがわかる．
+
+\section{双対シンプレックス法}
+シンプレックス法では，実行可能基底解を最初に求める必要があった．初期実行可能基底解が簡単に与えられない場合は，2段階法を用いて実行可能基底解を求めるなどの工夫が必要だった．しかし，容易に求められる基底解が双対問題の実行可能解ならば，双対問題を解くことにより，与えられた問題をシンプレックス法で解くことができる．この考えに基づいた手法が双対シンプレックス法である．
+
 
 \end{document}

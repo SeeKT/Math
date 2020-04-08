@@ -36,8 +36,15 @@
 \contentsline {section}{\numberline {5.5}シンプレックス法}{27}%
 \contentsline {section}{\numberline {5.6}2段階法}{29}%
 \contentsline {section}{\numberline {5.7}シンプレックス法の収束性}{33}%
-\contentsline {chapter}{\numberline {第6章}最適化問題の双対性}{35}%
-\contentsline {chapter}{\numberline {第7章}証明}{36}%
-\contentsline {section}{\numberline {7.1}2章の証明}{36}%
-\contentsline {section}{\numberline {7.2}4章の証明}{38}%
-\contentsline {chapter}{参考文献}{41}%
+\contentsline {section}{\numberline {5.8}線形計画問題の双対性}{34}%
+\contentsline {section}{\numberline {5.9}双対シンプレックス法}{36}%
+\contentsline {chapter}{\numberline {第6章}最適化問題の双対性}{37}%
+\contentsline {section}{\numberline {6.1}ラグランジュ双対問題}{37}%
+\contentsline {paragraph}{双対問題と弱双対定理}{38}%
+\contentsline {paragraph}{鞍点と最適性}{40}%
+\contentsline {paragraph}{等式制約がある場合の双対問題}{40}%
+\contentsline {section}{\numberline {6.2}凸計画問題の双対定理}{41}%
+\contentsline {chapter}{\numberline {第7章}証明}{42}%
+\contentsline {section}{\numberline {7.1}2章の証明}{42}%
+\contentsline {section}{\numberline {7.2}4章の証明}{44}%
+\contentsline {chapter}{参考文献}{47}%
