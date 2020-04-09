@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  8 APR 2020 22:54
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  9 APR 2020 22:47
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -609,19 +609,33 @@ File: ../figure/KKT_2.pdf Graphic file (type pdf)
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 59.
- [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35])
-(../duality/duality.tex [36]
-第6章
-[37
+ [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
+[36] [37] [38] [39]
+Underfull \hbox (badness 1117) in paragraph at lines 939--968
+[][]\JY1/mc/m/n/10 この問題のシンプレ ックスタブロ ーは表 \OT1/cmr/m/n/10 5.7 \
+JY1/mc/m/n/10 で表され ， 最適解は $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[];
+ x[]; x[]; x[]; x[]\OT1/cmr/m/n/10 )[] =
+ []
 
-] [38]
+[40]
+Underfull \hbox (badness 1264) in paragraph at lines 1075--1077
+\JY1/mc/m/n/10 となり ， 実行可能性を損なわず ， 最適基底は変化しない ． 最適解
+は ， $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; x[]; x[]; x[]; x[]\OT1/cmr/m
+/n/10 ) =
+ []
+
+[41]) (../duality/duality.tex [42]
+第6章
+[43
+
+] [44]
 File: ../figure/KKT_3.pdf Graphic file (type pdf)
 <../figure/KKT_3.pdf>
- [39] [40]) (../apdx/apdx.tex [41]
+ [45] [46]) (../apdx/apdx.tex [47]
 第7章
-[42
+[48
 
-] [43]
+] [49]
 Overfull \hbox (31.00201pt too wide) in paragraph at lines 170--172
 \JY1/mc/m/n/10 が成立する ． よ って ， $\OML/cmm/m/it/10 m$ \JY1/mc/m/n/10 次
 正方行列 $\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/b/it/10
@@ -634,13 +648,13 @@ m/n/10 r\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/b/it/10 x[]\OT1/cmr/m/n/10
 T1/cmr/m/n/10 )$
  []
 
-[44] [45]) [46]
+[50] [51]) [52]
 Underfull \hbox (badness 1253) in paragraph at lines 38--39
 [][]\JY1/mc/m/n/10 オペレ ーシ ョンズ ・ リサ ーチとは\OT1/cmr/m/n/10 . \JY1/mc
 /m/n/10 公益社団法人日本オペレ ーシ ョンズ ・ リサ ーチ学会\OT1/cmr/m/n/10 .
  []
 
-[47
+[53
 
 ] (./optimization.aux)
 
@@ -648,12 +662,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7695 strings out of 481528
- 112534 string characters out of 5925952
- 386878 words of memory out of 5000000
- 23149 multiletter control sequences out of 15000+600000
+ 7709 strings out of 481528
+ 112764 string characters out of 5925952
+ 387039 words of memory out of 5000000
+ 23163 multiletter control sequences out of 15000+600000
  560554 words of font info for 156 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  44i,16n,44p,567b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on optimization.dvi (49 pages, 206716 bytes).
+Output written on optimization.dvi (55 pages, 239592 bytes).
