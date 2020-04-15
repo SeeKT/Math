@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (fd57863, 2020-04-02)"
+   sodipodi:docname="infer.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path850"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path850-6"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="377.10904"
+     inkscape:cy="873.21328"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g5222">
+      <circle
+         r="24.321527"
+         cy="75.700829"
+         cx="43.297661"
+         id="path815"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332" />
+      <circle
+         r="14.967093"
+         cy="75.700829"
+         cx="142.72192"
+         id="path817"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332" />
+      <g
+         transform="translate(0,-0.29673439)"
+         id="g5199">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+           d="m 52.597822,71.691787 c 0,0 38.085907,-41.56041 84.991708,-0.267268"
+           id="path821"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3)"
+           d="m 137.80663,80.303338 c 0,0 -38.0859,41.560412 -84.991702,0.267268"
+           id="path821-7"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,2.2345595,16.437076)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot5117"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5119"><rect
+             y="79.537178"
+             x="119.70308"
+             height="87.378197"
+             width="210.61681"
+             id="rect5121" /></flowRegion><flowPara
+           style="font-size:24px"
+           id="flowPara5123">母集団</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,104.69095,24.38924)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot5117-5"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5119-3"><rect
+             y="79.537178"
+             x="119.70308"
+             height="87.378197"
+             width="210.61681"
+             id="rect5121-5" /></flowRegion><flowPara
+           style="font-size:24px"
+           id="flowPara5123-6">標本</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,57.428426,17.434644)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot5117-5-2"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5119-3-9"><rect
+             y="79.537178"
+             x="119.70308"
+             height="87.378197"
+             width="210.61681"
+             id="rect5121-5-1" /></flowRegion><flowPara
+           style="font-size:24px"
+           id="flowPara5123-6-2">抽出</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,47.820876,75.833036)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot5117-5-7"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5119-3-0"><rect
+             y="79.537178"
+             x="119.70308"
+             height="87.378197"
+             width="210.61681"
+             id="rect5121-5-9" /></flowRegion><flowPara
+           style="font-size:24px"
+           id="flowPara5123-6-3">統計的推測</flowPara></flowRoot>    </g>
+  </g>
+</svg>

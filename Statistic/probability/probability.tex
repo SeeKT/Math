@@ -1,0 +1,145 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+
+\chapter{事象と確率}
+\section{集合と事象}
+\begin{itemize}
+  \item 試行 (trials)
+  \begin{itemize}
+    \item 実験や観測，調査の総称．
+  \end{itemize}
+  \item 全事象 (total event)
+  \begin{itemize}
+    \item 試行を行ったときに起こりうる全ての結果の集まり
+  \end{itemize}
+  \item 母集団 (population)
+  \begin{itemize}
+    \item 統計学では，全事象のことを試行の対象となる集団とみなす．
+  \end{itemize}
+  \item 事象 (event)
+  \begin{itemize}
+    \item ある性質を満たす結果の集まり
+  \end{itemize}
+\end{itemize}
+
+$\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) とする．可測集合の定義を以下で与える．
+\begin{screen}
+  \begin{defi}
+    $\Omega$の部分集合を要素とする集合族$\mathscr{A}$が次の3条件を満たすとき，$\sigma$-加法族という．
+    \begin{enumerate}
+      \item $\Omega \in \mathscr{A}, \; \emptyset \in \mathscr{A}$．
+      \item $A \in \mathscr{A}$ならば$A^{\mathrm{C}} \in \mathscr{A}$．
+      \item $A_n \in \mathscr{A} \, (n = 1, 2, \ldots)$ならば，$\bigcup_{n = 1}^{\infty} A_n \in \mathscr{A}$．
+    \end{enumerate}
+  \end{defi}
+\end{screen}
+また，$(\Omega, \mathscr{A})$を可測空間，$\mathscr{A}$の要素を可測集合という\footnote{テキストでは，$\mathscr{A}$($\sigma$-加法族)を事象族，$\mathscr{A}$の要素を事象と呼んでいる．}．
+
+\section{確率と確率空間}
+\begin{screen}
+  \begin{defi}\label{def:pr_measure}
+    事象族$\mathscr{A}$上で定義された関数$P$が次の3条件を満たすとき，確率 (または確率測度 (probability measure) ) という．
+    \begin{description}
+      \item[(P1)] 任意の事象$A \in \mathscr{A}$に対して，$0 \leq P(A) \leq 1$．
+      \item[(P2)] $P(\emptyset) = 0, \; P(\Omega) = 1$．
+      \item[(P3)] $A_n \in \mathscr{A} \, (n = 1, 2, \ldots)$が互いに素 ($A_m \cap A_n = \emptyset \, (m \leq n)$)のとき\footnote{$\sigma-加法性$という．}，
+      \begin{equation}
+        P(\bigcup_{n = 1}^{\infty} A_n) = \sum_{n = 1}^{\infty} P(A_n). \; \; \nonumber
+      \end{equation}
+    \end{description}
+  \end{defi}
+\end{screen}
+このとき，$(\Omega, \mathscr{A}, P)$を確率空間 (probability space)と呼ぶ．
+(P1)-(P3)から確率測度に関する基本的性質が導かれる:
+\begin{enumerate}
+  \item $P(A^{\mathrm{C}}) = 1 - P(A)$
+  \item $A \subset B \Longrightarrow P(A) \leq P(B)$
+  \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+  \item $A_n \in \mathscr{A}, \, A_n \supset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcap_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$
+  \item $A_n \in \mathscr{A}, \, A_n \subset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcup_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$
+\end{enumerate}
+
+\section{事象の独立性と従属性}
+\begin{screen}
+  \begin{defi}[独立性]
+    2つの事象$A, \, B$が独立 (independent) であるとは，
+    \begin{equation}
+      P(A \cap B) = P(A) P(B) \nonumber
+    \end{equation}
+    が成り立つことをいう．独立でないとき，従属 (dependent) であるという．
+  \end{defi}
+\end{screen}
+
+\begin{screen}
+  \begin{defi}[条件付き確率]\label{def:cond_pr}
+    2つの事象$A, \, B$があって，$P(A) > 0$のとき，
+    \begin{equation}
+      P(B|A) \stackrel{\mathrm{def}}{\coloneqq} \frac{P(A \cap B)}{P(A)} \nonumber
+    \end{equation}
+    を，$A$が与えられたときの$B$の条件付き確率という．
+  \end{defi}
+\end{screen}
+条件付き確率について，以下の性質が成り立つ．
+\begin{enumerate}
+  \item $P(A \cap B) = P(A) P(B|A)$
+  \item $A, \, B$が独立のとき，$P(B|A) = P(B), \, P(A|B) = P(A)$
+\end{enumerate}
+
+\begin{screen}
+  \begin{theo}[全確率の法則]\label{theo:total_pr}
+    $A_1, A_2 \ldots, A_n$を互いに素な事象で，$\Omega = \bigcup_{i = 1}^n A_i$とする．
+    $P(A_i) > 0 \, (i = 1, 2, \ldots, n)$のとき，任意の事象$B$に対して，
+    \begin{equation}\label{eq:total_pr}
+      P(B) = \sum_{i = 1}^n P(A_i) P(B | A_i)
+    \end{equation}
+    が成立する．
+  \end{theo}
+\end{screen}
+
+\begin{proof}[定理\ref{theo:total_pr}の証明]
+  \begin{equation}
+    B = B \cap \Omega = B \cap \left(\bigcup_{i = 1}^n A_i\right) = \bigcup_{i = 1}^n (B \cap A_i) \nonumber
+  \end{equation}
+  および
+  \begin{equation}
+    (B \cap A_i) \cap (B \cap A_j) = \emptyset \; (i \neq j) \nonumber
+  \end{equation}
+  より，定義\ref{def:pr_measure}から
+  \begin{equation}
+    P(B) = P\left(\bigcup_{i = 1}^n (B \cap A_i)\right) = \sum_{i = 1}^n P(B \cap A_i) \nonumber
+  \end{equation}
+  が成立し，定義\ref{def:cond_pr}より，(\ref{eq:total_pr})式が成立する．\qed
+\end{proof}
+
+事象$B$が起こる前と後のことをそれぞれ事前と事後と呼ぶ．$A_i$に対して$P(A_i)$は$B$が起こる前に与えられている確率であるから事前確率 (prior probability) といい，$P(A_i | B)$は$B$が起こった後で与えられる確率であるから事後確率 (posterior probability) という．次のベイズの定理が成立する\footnote{ベイズの定理は，事前確率$P(A_i),\, P(B|A_i) \; (i = 1, 2, \ldots, n)$が求まれば，事後確率$P(A_i|B)$が導出できることを述べている．}．
+\begin{screen}
+  \begin{theo}[ベイズの定理]\label{theo:bayes}
+    $A_1, A_2, \ldots, A_n$を互いに素な事象で，$\Omega = \bigcup_{i = 1}^n A_i$とする．
+    $P(A_i) > 0 \; (i = 1,2, \ldots, n)$のとき，任意の事象$B$に対して
+    \begin{equation}\label{eq:bayes}
+      P(A_i | B) = \frac{P(A_i) P(B | A_i)}{\sum_{j = 1}^n P(A_j) P(B | A_j)} \; \; (i = 1, 2, \ldots, n)
+    \end{equation}
+    が成立する．
+  \end{theo}
+\end{screen}
+
+\begin{proof}[定理\ref{theo:bayes}の証明]
+  定義\ref{def:cond_pr}より，
+  \begin{equation}
+    P(A_i|B) = \frac{P(A_i \cap B)}{P(B)}. \nonumber
+  \end{equation}
+  条件付き確率の性質より，
+  \begin{equation}
+    P(A_i \cap B) = P(A_i) P(B | A_i). \nonumber
+  \end{equation}
+  定理\ref{theo:total_pr}より，
+  \begin{equation}
+    P(B) = \sum_{i = 1}^n P(A_i) P(B | A_i)
+  \end{equation}
+  であるから，(\ref{eq:bayes})式が成立する．\qed
+\end{proof}
+
+
+
+\end{document}
