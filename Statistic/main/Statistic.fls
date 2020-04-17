@@ -245,4 +245,17 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
+INPUT ../figure/dpf.pdf
+INPUT extractbb -B cropbox -O ../figure/dpf.pdf
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT ../figure/dpdf.pdf
+INPUT extractbb -B cropbox -O ../figure/dpdf.pdf
+INPUT ../figure/cpf.pdf
+INPUT extractbb -B cropbox -O ../figure/cpf.pdf
+INPUT ../figure/cpdf.pdf
+INPUT extractbb -B cropbox -O ../figure/cpdf.pdf
+INPUT ../probability/model.tex
+INPUT ../probability/model.tex
 INPUT Statistic.aux

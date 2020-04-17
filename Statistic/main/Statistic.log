@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  15 APR 2020 16:10
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  17 APR 2020 21:33
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -600,16 +600,54 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 10.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 10.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 15.
 [6
 
-]) [7] (./Statistic.aux) ) 
-Here is how much of TeX's memory you used:
- 7554 strings out of 481528
- 110463 string characters out of 5925952
- 369695 words of memory out of 5000000
- 23031 multiletter control sequences out of 15000+600000
- 558626 words of font info for 147 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 44i,12n,44p,492b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
+]
+File: ../figure/dpf.pdf Graphic file (type pdf)
+<../figure/dpf.pdf>
+LaTeX Font Info:    Font shape `JT1/mc/b/n' in size <8> not available
+(Font)              Font shape `JT1/mc/bx/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 88.
+LaTeX Font Info:    Font shape `JY1/mc/b/n' in size <8> not available
+(Font)              Font shape `JY1/mc/bx/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 88.
+File: ../figure/dpdf.pdf Graphic file (type pdf)
+<../figure/dpdf.pdf>
 
-Output written on Statistic.dvi (8 pages, 20256 bytes).
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 85--95
+[][][] [] 
+ []
+
+[7]
+File: ../figure/cpf.pdf Graphic file (type pdf)
+<../figure/cpf.pdf>
+File: ../figure/cpdf.pdf Graphic file (type pdf)
+<../figure/cpdf.pdf>
+
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 119--129
+[][][] [] 
+ []
+
+[8] [9] [10] [11]) (../probability/model.tex [12]
+第3章
+[13
+
+] [14] [15]) [16] (./Statistic.aux) ) 
+Here is how much of TeX's memory you used:
+ 7594 strings out of 481528
+ 111114 string characters out of 5925952
+ 370791 words of memory out of 5000000
+ 23064 multiletter control sequences out of 15000+600000
+ 559311 words of font info for 150 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 44i,15n,44p,492b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Statistic.dvi (17 pages, 61408 bytes).

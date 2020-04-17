@@ -1,0 +1,32 @@
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate[label=below left:O] (O) at (0,0); %原点O
+  \coordinate (XS) at (0,0); %x軸最小
+  \coordinate (XL) at (7.5,0); %x軸最大
+  \coordinate (YS) at (0,0); %y軸最小
+  \coordinate (YL) at (0,4.3); %y軸最大
+  \coordinate[label=left:$1$] (YMAX0) at (0, 4);
+  \coordinate (YMAXX) at (7.5, 4);
+  \draw[thin] (YMAX0) -- (YMAXX);
+  \draw[thin,->,>=stealth] (XS)--(XL) node[right] {$x$}; %x軸
+  \draw[thin,->,>=stealth] (YS)--(YL) node[above right] {$f(x)$ 確率関数}; %y軸
+  \coordinate[label=below:$x_1$] (X1) at (0.8, 0);
+  \coordinate[label=above:$f(x_1)$] (FX1) at (0.8, 0.8);
+  \draw[thick] (X1) -- (FX1);
+  \coordinate[label=below:$x_2$] (X2) at (1.65, 0);
+  \coordinate[label=above:$f(x_2)$] (FX2) at (1.65, 0.65);
+  \draw[thick] (X2) -- (FX2);
+  \coordinate[label=below:$x_3$] (X3) at (3.1, 0);
+  \coordinate[label=above:$f(x_3)$] (FX3) at (3.1, 0.4);
+  \draw[thick] (X3) -- (FX3);
+  \coordinate[label=below:$\cdots$] (X4) at (5.15, 0);
+  \coordinate[label=below:$x_n$] (Xn) at (7.2, 0);
+  \coordinate[label=above:$f(x_n)$] (FXn) at (7.2, 0.7);
+  \draw[thick] (Xn) -- (FXn);
+\end{tikzpicture}
+
+\end{document}

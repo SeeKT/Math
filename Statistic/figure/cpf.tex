@@ -1,0 +1,12 @@
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+  \begin{tikzpicture}[domain=-3:3,samples=200]
+  \draw [->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw [->] (0,0) -- (0,2.5) node[right] {$f(x)$ 密度関数};
+  \draw plot (\x, {5 * exp(-0.5 * \x * \x) / sqrt(2 * pi)});
+\end{tikzpicture}
+
+\end{document}

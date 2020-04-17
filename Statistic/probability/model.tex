@@ -1,0 +1,159 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+\chapter{確率分布の代表的モデル}
+\section{離散分布モデル}
+ここでは，離散一様分布，二項分布，ポアソン分布について，その分布の特性値を求める．
+\subsection{離散一様分布 $DU(n)$}
+確率変数$X$が値$1, \ldots, n$を等確率$1/n$でとるとき，その確率関数は
+\begin{equation}
+  f(x) = P(X = x) = \frac{1}{n}, \; \; x = 1, \ldots, n \nonumber
+\end{equation}
+である．このような分布を離散一様分布 (discrete uniform distribution) といい，記号$DU(n)$で表す．
+
+$DU(n)$について，平均，分散はそれぞれ，
+\begin{align}
+  &E[X] = \sum_{x = 1}^n x \frac{1}{n} = \frac{n + 1}{2} \nonumber \\
+  &V[X] = \sum_{x = 1}^n x^2 \frac{1}{n} - (E[X])^2 = \frac{(n + 1)(2n + 1)}{6} - \frac{(n + 1)^2}{4} = \frac{n^2 - 1}{12} \nonumber
+\end{align}
+で与えられる．
+
+\subsection{二項分布 $B_N(n, p)$}
+成功の確率が$p \, (0 < p < 1)$，失敗の確率が$1 - p$の試行をベルヌーイ試行 (Bernoulli trial) という．その試行の成功を$1$，失敗を$0$とするとき，2値 (bivariate) r.v. $\varepsilon$が得られる:
+\begin{equation}
+  \varepsilon = \begin{cases}
+    1 & (確率p), \\
+    0 & (確率1 - p).
+\end{cases}\nonumber
+\end{equation}
+この分布をベルヌーイ分布といい，記号$Ber(p)$で表す．確率関数は，
+\begin{equation}
+  f(\varepsilon | p) = p^{\varepsilon} (1 - p)^{\varepsilon}, \; \varepsilon = 0, 1 \nonumber
+\end{equation}
+となる．特に，成功の確率と失敗の確率の比$p/(1-p)$をオッズ (odds) という．
+
+ベルヌーイ分布の平均と分散は，
+\begin{align}
+  &E[\varepsilon] = 1 \times p + 0 \times (1 - p) = p, \nonumber \\
+  &V[\varepsilon] = E[\varepsilon^2] - (E[\varepsilon])^2 = p - p^2 = p(1 - p). \nonumber
+\end{align}
+
+次に，$n$回の独立なベルヌーイ試行を$\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_n$とし，そのときの成功の回数を$X = \varepsilon_1 + \varepsilon_2 + \cdots + \varepsilon_n$とおくと，$X$は離散値
+$0, 1, \ldots, n$をとるr.v.で，その確率関数は次のようになる:
+\begin{equation}
+  f(x|p) = \binom{n}{x} p^x (1 - p)^{n - x}, \; \; x = 0, 1, \ldots, n. \nonumber
+\end{equation}
+
+二項定理より，
+\begin{equation}
+  \sum_{x = 0}^n f(x|p) = \sum_{x = 0}^n \binom{n}{x} p^x (1 - p)^{n - x} = (p + (1 - p))^n = 1. \nonumber
+\end{equation}
+この分布を二項分布 (binomial distribution) といい，記号$B_N(n, p)$で表す．ただし，$B_N(n, p) = Ber(p)$である．
+
+p.g.f.は，
+\begin{align}
+  P(t) &= E[t^X] = \sum_{x = 0}^{\infty} t^x \binom{n}{x} p^x (1 - p)^{n - x} \nonumber \\
+  &= \sum_{x = 0}^{\infty} \binom{n}{x} (tp)^x (1 - p)^{n - x} = (pt + 1 - p)^n \nonumber
+\end{align}
+である．この微分を計算することで，$k$次階乗モーメントが計算できる:
+\begin{align}
+  &P^{\prime}(t) = np(pt + 1 - p)^{n - 1}, \; \; \therefore E[X] = P^{\prime}(1) = np. \nonumber \\
+  &P^{\prime \prime}(t) = n(n - 1)p^2(pt + 1 - p)^{n - 2}, \; \; \therefore E[X(X - 1)] = P^{\prime \prime}(1) = n(n - 1)p^2. \nonumber
+\end{align}
+これから分散も計算でき，
+\begin{equation}
+  V[X] = np(1 - p) \nonumber
+\end{equation}
+が得られる．
+
+\subsection{ポアソン分布 $P_O(\lambda)$}
+「まれな現象の大量観測」によって発生する事象の個数は，ポアソン分布 (Poisson distribution) に従う．例えば，1台の自動車が1日に交通事故を起こす確率は小さいが，自動車の台数は多いので，1日の交通事故の件数はポアソン分布に従うことが知られている．ポアソン分布は記号$P_O(\lambda)$で表し，その確率関数は，
+\begin{align}
+  f(x | \lambda) &= \frac{\lambda^x}{x!} e^{-\lambda}, \; \; x = 0, 1, 2, \ldots, \nonumber \\
+  \Theta &= \{\lambda : 0 < \lambda < \infty\} \nonumber
+\end{align}
+で与えられる．母数$\lambda$のことを強度 (intensity) という．
+指数関数のべき級数展開により，
+\begin{equation}
+  \sum_{x = 0}^{\infty} f(x | \lambda) = e^{-\lambda} \sum_{x = 0}^{\infty} \frac{\lambda^x}{x!} = e^{-\lambda}e^{\lambda} = 1
+\end{equation}
+が得られる．
+
+ポアソン分布の確率母関数は，
+\begin{equation}
+  P(t) = E[t^X] = e^{-\lambda} \sum_{x = 0}^{\infty} \frac{t^x \lambda^x}{x!} = e^{-\lambda}e^{t\lambda} = e^{\lambda(t - 1)}. \nonumber
+\end{equation}
+であり，
+\begin{align}
+  &P^{\prime}(t) = \lambda e^{\lambda(t - 1)} \; \; \therefore E[X] = P^{\prime}(1) = \lambda \nonumber \\
+  &P^{\prime \prime}(t) = \lambda^2 e^{\lambda(t - 1)} \; \; \therefore E[X(X - 1)] = P^{\prime \prime}(1) = \lambda^2 \nonumber
+\end{align}
+から分散は$V[X] = \lambda$と求められる．つまり，ポアソン分布の平均と分散は等しく強度$\lambda$である．
+成功確率が小さいが，試行回数が大きいとき，二項分布に対する近似分布として，ポアソン分布が導出される．
+
+\section{連続分布モデル}
+ここでは，一様分布および正規分布について，その分布の特性値を求める．
+\subsection{一様分布 $U(\alpha, \beta)$}
+確率変数$X$が区間$(\alpha, \beta)$上の値を等確率でとるとき，その密度関数は，
+\begin{align}
+  f(x) &= \begin{cases}
+    \frac{1}{\beta - \alpha} & (\alpha < x < \beta) \\
+    0 & (\mbox{otherwise}).
+\end{cases}\nonumber \\
+\Theta &= \{\bm{\theta} = (\alpha, \beta) : -\infty < \alpha < \beta < \infty\} \nonumber
+\end{align}
+と記述される．このような分布を一様分布 (uniform distribution) といい，記号$U(\alpha, \beta)$で表す．
+
+一様分布の平均および分散は，
+\begin{align}
+  &E[X] = \frac{\alpha + \beta}{2} \nonumber \\
+  &V[X] = \frac{(\beta - \alpha)^2}{12} \nonumber
+\end{align}
+と求められる．
+
+\subsection{正規分布}
+正規分布 (normal distribution) / ガウス分布 (Gaussian distribution) は，次の密度関数を持つ．
+\begin{align}
+  f(x | \bm{\theta}) &= \frac{1}{\sigma \sqrt{2\pi}} \exp\left\{- \frac{(x - \mu)^2}{2 \sigma^2} \right\}, \; \; -\infty < x < \infty, \nonumber \\
+  \Theta &= \{\bm{\theta} = (\mu, \sigma^2) : -\infty < \mu < \infty, \, 0 < \sigma^2 < \infty\}. \nonumber
+\end{align}
+正規分布は母数$\mu, \sigma^2$にのみ依存するので，記号$N(\mu, \sigma^2)$で表す．
+この母数$\mu, \sigma^2$はそれぞれ平均と分散である．特に，$\mu = 0, \sigma^2 = 1$のとき，$N(0,1)$を標準正規分布 (standard normal distribution) という．標準正規分布の密度関数は
+\begin{equation}
+  \varphi(z) = \frac{1}{\sqrt{2\pi}} \exp\left(- \frac{z^2}{2}\right) \nonumber
+\end{equation}
+という記号で表す．一般の正規分布$N(\mu, \sigma^2)$の密度関数は，
+\begin{equation}
+  f(x | \bm{\theta}) = \frac{1}{\sigma} \varphi\left(\frac{x - \mu}{\sigma}\right) \nonumber
+\end{equation}
+のように，$\varphi(z)$の線形変換として記述できる．
+
+\begin{description}
+  \item[標準化]
+  r.v. $X$が平均$\mu$，分散$\sigma^2$を持つとする．このとき，
+  \begin{equation}
+    Z \coloneqq \frac{X - \mu}{\sigma} \nonumber
+  \end{equation}
+  とすると，$E[Z] = 0, \, V[Z] = 1$となる．この変換を標準化という．
+\end{description}
+
+標準化を用いると，
+\begin{equation}
+  X \sim N(\mu, \sigma^2) \Longrightarrow Z = \frac{X - \mu}{\sigma} \sim N(0, 1) \nonumber
+\end{equation}
+とすることができる．
+
+つまり，確率変数$X \sim N(\mu, \sigma^2)$の性質は標準化によって，$Z \sim N(0, 1)$の性質に変換することができる．逆に，$Z \sim N(0, 1)$から$X \sim N(\mu, \sigma^2)$を構成することができる．
+
+標準正規分布$N(0, 1)$の積率母関数は，
+\begin{equation}
+  M_z(t) = E[e^{tZ}] = \int_{-\infty}^{\infty} e^{tz}\varphi(z)dz = e^{\frac{t^2}{2}} \nonumber
+\end{equation}
+であり，正規分布$N(\mu, \sigma^2)$の積率母関数は，
+\begin{equation}
+  M_x(t) = E[e^{tX}] = E[e^{t(\mu + \sigma Z)}] = e^{\mu t} E[e^{(t\sigma})Z] = e^{\mu t + \frac{\sigma^2 t^2}{2}} \nonumber
+\end{equation}
+である．
+
+
+\end{document}

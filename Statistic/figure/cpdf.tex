@@ -1,0 +1,15 @@
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+  \begin{tikzpicture}[domain=-3:3,samples=200]
+  \draw [->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw [->] (0,0) -- (0,2.5) node[right] {$f(x)$ 連続分布関数};
+  \coordinate[label=above left:$0$] (O) at (0, 0);
+  \coordinate[label=above left:$1$] (YMAX0) at (0, 2);
+  \draw[thin] (-3.2, 2) -- (3.2, 2);
+  \draw plot (\x, {2 / (1 + exp(-\x))});
+\end{tikzpicture}
+
+\end{document}

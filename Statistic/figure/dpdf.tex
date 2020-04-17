@@ -1,0 +1,42 @@
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate[label=below left:O] (O) at (0,0); %原点O
+  \coordinate (XS) at (0,0); %x軸最小
+  \coordinate (XL) at (7.5,0); %x軸最大
+  \coordinate (YS) at (0,0); %y軸最小
+  \coordinate (YL) at (0,4.3); %y軸最大
+  \coordinate[label=left:$1$] (YMAX0) at (0, 4);
+  \coordinate (YMAXX) at (7.5, 4);
+  \draw[thin] (YMAX0) -- (YMAXX);
+  \draw[thin,->,>=stealth] (XS)--(XL) node[right] {$x$}; %x軸
+  \draw[thin,->,>=stealth] (YS)--(YL) node[above right] {$F(x)$ 離散分布関数}; %y軸
+  \coordinate[label=below:$x_1$] (X1) at (0.8, 0);
+  \coordinate[label=below right:$f(x_1)$] (FX1) at (0.8, 0.8);
+  \draw[thin,densely dashed] (X1) -- (FX1);
+  \coordinate[label=below:$x_2$] (X2) at (1.65, 0);
+  \coordinate (FX12) at (1.65, 0.8);
+  \coordinate[label=below right:$f(x_2)$] (FX2) at (1.65, 1.45);
+  \draw[thick] (FX1) -- (FX12);
+  \draw[thin,densely dashed] (FX12) -- (FX2);
+  \coordinate[label=below:$x_3$] (X3) at (3.1, 0);
+  \coordinate (FX23) at (3.1, 1.45);
+  \coordinate[label=below right:$f(x_3)$] (FX3) at (3.1, 1.85);
+  \draw[thick] (FX2) -- (FX23);
+  \draw[thin,densely dashed] (FX23) -- (FX3);
+  \coordinate (FX34) at (3.5, 1.85);
+  \draw[thick] (FX3) -- (FX34);
+  \coordinate[label=below:$\cdots$] (X4) at (5.15, 0);
+  \coordinate[label=below:$x_n$] (Xn) at (7.2, 0);
+  \coordinate (FXn1n) at (7.2, 3.3);
+  \coordinate (FXn1n2) at (6.8, 3.3);
+  \coordinate[label=below right:$f(x_n)$] (FXn) at (7.2, 4);
+  \draw[thick] (FXn1n2) -- (FXn1n);
+  \draw[thin,densely dashed] (FXn1n) -- (FXn);
+  \draw[thick] (FXn) -- (YMAXX);
+\end{tikzpicture}
+
+\end{document}
