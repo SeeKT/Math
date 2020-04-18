@@ -1,0 +1,52 @@
+\documentclass{jsreport}
+\input{../preamble.tex}
+\begin{document}
+\chapter{2変量 (多変量) 確率ベクトルの分布}
+\section{$n$次元確率ベクトルの同時分布}
+一般に，$n$個の1次元確率変数$X_1, X_2, \ldots, X_n$に対して，
+$\bm{X} = (X_1, X_2, \ldots, X_n)$を$n$次元確率ベクトル (random vector, r.vec.)，
+$P(a_1 \leq X_1 \leq b_1, a_2 \leq X_2 \leq b_2, \cdots, a_n \leq X_n \leq b_n), \, a_i \leq b_i \, (i = 1, 2, \ldots, n)$を$\bm{X}$の同時確率分布という．
+$F_{\bm{X}}(x_1, \cdots x_n) = P(X_1 \leq x_1, \cdots, X_n \leq x_n)$を$\bm{X}$の同時分布関数という．以降，主に連続型について述べる．
+
+\begin{screen}
+  \begin{defi}[同時確率密度関数]
+    $\bm{X} = (X_1, \ldots, X_n)$を$n$次元確率ベクトルとする．
+    \begin{equation}
+      P(a_1 \leq X_1 \leq b_1, \cdots, a_n \leq X_n \leq b_n) = \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f_{\bm{X}}(x_1, \cdots, x_n) dx_1 \cdots dx_n \nonumber
+    \end{equation}
+    で与えられ，次を満たす$f_{\bm{X}}(x_1, \cdots, x_n)$を$\bm{X}$の(n次元)同時確率密度関数(joint p.d.f.)という．
+    \begin{enumerate}
+      \item $f_{\bm{X}}(x_1, \cdots, x_n) \geq 0$.
+      \item $\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f_{\bm{X}}(x_1, \cdots, x_n) dx_1 \cdots dx_n = 1$.
+    \end{enumerate}
+  \end{defi}
+\end{screen}
+
+同時確率密度関数は，
+\begin{equation}
+  f_{\bm{X}}(x_1, \cdots, x_n) = \frac{\partial^n}{\partial x_1 \cdots \partial x_n} F_{\bm{X}}(x_1, \cdots, x_n) \nonumber
+\end{equation}
+および
+\begin{equation}
+  F_{\bm{X}}(x_1, \cdots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f_{\bm{X}}(y_1, \cdots, y_n) dy_1 \cdots dy_n \nonumber
+\end{equation}
+を満たす．
+
+各成分だけに注目した分布関数
+\begin{align}
+  F_i(x_i) &= F_{\bm{X}}(\infty, \cdots, \infty, x_i, \infty, \cdots, \infty) \nonumber \\
+   &= P(X_1 \in \mathbb{R}, \cdots, X_{i - 1} \in \mathbb{R}, X_i \leq x_i, X_{i + 1} \in \mathbb{R}, \cdots, X_n \in \mathbb{R}) \nonumber \\
+   &= P(X_i \leq x_i) \nonumber
+\end{align}
+を$X_i$の周辺分布関数という．その分布関数を
+\begin{equation}
+  f_{X_i}(x_i) = \frac{\partial F_i(x_i)}{\partial x_i} = \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f(x_1, \cdots, x_n) dx_1 \cdots dx_{i - 1} dx_{i + 1} \cdots dx_n \nonumber
+\end{equation}
+を周辺確率密度関数という．周辺確率密度関数は，
+\begin{equation}
+  \int_{-\infty}^{x_i} f_{X_i}(x) dx = F_i(x_i) \nonumber
+\end{equation}
+を満たす．
+
+
+\end{document}

@@ -67,7 +67,8 @@ p.g.f.は，
 が得られる．
 
 \subsection{ポアソン分布 $P_O(\lambda)$}
-「まれな現象の大量観測」によって発生する事象の個数は，ポアソン分布 (Poisson distribution) に従う．例えば，1台の自動車が1日に交通事故を起こす確率は小さいが，自動車の台数は多いので，1日の交通事故の件数はポアソン分布に従うことが知られている．ポアソン分布は記号$P_O(\lambda)$で表し，その確率関数は，
+「まれな現象の大量観測」によって発生する事象の個数は，ポアソン分布 (Poisson distribution) に従う．例えば，1台の自動車が1日に交通事故を起こす確率は小さいが，自動車の台数は多いので，1日の交通事故の件数はポアソン分布に従うことが知られている．
+ポアソン分布は記号$P_O(\lambda)$で表し，その確率関数は，
 \begin{align}
   f(x | \lambda) &= \frac{\lambda^x}{x!} e^{-\lambda}, \; \; x = 0, 1, 2, \ldots, \nonumber \\
   \Theta &= \{\lambda : 0 < \lambda < \infty\} \nonumber
@@ -75,7 +76,7 @@ p.g.f.は，
 で与えられる．母数$\lambda$のことを強度 (intensity) という．
 指数関数のべき級数展開により，
 \begin{equation}
-  \sum_{x = 0}^{\infty} f(x | \lambda) = e^{-\lambda} \sum_{x = 0}^{\infty} \frac{\lambda^x}{x!} = e^{-\lambda}e^{\lambda} = 1
+  \sum_{x = 0}^{\infty} f(x | \lambda) = e^{-\lambda} \sum_{x = 0}^{\infty} \frac{\lambda^x}{x!} = e^{-\lambda}e^{\lambda} = 1 \nonumber
 \end{equation}
 が得られる．
 
@@ -89,10 +90,24 @@ p.g.f.は，
   &P^{\prime \prime}(t) = \lambda^2 e^{\lambda(t - 1)} \; \; \therefore E[X(X - 1)] = P^{\prime \prime}(1) = \lambda^2 \nonumber
 \end{align}
 から分散は$V[X] = \lambda$と求められる．つまり，ポアソン分布の平均と分散は等しく強度$\lambda$である．
+ポアソン分布は，ある期間に平均$\lambda$回起こる事象がある期間に起こる回数$X$が従う分布である．
 成功確率が小さいが，試行回数が大きいとき，二項分布に対する近似分布として，ポアソン分布が導出される．
 
+$n \to \infty$のとき，$n p_n \to \lambda$とする．すなわち，
+\begin{equation}
+  p_n = \frac{\lambda + o(1)}{n} \nonumber
+\end{equation}
+とする．このとき，二項分布の確率関数は，
+\begin{align}
+  f_n(x | p_n) &= \binom{n}{x} p_n^x (1 - p_n)^{n - x} \nonumber \\
+  &= \frac{n!}{x! (n - x)!} \left(\frac{\lambda + o(1)}{n}\right)^x \left(1 - \frac{\lambda + o(1)}{n}\right)^{n - x} \nonumber \\
+  &= \frac{(\lambda + o(1))^x}{x!} \frac{n(n-1)\cdots(n - x + 1)}{n^x} \left(1 - \frac{\lambda + o(1)}{n}\right)^{n - x} \nonumber \\
+  &\to \frac{\lambda^x}{x!} e^{-\lambda} = f(x| \lambda) \nonumber
+\end{align}
+となり，ポアソン分布の確率関数が得られる．
+
 \section{連続分布モデル}
-ここでは，一様分布および正規分布について，その分布の特性値を求める．
+ここでは，一様分布，正規分布および指数分布について，その分布の特性値を求める．
 \subsection{一様分布 $U(\alpha, \beta)$}
 確率変数$X$が区間$(\alpha, \beta)$上の値を等確率でとるとき，その密度関数は，
 \begin{align}
@@ -111,7 +126,7 @@ p.g.f.は，
 \end{align}
 と求められる．
 
-\subsection{正規分布}
+\subsection{正規分布 $N(\mu, \sigma^2)$}
 正規分布 (normal distribution) / ガウス分布 (Gaussian distribution) は，次の密度関数を持つ．
 \begin{align}
   f(x | \bm{\theta}) &= \frac{1}{\sigma \sqrt{2\pi}} \exp\left\{- \frac{(x - \mu)^2}{2 \sigma^2} \right\}, \; \; -\infty < x < \infty, \nonumber \\
@@ -155,5 +170,25 @@ p.g.f.は，
 \end{equation}
 である．
 
+\subsection{指数分布 $E_X(\lambda)$}
+指数分布 (exponential distribution) は，以下のような密度関数を持つ．
+\begin{align}
+  f(x|\lambda) &= \lambda e^{-\lambda x}, 0 < x < \infty, \nonumber \\
+  \Theta &= \{\lambda : 0 < \lambda < \infty\}. \nonumber
+\end{align}
+母数$\lambda$をもつ指数分布を$E_X(\lambda)$と表す．
+
+積率母関数は，
+\begin{equation}
+  M(t) = E[e^{tX}] = \int_0^{\infty} e^{tx}\lambda e^{-\lambda x} dx = \int_0^{\infty} \lambda e^{-(\lambda - t)x} dx = \frac{\lambda}{\lambda - t} \nonumber
+\end{equation}
+であり，積率母関数を微分することで，
+\begin{equation}
+  M^{\prime}(t) = \frac{\lambda}{(\lambda - t)^2} \; \; \therefore E[X] = M^{\prime}(0) = \frac{1}{\lambda} \nonumber
+\end{equation}
+\begin{equation}
+  M^{\prime \prime} (t) = \frac{2 \lambda}{(\lambda - t)^3} \; \; \therefore E[X^2] = M^{\prime \prime}(0) = \frac{2}{\lambda^2} \nonumber
+\end{equation}
+がえられ，分散は$V[X] = 1/\lambda^2$と求められる．
 
 \end{document}

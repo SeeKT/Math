@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  17 APR 2020 21:33
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019) (preloaded format=platex 2020.4.7)  18 APR 2020 23:56
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -632,7 +632,7 @@ File: ../figure/cpf.pdf Graphic file (type pdf)
 File: ../figure/cpdf.pdf Graphic file (type pdf)
 <../figure/cpdf.pdf>
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 119--129
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 122--132
 [][][] [] 
  []
 
@@ -640,14 +640,18 @@ Overfull \hbox (2.2222pt too wide) in paragraph at lines 119--129
 第3章
 [13
 
-] [14] [15]) [16] (./Statistic.aux) ) 
+] [14] [15] [16]) (../probability/bector.tex [17]
+第4章
+[18
+
+]) [19] (./Statistic.aux) ) 
 Here is how much of TeX's memory you used:
- 7594 strings out of 481528
- 111114 string characters out of 5925952
+ 7608 strings out of 481528
+ 111355 string characters out of 5925952
  370791 words of memory out of 5000000
- 23064 multiletter control sequences out of 15000+600000
- 559311 words of font info for 150 fonts, out of 8000000 for 9000
+ 23075 multiletter control sequences out of 15000+600000
+ 561749 words of font info for 160 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  44i,15n,44p,492b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Statistic.dvi (17 pages, 61408 bytes).
+Output written on Statistic.dvi (20 pages, 70356 bytes).
