@@ -19,7 +19,7 @@ $DU(n)$について，平均，分散はそれぞれ，
 で与えられる．
 
 \subsection{二項分布 $B_N(n, p)$}
-成功の確率が$p \, (0 < p < 1)$，失敗の確率が$1 - p$の試行をベルヌーイ試行 (Bernoulli trial) という．その試行の成功を$1$，失敗を$0$とするとき，2値 (bivariate) r.v. $\varepsilon$が得られる:
+成功の確率が$p \, (0 < p < 1)$，失敗の確率が$1 - p$の試行をベルヌーイ試行 (Bernoulli trial) という．その試行の成功を$1$，失敗を$0$とするとき，2値 (bivariate) 確率変数 $\varepsilon$が得られる:
 \begin{equation}
   \varepsilon = \begin{cases}
     1 & (確率p), \\
@@ -39,7 +39,7 @@ $DU(n)$について，平均，分散はそれぞれ，
 \end{align}
 
 次に，$n$回の独立なベルヌーイ試行を$\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_n$とし，そのときの成功の回数を$X = \varepsilon_1 + \varepsilon_2 + \cdots + \varepsilon_n$とおくと，$X$は離散値
-$0, 1, \ldots, n$をとるr.v.で，その確率関数は次のようになる:
+$0, 1, \ldots, n$をとる確率変数で，その確率関数は次のようになる:
 \begin{equation}
   f(x|p) = \binom{n}{x} p^x (1 - p)^{n - x}, \; \; x = 0, 1, \ldots, n. \nonumber
 \end{equation}
@@ -145,7 +145,7 @@ $n \to \infty$のとき，$n p_n \to \lambda$とする．すなわち，
 
 \begin{description}
   \item[標準化]
-  r.v. $X$が平均$\mu$，分散$\sigma^2$を持つとする．このとき，
+  確率変数 $X$が平均$\mu$，分散$\sigma^2$を持つとする．このとき，
   \begin{equation}
     Z \coloneqq \frac{X - \mu}{\sigma} \nonumber
   \end{equation}

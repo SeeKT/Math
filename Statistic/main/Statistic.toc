@@ -19,3 +19,6 @@
 \contentsline {subsection}{\numberline {3.2.3}指数分布 $E_X(\lambda )$}{17}%
 \contentsline {chapter}{\numberline {第4章}2変量 (多変量) 確率ベクトルの分布}{18}%
 \contentsline {section}{\numberline {4.1}$n$次元確率ベクトルの同時分布}{18}%
+\contentsline {section}{\numberline {4.2}共分散と相関係数}{20}%
+\contentsline {section}{\numberline {4.3}2 (多) 変量正規分布}{22}%
+\contentsline {subsection}{\numberline {4.3.1}2変量正規分布 $N_2(\bm {\mu }, \bm {\Sigma })$}{22}%

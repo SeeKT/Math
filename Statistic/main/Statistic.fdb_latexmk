@@ -1,18 +1,18 @@
 # Fdb version 3
-["dvipdf"] 1587221810 "Statistic.dvi" "Statistic.pdf" "Statistic" 1587221810
-  "Statistic.dvi" 1587221810 70356 61a02a9d6c37ccecb8fb25781a5e1d84 "latex"
+["dvipdf"] 1587265490 "Statistic.dvi" "Statistic.pdf" "Statistic" 1587265491
+  "Statistic.dvi" 1587265490 94840 b19f556fc48c76b3ed23def09d23d566 "latex"
   (generated)
   "Statistic.pdf"
-["latex"] 1587221809 "Statistic.tex" "Statistic.dvi" "Statistic" 1587221810
+["latex"] 1587265487 "Statistic.tex" "Statistic.dvi" "Statistic" 1587265491
   "../figure/cpdf.pdf" 1587108315 10368 5c4e2295c91f75580b156ade086fd147 ""
   "../figure/cpf.pdf" 1587108259 9314 6e7e8cd8dd3403a43240dfa03544e022 ""
   "../figure/dpdf.pdf" 1587107847 11958 4353e2bdac871f0f965ad66a27856cdb ""
   "../figure/dpf.pdf" 1587106236 10872 fefc73bd1bf3ec1ece93dc350cba0071 ""
   "../figure/infer.pdf" 1586933763 53636 9003ba67e9dac55ca9f229a8411e57ab ""
   "../preamble.tex" 1586353813 1176 d989e0ac70df9eace221e348cfaf0966 ""
-  "../probability/bector.tex" 1587221808 2588 7e3cdf752ce6af9df04133e317c1cc12 ""
-  "../probability/dist.tex" 1587218003 15004 3567981835f581401a9bd5ae4a95094e ""
-  "../probability/model.tex" 1587220214 10105 88a6e43782860b3e26ed4b67aa3130bf ""
+  "../probability/bector.tex" 1587265485 14825 cde087cbd05f504d3c16bce60d08a2d6 ""
+  "../probability/dist.tex" 1587254976 15146 2989fe6131bae37db1a0f9e61f0c1468 ""
+  "../probability/model.tex" 1587254987 10129 9a02bbc1f9348ce70b2e91ec50969654 ""
   "../probability/probability.tex" 1587109414 6401 f64e038f2d55e01e983e08c38d5d9315 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -130,11 +130,11 @@
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1583018212 39451 6c50cbbc48279cc2d67f72e32ca48ad5 ""
   "/usr/local/texlive/2019/texmf-var/web2c/eptex/platex.fmt" 1586224174 10619550 d4c0012e30d33487ef6670fe2f83e9af ""
   "/usr/local/texlive/2019/texmf.cnf" 1586224125 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "Statistic.aux" 1587221810 4030 eb81a2c95fd7b7071c18d6af1972ec26 "latex"
+  "Statistic.aux" 1587265490 4439 f4404a61a029c3f42ad438f32eb1aeab "latex"
   "Statistic.tex" 1587220184 514 784d79ecfe07122fc51d74d016ca3313 ""
-  "Statistic.toc" 1587221810 1617 92233fb81da59c1c96f89e5aa5b0daea "latex"
+  "Statistic.toc" 1587265490 1868 83ff2503c8e08df9a80f40a00c71184f "latex"
   (generated)
-  "Statistic.log"
-  "Statistic.dvi"
   "Statistic.aux"
   "Statistic.toc"
+  "Statistic.dvi"
+  "Statistic.log"

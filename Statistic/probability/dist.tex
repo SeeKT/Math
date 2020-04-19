@@ -132,19 +132,19 @@
   \caption{確率密度関数および連続分布関数}\label{fig:con}
 \end{figure}
 
-以下，確率変数をr.v.，確率密度関数をp.d.f.と略記する．
+確率変数をr.v.，確率密度関数をp.d.f.と略記することもある．
 \section{分布の特性値 : 平均値と分散}
 \begin{screen}
   \begin{defi}[平均値]
     \begin{enumerate}
-      \item $X$が離散型r.v.のとき($P(X=x_i) = p_i \; (i = 1, 2, \ldots)$)
+      \item $X$が離散型確率変数のとき($P(X=x_i) = p_i \; (i = 1, 2, \ldots)$)
 
       $X$の平均値$E[X]$は，
       \begin{equation}
         E[X] \coloneqq \sum_{i = 1}^{\infty} x_i p_i \nonumber
       \end{equation}
       とする．
-      \item $X$が連続型r.v.のとき($P(a \leq X \leq b) = \int_{a}^b f(x) dx$)
+      \item $X$が連続型確率変数のとき($P(a \leq X \leq b) = \int_{a}^b f(x) dx$)
 
       $X$の平均値$E[X]$は，
       \begin{equation}
@@ -156,13 +156,13 @@
 
 \begin{screen}
   \begin{defi}
-    $h(X)$を連続関数として，$Y = h(X)$となるr.v.を考える．
+    $h(X)$を連続関数として，$Y = h(X)$となる確率変数を考える．
     \begin{enumerate}
-      \item $X$が離散型r.v.のとき
+      \item $X$が離散型確率変数のとき
       \begin{equation}
         E[Y] = E[h(X)] \coloneqq \sum_{i=1}^{\infty} h(x_i)p_i \nonumber
       \end{equation}
-      \item $X$が連続型r.v.のとき
+      \item $X$が連続型確率変数のとき
       \begin{equation}
         E[Y] = E[h(X)] \coloneqq \int_{-\infty}^{\infty} h(x)f(x) dx \nonumber
       \end{equation}
@@ -173,7 +173,7 @@
 期待値は，以下の性質を持つ．
 \begin{description}
   \item[(E1)] $c$を定数とすると，$E[c] = c$
-  \item[(E2)] $X, Y$をr.v.，$h(X), k(X)$を連続関数，$a,b$を定数とする．
+  \item[(E2)] $X, Y$を確率変数，$h(X), k(X)$を連続関数，$a,b$を定数とする．
   \begin{equation}
     E[ah(X) + bk(Y)] = aE[h(X)] + bE[k(Y)] \nonumber
   \end{equation}
@@ -183,7 +183,7 @@
 
 \begin{screen}
   \begin{defi}[分散]
-    $X$をr.v.とし，$E[X] = \mu, \, E[X^2] < \infty$とする．このとき，$X$の分散$V[X]$を
+    $X$を確率変数とし，$E[X] = \mu, \, E[X^2] < \infty$とする．このとき，$X$の分散$V[X]$を
     \begin{equation}
       V[X] \coloneqq E[(X - E[X])^2] = E[(X - \mu)^2] \nonumber
     \end{equation}
@@ -191,7 +191,7 @@
   \end{defi}
 \end{screen}
 
-分散は，以下の性質を持つ．$X$をr.v.，$E[X] = \mu, \, E[X^2] < \infty$とし，$a, b$を定数とすると，
+分散は，以下の性質を持つ．$X$を確率変数，$E[X] = \mu, \, E[X^2] < \infty$とし，$a, b$を定数とすると，
 \begin{description}
   \item[(V1)] $V[X] = E[X^2] - \mu^2$
   \item[(V2)] $V[aX + b] = a^2V[X]$
@@ -226,14 +226,14 @@
 \begin{enumerate}
   \item 確率母関数 (probability generating function, p.g.f.)
 
-  $X$: 離散型r.v. ($x = 0, 1, 2, \ldots$)
+  $X$: 離散型確率変数 ($x = 0, 1, 2, \ldots$)
   \begin{equation}
     P(t) \coloneqq E[t^X] = \sum_{x = 0}^{\infty} t^x P(X = x), \; |t| \leq 1 \nonumber
   \end{equation}
   を$X$の確率母関数という．
   \item 積率母関数 (moment generating function, m.g.f.)
 
-  $X$: r.v.
+  $X$: 確率変数
   \begin{equation}
     M(t) \coloneqq E[e^{tX}] = \begin{cases}
       \sum_{x = 0}^{\infty} e^{tx} P(X = x) & (離散型) \\
@@ -243,7 +243,7 @@
   を$X$の積率母関数という．
   \item 特性関数 (characteristic function, c.f.)
 
-  $X$: r.v.
+  $X$: 確率変数
   \begin{equation}
     \phi(t) \coloneqq E[e^{itX}] = \begin{cases}
       \sum_{x = 0}^{\infty} e^{itx} P(X = x) & (離散型) \\
@@ -255,7 +255,7 @@
 
 ただし，以下の性質が成り立つ．
 \begin{itemize}
-  \item $X$が離散型r.v.のとき，$M(t) = P(e^t), \, \phi(t) = P(e^{it})$
+  \item $X$が離散型確率変数のとき，$M(t) = P(e^t), \, \phi(t) = P(e^{it})$
   \item $M(t)$は一般に存在するとは限らないが，$\phi(t)$は常に存在する．
   \item $\phi(t) = M(it)$
 \end{itemize}
@@ -263,7 +263,7 @@
 モーメントの計算について，それぞれの関数は以下の性質が成り立つ．
 \begin{description}
   \item[p.g.f.]
-  $X$: 離散型r.v., $E[X] < \infty, V[X] < \infty$
+  $X$: 離散型確率変数, $E[X] < \infty, V[X] < \infty$
   \begin{align}
     \frac{dP(t)}{dt} &= \frac{d}{dt} \left(\sum_{x = 0}^{\infty} t^x P(X = x) \right) = \frac{d}{dt} \left(P(X = 0) + \sum_{x=1}^{\infty} t^x P(X = x)\right) \nonumber \\
     &= \sum_{x=1}^{\infty} \frac{d}{dt} (t^x P(X = x)) = \sum_{x = 1}^{\infty} x t^{x - 1} P(X = x) \nonumber
@@ -289,7 +289,7 @@
   で求められる．
 
   \item[m.g.f.]
-  $X$: (主に連続型)r.v.
+  $X$: (主に連続型)確率変数
   \begin{align}
     \frac{d M(t)}{dt} &= \frac{d}{dt} \left( \int_{-\infty}^{\infty} e^{tx} f(x) dx\right)
     = \int_{-\infty}^{\infty} \left(\frac{d}{dt} e^{tx}\right) f(x) dx \nonumber \\
@@ -307,7 +307,7 @@
   \begin{equation}
     \left.\frac{d^2 M(t)}{dt^2}\right|_{t = 0} = \int_{-\infty}^{\infty} x^2 f(x) dx = E[x^2]. \nonumber
   \end{equation}
-  離散型r.v.についても同様．
+  離散型確率変数についても同様．
   \item[c.f.]
   $E[X^2] < \infty$とする．
   m.g.f.と同様の議論により，
@@ -342,7 +342,7 @@
     \begin{enumerate}
       \item 一致性
       \begin{description}
-        \item[$X_1, X_2$] : r.v.
+        \item[$X_1, X_2$] : 確率変数
         \item[$F_1, F_2$] : $X_1, X_2$の分布関数
         \item[$\phi_1, \phi_2$] : $X_1, X_2$の特性関数
       \end{description}
@@ -352,7 +352,7 @@
       \end{equation}
       \item 連続性
       \begin{description}
-        \item[$X, X_n \, (n = 1, 2, \ldots)$] : r.v.
+        \item[$X, X_n \, (n = 1, 2, \ldots)$] : 確率変数
         \item[$F, F_n \, (n = 1, 2, \ldots)$] : $X, X_n$の分布関数
         \item[$\phi, \phi_n \, (n = 1, 2, \ldots)$] : $X, X_n$の特性関数
       \end{description}
