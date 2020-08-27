@@ -1,0 +1,23 @@
+% pdfseparate [オプション] PDFファイル名 出力先ファイル名
+% pdfseparate -l 1 graph.pdf graph_1.pdf
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate[label=below left:{\scriptsize $O$}] (O) at (0,0); %原点O
+  \coordinate (XS) at (-0.5,0); %x軸最小
+  \coordinate (XL) at (3.5,0); %x軸最大
+  \coordinate (YS) at (0,-0.5); %y軸最小
+  \coordinate (YL) at (0,3.5); %y軸最大
+  \draw[thin,->,>=stealth] (XS)--(XL) node[right] {{\scriptsize $x_i^1$}}; %x軸
+  \draw[thin,->,>=stealth] (YS)--(YL) node[above] {{\scriptsize $x_i^2$}}; %y軸
+  \coordinate[label=above right:{\scriptsize $x_i$}] (P) at (2.1,0.9);
+  \fill (P) circle (0.05); %Pの塗りつぶし
+  \draw[domain=0:3] plot(\x,-\x+3);
+  \draw (3,0)node[below]{{\scriptsize $1$}};
+  \draw (0,3)node[left]{{\scriptsize $1$}};
+\end{tikzpicture}
+
+\end{document}
