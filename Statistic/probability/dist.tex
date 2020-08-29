@@ -221,7 +221,7 @@
 \end{cases}\nonumber
 \end{equation}
 として与えられる．
-関数のままでは分布の特徴をうまく表現できない．そこで，確率分布を扱いやすい関数に変換する．
+関数のままでは分布の特徴をうまく表現できない．そこで，確率分布を扱いやすい関数に変換する．モーメントを特性値として捉える．
 
 \begin{enumerate}
   \item 確率母関数 (probability generating function, p.g.f.)
@@ -284,7 +284,7 @@
   分散は，
   \begin{align}
     V[X] &= E[X^2] - (E[X])^2 = E[X(X - 1)] + E[X] - (E[X])^2 \nonumber \\
-    &= \left.\frac{d^2 P(t)}{dt^2}\right|_{t = 1} + \left.\frac{d P(t)}{dt}\right|_{t = 1} + \left(\left.\frac{d P(t)}{dt}\right|_{t = 1}\right)^2 \nonumber
+    &= \left.\frac{d^2 P(t)}{dt^2}\right|_{t = 1} + \left.\frac{d P(t)}{dt}\right|_{t = 1} - \left(\left.\frac{d P(t)}{dt}\right|_{t = 1}\right)^2 \nonumber
   \end{align}
   で求められる．
 
@@ -305,8 +305,13 @@
   \end{equation}
   より，
   \begin{equation}
-    \left.\frac{d^2 M(t)}{dt^2}\right|_{t = 0} = \int_{-\infty}^{\infty} x^2 f(x) dx = E[x^2]. \nonumber
+    \left.\frac{d^2 M(t)}{dt^2}\right|_{t = 0} = \int_{-\infty}^{\infty} x^2 f(x) dx = E[X^2]. \nonumber
   \end{equation}
+  よって，
+  \begin{align}
+    V[X] &= E[X^2] - (E[X])^2 \nonumber  \\
+    &= \left.\frac{d^2 M(t)}{dt^2}\right|_{t = 0} - \left(\left.\frac{d M(t)}{dt}\right|_{t = 0}\right)^2. \nonumber
+  \end{align}
   離散型確率変数についても同様．
   \item[c.f.]
   $E[X^2] < \infty$とする．
@@ -335,7 +340,7 @@
 \end{equation}
 が成り立つ．
 
-以上はモーメントの計算について述べたが，確率分布の同値性および分布の終息について，以下の定理が成り立つ．
+以上はモーメントの計算について述べたが，確率分布の同値性および分布の収束について，以下の定理が成り立つ．
 
 \begin{screen}
   \begin{theo}

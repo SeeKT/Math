@@ -170,6 +170,41 @@ $n \to \infty$のとき，$n p_n \to \lambda$とする．すなわち，
 \end{equation}
 である．
 
+$Z \sim N(0, 1)$のとき，
+\begin{equation}
+  P(Z \leq 0) = P(Z \geq 0) = 0.5 \nonumber
+\end{equation}
+である．また，$\alpha \in [0, 1]$に対して，
+\begin{equation}
+  \alpha = P(Z \geq z_{\alpha}) = 1 - P(Z \leq z_{\alpha}) = 1 - \phi(z_{\alpha}) \nonumber
+\end{equation}
+となる$z_{\alpha}$を標準正規分布の上側$\alpha$-点という．
+
+\begin{description}
+  \item[千三ツの法則]
+  $X \sim N(\mu, \sigma^2)$とする($Z = (X - \mu)/\sigma \sim N(0, 1)$)．このとき，
+  \begin{align}
+    P(|X - \mu| \geq 3\sigma) &= P\left(\frac{X - \mu}{\sigma} \geq 3\right) + P\left(\frac{X - \mu}{\sigma} \leq -3\right) \nonumber \\
+    &= P(Z \geq 3) + P(Z \leq -3) = 2P(Z \geq 3) \nonumber \\
+    &= 2 \times 0.013 \approx \frac{3}{1000} \; \; (千分の三) \nonumber
+  \end{align}
+  つまり，正規分布に従う確率変数が，中心$\mu$から$3\sigma$以上離れる確率は極めて小さい．
+
+  \item[偏差値]
+  $X \sim N(\mu, \sigma^2)$とする．$Z \coloneqq (X - \mu)/\sigma \sim N(0, 1)$．
+  $Y = 10 Z + 50$とおくと，$Y \sim N(50, 10^2)$．偏差値$y$は，
+  \begin{equation}
+    y = 10 \frac{x - \mu}{\sigma} + 50 \nonumber
+  \end{equation}
+  で与えられる．
+
+  つまり，偏差値とは，得点分布$N(\mu, \sigma^2)$に従う$X$が$N(50, 10^2)$に従うように変換する式
+  \begin{equation}
+    Y = 10 \frac{X - \mu}{\sigma} + 50 \sim N(50, 10^2) \nonumber
+  \end{equation}
+  により得られたものである．
+\end{description}
+
 \subsection{指数分布 $E_X(\lambda)$}
 指数分布 (exponential distribution) は，以下のような密度関数を持つ．
 \begin{align}

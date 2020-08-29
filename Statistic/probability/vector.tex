@@ -4,37 +4,37 @@
 \chapter{2変量 (多変量) 確率ベクトルの分布}
 \section{$n$次元確率ベクトルの同時分布}
 一般に，$n$個の1次元確率変数$X_1, X_2, \ldots, X_n$に対して，
-$\bm{X} = (X_1, X_2, \ldots, X_n)$を$n$次元確率ベクトル (random vector, r.vec.)，
-$P(a_1 \leq X_1 \leq b_1, a_2 \leq X_2 \leq b_2, \cdots, a_n \leq X_n \leq b_n), \, a_i \leq b_i \, (i = 1, 2, \ldots, n)$を$\bm{X}$の同時確率分布という．
-$F_{\bm{X}}(x_1, \cdots x_n) = P(X_1 \leq x_1, \cdots, X_n \leq x_n)$を$\bm{X}$の同時分布関数という．以降，主に連続型について述べる．
+$\bm{X}_n = (X_1, X_2, \ldots, X_n)$を$n$次元確率ベクトル (random vector, r.vec.)，
+$P(a_1 \leq X_1 \leq b_1, a_2 \leq X_2 \leq b_2, \cdots, a_n \leq X_n \leq b_n), \, a_i \leq b_i \, (i = 1, 2, \ldots, n)$を$\bm{X}_n$の同時確率分布という．
+$F_{\bm{X}_n}(x_1, \cdots x_n) = P(X_1 \leq x_1, \cdots, X_n \leq x_n)$を$\bm{X}_n$の同時分布関数という．以降，主に連続型について述べる．
 
 \begin{screen}
   \begin{defi}[同時確率密度関数]
-    $\bm{X} = (X_1, \ldots, X_n)$を$n$次元確率ベクトルとする．
+    $\bm{X}_n = (X_1, \ldots, X_n)$を$n$次元確率ベクトルとする．
     \begin{equation}
-      P(a_1 \leq X_1 \leq b_1, \cdots, a_n \leq X_n \leq b_n) = \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f_{\bm{X}}(x_1, \cdots, x_n) dx_1 \cdots dx_n \nonumber
+      P(a_1 \leq X_1 \leq b_1, \cdots, a_n \leq X_n \leq b_n) = \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f_{\bm{X}_n}(x_1, \cdots, x_n) dx_1 \cdots dx_n \nonumber
     \end{equation}
-    で与えられ，次を満たす$f_{\bm{X}}(x_1, \cdots, x_n)$を$\bm{X}$の(n次元)同時確率密度関数(joint p.d.f.)という．
+    で与えられ，次を満たす$f_{\bm{X}_n}(x_1, \cdots, x_n)$を$\bm{X}_n$の(n次元)同時確率密度関数(joint p.d.f.)という．
     \begin{enumerate}
-      \item $f_{\bm{X}}(x_1, \cdots, x_n) \geq 0$.
-      \item $\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f_{\bm{X}}(x_1, \cdots, x_n) dx_1 \cdots dx_n = 1$.
+      \item $f_{\bm{X}_n}(x_1, \cdots, x_n) \geq 0$.
+      \item $\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f_{\bm{X}_n}(x_1, \cdots, x_n) dx_1 \cdots dx_n = 1$.
     \end{enumerate}
   \end{defi}
 \end{screen}
 
 同時確率密度関数は，
 \begin{equation}
-  f_{\bm{X}}(x_1, \cdots, x_n) = \frac{\partial^n}{\partial x_1 \cdots \partial x_n} F_{\bm{X}}(x_1, \cdots, x_n) \nonumber
+  f_{\bm{X}_n}(x_1, \cdots, x_n) = \frac{\partial^n}{\partial x_1 \cdots \partial x_n} F_{\bm{X}_n}(x_1, \cdots, x_n) \nonumber
 \end{equation}
 および
 \begin{equation}
-  F_{\bm{X}}(x_1, \cdots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f_{\bm{X}}(y_1, \cdots, y_n) dy_1 \cdots dy_n \nonumber
+  F_{\bm{X}_n}(x_1, \cdots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f_{\bm{X}_n}(y_1, \cdots, y_n) dy_1 \cdots dy_n \nonumber
 \end{equation}
 を満たす．
 
 各成分だけに注目した分布関数
 \begin{align}
-  F_i(x_i) &= F_{\bm{X}}(\infty, \cdots, \infty, x_i, \infty, \cdots, \infty) \nonumber \\
+  F_{X_i}(x_i) &= F_{\bm{X}_n}(\infty, \cdots, \infty, x_i, \infty, \cdots, \infty) \nonumber \\
    &= P(X_1 \in \mathbb{R}, \cdots, X_{i - 1} \in \mathbb{R}, X_i \leq x_i, X_{i + 1} \in \mathbb{R}, \cdots, X_n \in \mathbb{R}) \nonumber \\
    &= P(X_i \leq x_i) \nonumber
 \end{align}
@@ -44,7 +44,7 @@ $F_{\bm{X}}(x_1, \cdots x_n) = P(X_1 \leq x_1, \cdots, X_n \leq x_n)$を$\bm{X}$
 \end{equation}
 を周辺確率密度関数という．周辺確率密度関数は，
 \begin{equation}
-  \int_{-\infty}^{x_i} f_{X_i}(x) dx = F_i(x_i) \nonumber
+  \int_{-\infty}^{x_i} f_{X_i}(x) dx = F_{X_i}(x_i) \nonumber
 \end{equation}
 を満たす．
 
@@ -73,14 +73,14 @@ $\bm{X} = (X_1, \ldots, X_n)$を$n$次元離散型確率ベクトルとし，$\b
 \end{equation}
 が成り立つ」ことは同値である．
 
-$\bm{X} = (X_1, \ldots, X_n)$を$n$次元連続型確率ベクトルとする ($\bm{X} \sim f_{\bm{X}}(\bm{x}), \, X_i \sim f_{X_i}(x_i)$)．このとき，「確率変数$X_1, \ldots, X_n$が互いに独立である」ことと「任意の$a_i \leq b_i \, (i = 1, 2, \ldots, n)$に対して
+$\bm{X}_n = (X_1, \ldots, X_n)$を$n$次元連続型確率ベクトルとする ($\bm{X}_n \sim f_{\bm{X}_n}(\bm{x}), \, X_i \sim f_{X_i}(x_i)$)．このとき，「確率変数$X_1, \ldots, X_n$が互いに独立である」ことと「任意の$a_i \leq b_i \, (i = 1, 2, \ldots, n)$に対して
 \begin{equation}
-  \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f_{\bm{X}}(x_1, \cdots, x_n) dx_1 \cdots dx_n = \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} \prod_{i = 1}^n f_{X_i}(x_i) dx_1 \cdots dx_n \nonumber
+  \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f_{\bm{X}_n}(x_1, \cdots, x_n) dx_1 \cdots dx_n = \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} \prod_{i = 1}^n f_{X_i}(x_i) dx_1 \cdots dx_n \nonumber
 \end{equation}
 が成り立つ」ことは同値である\footnote{
-$f_{\bm{X}}(x_1, \cdots, x_n)$が$\forall (x_1, \cdots, x_n) \in \mathbb{R}^n$で連続とする．このとき，「確率変数$X_1, \ldots, X_n$が互いに独立である」ことと「任意の$(x_1, \cdots, x_n) \in \mathbb{R}^n$に対して
+$f_{\bm{X}_n}(x_1, \cdots, x_n)$が$\forall (x_1, \cdots, x_n) \in \mathbb{R}^n$で連続とする．このとき，「確率変数$X_1, \ldots, X_n$が互いに独立である」ことと「任意の$(x_1, \cdots, x_n) \in \mathbb{R}^n$に対して
 \begin{equation}
-  f_{\bm{X}}(x_1, \cdots, x_n) = \prod_{i = 1}^n f_{X_i}(x_i) \nonumber
+  f_{\bm{X}_n}(x_1, \cdots, x_n) = \prod_{i = 1}^n f_{X_i}(x_i) \nonumber
 \end{equation}
 が成り立つ」ことは同値である．
 }．
@@ -115,7 +115,7 @@ $f_{\bm{X}}(x_1, \cdots, x_n)$が$\forall (x_1, \cdots, x_n) \in \mathbb{R}^n$�
 $X$の条件付き期待値$E[X | Y = y]$と$X$の条件付き分散$V[X | Y = y]$は，
 \begin{align}
   E[X | y] &= E[X | Y = y] = \int_{-\infty}^{\infty} x f_{X} (x | y) dx \nonumber \\
-  V[X | y] &= V[X | Y = y] = \int_{-\infty}^{\infty} (x - E[X | Y = y])^2 f_{X}(x, y) dx \nonumber
+  V[X | y] &= V[X | Y = y] = \int_{-\infty}^{\infty} (x - E[X | Y = y])^2 f_{X}(x | y) dx \nonumber
 \end{align}
 で定義される．
 
@@ -127,7 +127,7 @@ $(X, Y)$を確率ベクトル，$h: \mathbb{R}^2 \rightarrow \mathbb{R}$を連�
 で定義される．離散分布と連続型分布に対しては以下のように計算される:
 \begin{align}
   E[h(X, Y)] &= \sum_{j = 1}^r \sum_{k = 1}^c h(x_j, y_k) f(x_j, y_k) \; \; \; (離散) \nonumber \\
-  E[h(X, Y)] &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(x, y) f(x, y) dx dy \; \; \; (連続). \nonumber
+  E[h(X, Y)] &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(x, y) f_{X Y}(x, y) dx dy \; \; \; (連続). \nonumber
 \end{align}
 
 $h(x, y) = h_1(x)h_2(y)$とする．このとき，期待値に関して次の性質が成り立つ:
@@ -252,7 +252,7 @@ $h(X, Y) = e^{sX + tY}$とすれば(ただし，$s, t \in \mathbb{R}$)同時積�
 
 $(X, Y)^{\mathrm{T}} \sim N_2(\bm{\mu}, \bm{\Sigma})$のとき，
 \begin{equation}
-  f_{XY}(x, y) = \frac{1}{(\sqrt{2\pi})^2 |\bm{\Sigma}|^{\frac{1}{2}}} \exp\left\{
+  f_{XY}(x, y) = \frac{1}{(\sqrt{2\pi})^2 |\bm{\Sigma}|^{1/2}} \exp\left\{
   -\frac{1}{2} (\bm{x} - \bm{\mu})^{\mathrm{T}} \bm{\Sigma}^{-1} (\bm{x}-\bm{\mu})
   \right\} \nonumber
 \end{equation}
@@ -281,7 +281,7 @@ $X$の周辺分布は$N(\mu_X, \sigma_X^2)$であり，$X$を与えたときの$
     \item[($\Longleftarrow$)]
     定理\ref{theo:joint}より，
     \begin{equation}
-      \rho = \frac{Cov(X, Y)}{\sqrt{V[X]}\sqrt{V[y]}} = 0 \nonumber
+      \rho = \frac{Cov(X, Y)}{\sqrt{V[X]}\sqrt{V[Y]}} = 0 \nonumber
     \end{equation}
     \item[($\Longrightarrow$)]
     $\rho = 0$のとき，
@@ -317,4 +317,46 @@ $X$の周辺分布は$N(\mu_X, \sigma_X^2)$であり，$X$を与えたときの$
   \right) \nonumber
 \end{equation}
 である．
+
+\subsection{多変量正規分布$N_n(\bm{\mu}, \bm{\Sigma})$}
+$\bm{X}_n = (X_1, \ldots, X_n)^{\mathrm{T}}$を$n$次元確率ベクトルとする．
+\begin{equation}
+  E[X_i] = \mu_i, \; V[X_i] = \sigma_i^2, \; Cov(X_i, X_j) = \sigma_{ij} \, (i \neq j) \nonumber
+\end{equation}
+とする．また，
+\begin{align}
+  \bm{\mu} &= E[\bm{X}_n] = (E[X_1], \ldots, E[X_n])^{\mathrm{T}} \nonumber \\
+  &= (\mu_1, \ldots, \mu_n)^{\mathrm{T}} \nonumber
+\end{align}
+は平均ベクトル，
+\begin{align}
+  \bm{\sigma} &= E[(\bm{X}_n - \bm{\mu})(\bm{X}_n - \bm{\mu})^{\mathrm{T}}] \nonumber \\
+  &= \left(
+  \begin{array}{cccc}
+    V[X_1] & Cov(X_1, X_2) & \cdots & Cov(X_1, X_n) \\
+    Cov(X_2, X_1) & V[X_2] & \cdots & \vdots \\
+    \vdots & & \ddots & \vdots \\
+    Cov(X_n, X_1) & \cdots & \cdots & V[X_n]
+  \end{array}
+  \right) \nonumber \\
+  &= \left(
+  \begin{array}{cccc}
+    \sigma_1^2 & \sigma_{12} & \cdots & \sigma_{1n} \\
+    \sigma_{21} & \sigma_2^2 & \cdots & \vdots \\
+    \vdots & & \ddots & \vdots \\
+    \sigma_{n1} & \cdots & \cdots & \sigma_n^2
+  \end{array}
+  \right) \nonumber
+\end{align}
+は分散共分散行列である．
+
+$\bm{X}_n$がj.p.d.f.
+\begin{equation}
+  f_{\bm{X}_n}(\bm{x}) = \frac{1}{(2\pi)^{n/2} |\bm{\Sigma}|^{1/2}} \exp\left\{-\frac{1}{2} (\bm{x} - \bm{\mu})^{\mathrm{T}} \bm{\Sigma}^{-1} (\bm{x}-\bm{\mu})\right\} \nonumber
+\end{equation}
+を持つとき，$n$次元正規分布に従うといい，$\bm{X}_n \sim N_n(\bm{\mu}, \bm{\Sigma})$と表す．
+
+
+
+
 \end{document}

@@ -34,18 +34,18 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
     \end{enumerate}
   \end{defi}
 \end{screen}
-また，$(\Omega, \mathscr{A})$を可測空間，$\mathscr{A}$の要素を可測集合という\footnote{テキストでは，$\mathscr{A}$($\sigma$-加法族)を事象族，$\mathscr{A}$の要素を事象と呼んでいる．}．
+また，$(\Omega, \mathscr{A})$を可測空間，$\mathscr{A}$の要素を可測集合という．
 
 \section{確率と確率空間}
 \begin{screen}
   \begin{defi}\label{def:pr_measure}
-    事象族$\mathscr{A}$上で定義された関数$P$が次の3条件を満たすとき，確率 (または確率測度 (probability measure) ) という．
+    事象族$\mathscr{A}$上で定義された関数$P$が次の3条件を満たすとき，確率 (または確率測度 (probability measure)) という．
     \begin{description}
-      \item[(P1)] 任意の事象$A \in \mathscr{A}$に対して，$0 \leq P(A) \leq 1$．
-      \item[(P2)] $P(\emptyset) = 0, \; P(\Omega) = 1$．
-      \item[(P3)] $A_n \in \mathscr{A} \, (n = 1, 2, \ldots)$が互いに素 ($A_m \cap A_n = \emptyset \, (m \leq n)$)のとき\footnote{$\sigma-加法性$という．}，
+      \item[(P1)] 任意の事象$A \in \mathscr{A}$に対して，$0 \leq P(A) \leq 1$．\label{des:p1}
+      \item[(P2)] $P(\emptyset) = 0, \; P(\Omega) = 1$．\label{des:p2}
+      \item[(P3)] $A_n \in \mathscr{A} \, (n = 1, 2, \ldots)$が互いに素 ($A_m \cap A_n = \emptyset \, (m \leq n)$)のとき，\label{des:p3}
       \begin{equation}
-        P(\bigcup_{n = 1}^{\infty} A_n) = \sum_{n = 1}^{\infty} P(A_n). \; \; \nonumber
+        P\left(\bigcup_{n = 1}^{\infty} A_n\right) = \sum_{n = 1}^{\infty} P(A_n). \; \; (\sigma\mbox{-}加法性)\nonumber
       \end{equation}
     \end{description}
   \end{defi}
@@ -53,12 +53,82 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
 このとき，$(\Omega, \mathscr{A}, P)$を確率空間 (probability space)と呼ぶ．
 (P1)-(P3)から確率測度に関する基本的性質が導かれる:
 \begin{enumerate}
-  \item $P(A^{\mathrm{C}}) = 1 - P(A)$
-  \item $A \subset B \Longrightarrow P(A) \leq P(B)$
-  \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
-  \item $A_n \in \mathscr{A}, \, A_n \supset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcap_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$
-  \item $A_n \in \mathscr{A}, \, A_n \subset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcup_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$
+  \item $P(A^{\mathrm{C}}) = 1 - P(A)$ \label{enu:p_1}
+  \item $A \subset B \Longrightarrow P(A) \leq P(B)$ \label{enu:p_2}
+  \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \label{enu:p_3}
+  \item $A_n \in \mathscr{A}, \, A_n \supset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcap_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$ \label{enu:p_4}
+  \item $A_n \in \mathscr{A}, \, A_n \subset A_{n + 1} \, (n = 1, 2, \ldots) \Longrightarrow P(\bigcup_{n = 1}^{\infty} A_n) = \lim_{n \to \infty} P(A_n)$ \label{enu:p_5}
 \end{enumerate}
+
+\begin{proof}
+  \ref{enu:p_1}.
+  $A \in \mathscr{A}, A^{\mathrm{C}} \in \mathscr{A}$は互いに素であり，$A \cup A^{\mathrm{C}} = \Omega$．(P2), (P3)より，
+  \begin{equation}
+    1 = P(\Omega) = P(A \cup A^{\mathrm{C}}) = P(A) + P(A^{\mathrm{C}}). \nonumber
+  \end{equation}
+  よって，$P(A^{\mathrm{C}}) = 1 - P(A)$である．
+
+  \ref{enu:p_2}.
+  $A \subset B$より，
+  \begin{equation}
+    B = A \cup (A^{\mathrm{C}} \cap B), \; A \cap (A^{\mathrm{C}} \cap B) = \emptyset. \nonumber
+  \end{equation}
+  (P3)より，
+  \begin{equation}
+    P(B) = P(A \cup (A^{\mathrm{C}} \cap B)) = P(A) + P(A^{\mathrm{C}} \cap B). \nonumber
+  \end{equation}
+  (P1)より，
+  \begin{equation}
+    P(A^{\mathrm{C}} \cap B) \geq 0. \nonumber
+  \end{equation}
+  よって，
+  \begin{equation}
+    P(B) - P(A) = P(A^{\mathrm{C}} \cap B) \geq 0, \; \; \therefore P(A) \leq P(B). \nonumber
+  \end{equation}
+
+  \ref{enu:p_3}.
+  $A, B, A\cup B$について，
+  \begin{align}
+    &A \cup B = (A \cap B^{\mathrm{C}}) \cup (A \cap B) \cup (A^{\mathrm{C}} \cap B), \nonumber \\
+    &A = (A \cap B^{\mathrm{C}}) \cup (A \cap B), \nonumber \\
+    &B = (A^{\mathrm{C}} \cap B) \cup (A \cap B). \nonumber
+  \end{align}
+  (P3)より，
+  \begin{align}
+    &P(A \cup B) = P(A \cap B^{\mathrm{C}}) + P(A \cap B) + P(A^{\mathrm{C}} \cap B), \nonumber \\
+    &P(A) = P(A \cap B^{\mathrm{C}}) + P(A \cap B), \nonumber \\
+    &P(B) = P(A^{\mathrm{C}} \cap B) + P(A \cap B) \nonumber
+  \end{align}
+  よって，
+  \begin{equation}
+    P(A \cup B) = P(A) + P(B) - P(A \cap B). \nonumber
+  \end{equation}
+
+  \ref{enu:p_5}.
+  $A_0 = \emptyset, B_n = A_n \cap A_{n - 1}^{\mathrm{C}}$とおくと，
+  \begin{equation}
+    A_n = \bigcup_{k = 1}^n B_k, \; \; \bigcup_{n = 1}^{\infty} A_n = \bigcup_{k = 1}^{\infty} B_k. \nonumber
+  \end{equation}
+  $B_k \cap B_{k + 1} = \emptyset$より，
+  \begin{align}
+    P(A) &= P\left(\bigcup_{n = 1}^{\infty} A_n \right) = P\left(\bigcup_{k = 1}^{\infty} B_k\right) \nonumber \\
+    &= \sum_{k = 1}^{\infty} P(B_k) \; \; (\because \mbox{(P3)}) \nonumber \\
+    &= \lim_{n \to \infty} \sum_{k = 1}^n P(B_k) = \lim_{n \to \infty} \sum_{k = 1}^n P(A_k \cap A_{k - 1}^{\mathrm{C}}) \nonumber \\
+    &= \lim_{n \to \infty} P(A_n). \nonumber
+  \end{align}
+
+  \ref{enu:p_4}.
+  \begin{align}
+    P\left(\bigcap_{n = 1}^{\infty} A_n \right) &= 1 - P\left(\left(\bigcap_{n = 1}^{\infty} A_n\right)^{\mathrm{C}}\right) \; \; (\because \mbox{\ref{enu:p_1}}) \nonumber \\
+    &= 1 - P\left(\bigcup_{n = 1}^{\infty} A_n^{\mathrm{C}}\right). \; \; (\because \mbox{De Morgan's laws}) \nonumber
+  \end{align}
+  $C_n = A_n^{\mathrm{C}}$とおくと，$C_n \subset C_{n + 1} \; (n = 1, 2, \ldots)$．\ref{enu:p_5}より，
+  \begin{align}
+    P(A) &= P\left(\bigcap_{n = 1}^{\infty} A_n \right) = 1 - P\left(\bigcup_{n = 1}^{\infty} C_n \right) \nonumber \\
+    &= 1 - \lim_{n \to \infty} P(C_n) = \lim_{n \to \infty} (1 - P(C_n)) \nonumber \\
+    &= \lim_{n \to \infty} P(A_n). \nonumber
+  \end{align}
+\end{proof}
 
 \section{事象の独立性と従属性}
 \begin{screen}
@@ -83,7 +153,7 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
 条件付き確率について，以下の性質が成り立つ．
 \begin{enumerate}
   \item $P(A \cap B) = P(A) P(B|A)$
-  \item $A, \, B$が独立のとき，$P(B|A) = P(B), \, P(A|B) = P(A)$
+  \item $A, \, B$が独立のとき，$P(B|A) = P(B), \, P(A|B) = P(A)$.
 \end{enumerate}
 
 \begin{screen}
@@ -97,19 +167,19 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
   \end{theo}
 \end{screen}
 
-\begin{proof}[定理\ref{theo:total_pr}の証明]
+\begin{proof}
   \begin{equation}
     B = B \cap \Omega = B \cap \left(\bigcup_{i = 1}^n A_i\right) = \bigcup_{i = 1}^n (B \cap A_i) \nonumber
   \end{equation}
-  および
+  および$A_1, \ldots, A_n$が互いに素より，
   \begin{equation}
-    (B \cap A_i) \cap (B \cap A_j) = \emptyset \; (i \neq j) \nonumber
+    (B \cap A_i) \cap (B \cap A_j) = \emptyset \; (i \neq j). \nonumber
   \end{equation}
-  より，定義\ref{def:pr_measure}から
+  定義\ref{def:pr_measure}から
   \begin{equation}
     P(B) = P\left(\bigcup_{i = 1}^n (B \cap A_i)\right) = \sum_{i = 1}^n P(B \cap A_i) \nonumber
   \end{equation}
-  が成立し，定義\ref{def:cond_pr}より，(\ref{eq:total_pr})式が成立する．\qed
+  が成立し，定義\ref{def:cond_pr}より，(\ref{eq:total_pr})式が成立する．
 \end{proof}
 
 事象$B$が起こる前と後のことをそれぞれ事前と事後と呼ぶ．$A_i$に対して$P(A_i)$は$B$が起こる前に与えられている確率であるから事前確率 (prior probability) といい，$P(A_i | B)$は$B$が起こった後で与えられる確率であるから事後確率 (posterior probability) という．次のベイズの定理が成立する\footnote{ベイズの定理は，事前確率$P(A_i),\, P(B|A_i) \; (i = 1, 2, \ldots, n)$が求まれば，事後確率$P(A_i|B)$が導出できることを述べている．}．
@@ -124,7 +194,7 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
   \end{theo}
 \end{screen}
 
-\begin{proof}[定理\ref{theo:bayes}の証明]
+\begin{proof}
   定義\ref{def:cond_pr}より，
   \begin{equation}
     P(A_i|B) = \frac{P(A_i \cap B)}{P(B)}. \nonumber
@@ -137,7 +207,7 @@ $\Omega$をある集合 (全集合)とし，$\emptyset$を空集合 (空事象) 
   \begin{equation}
     P(B) = \sum_{i = 1}^n P(A_i) P(B | A_i)
   \end{equation}
-  であるから，(\ref{eq:bayes})式が成立する．\qed
+  であるから，(\ref{eq:bayes})式が成立する．
 \end{proof}
 
 
