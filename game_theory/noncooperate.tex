@@ -58,9 +58,9 @@
 
 特に，2人ゲームのときは利得行列$A, B$によってゲームを表現することができる．$e_{m_i}^k \in \mathbb{R}^{m_i}$を第$k$要素が$1$の$m_i$次元単位ベクトルとすると，$k \in {\cal A}_1, h \in {\cal A}_2$に対して，
 \begin{equation}
-  U_1(k, h) = (e_{m_1}^k)^{\mathrm{T}} A e_{m2}^{h}, \; \; U_2(h, k) = (e_{m_2}^h)^{\mathrm{T}} B e_{m1}^{k} \nonumber
+  U_1(k, h) = (e_{m_1}^k)^{\mathrm{T}} A e_{m_2}^{h}, \; \; U_2(k, h) = (e_{m_1}^k)^{\mathrm{T}} B e_{m_2}^{h} \nonumber
 \end{equation}
-である．$U_1(k, h)$は，1人目が$k$，2人目が$h$を取ったときの1人目の利得であり，$U_2(h, k)$は1人目が$k$，2人目が$h$を取ったときの2人目の利得である．
+である．$U_1(k, h)$は，1人目が$k$，2人目が$h$を取ったときの1人目の利得であり，$U_2(k, h)$は1人目が$k$，2人目が$h$を取ったときの2人目の利得である．
 
 ここで，「囚人のジレンマ」を例に2人ゲームの利得行列について説明する．
 \begin{itemize}
@@ -83,10 +83,15 @@
   \end{table}
   \item 利得行列
   \begin{equation}
-    A = B = \left(
+    A = \left(
     \begin{array}{cc}
       -1 & -5 \\
       0 & -2
+    \end{array}
+    \right), \; \; B = \left(
+    \begin{array}{cc}
+      -1 & 0 \\
+      -5 & -2
     \end{array}
     \right) \nonumber
   \end{equation}
@@ -267,7 +272,7 @@
 特に，2人ゲームのときは利得行列$(A, B)$によってゲームが表現される．
 \begin{align}
   u_1(x) &= \sum_{j \in \mathcal{A}_1} x_1^j u_1(e_{m_1}^j, x_2) = \sum_{j \in \mathcal{A}_1} \sum_{k \in \mathcal{A}_2} x_1^j x_2^k a_{jk} = x_1^{\mathrm{T}}Ax_2 \nonumber \\
-  u_2(x) &= \sum_{j \in \mathcal{A}_1} \sum_{k \in \mathcal{A}_2} x_1^j x_2^k b_{kj} = x_2^{\mathrm{T}} B x_1 \nonumber
+  u_2(x) &= \sum_{j \in \mathcal{A}_1} \sum_{k \in \mathcal{A}_2} x_1^j x_2^k b_{jk} = x_1^{\mathrm{T}} B x_2 \nonumber
 \end{align}
 ここからも分かるように，純粋戦略は，ある戦略を確率1でとるものであると解釈できる．
 
@@ -314,8 +319,380 @@ $\beta_i, \tilde{\beta}_i$の結合をそれぞれ，
 
 ナッシュ均衡は，すべてのエージェントにとって，その状況が実現されたら戦略を変える動機がないという点で合理的な解である．有限ゲームでは必ず存在する．
 
-強ナッシュ均衡は，最適反応の条件が$\forall x_i^{\prime} \neq x_i^{*}$に対して不等号で成立するものである．この均衡として得られる戦略プロファイルは純粋戦略プロファイルであり，存在しない可能性もある．
+強ナッシュ均衡は，最適反応の条件が$\forall x_i^{\prime} \neq x_i^{*}$に対して不等号で成立するものである．この均衡として得られる戦略プロファイルは純粋戦略プロファイルであり，存在しない可能性もある．強ナッシュ均衡は，混合戦略空間の1点集合である．
 
 特に2人2戦略の戦略型ゲームについて，具体的にナッシュ均衡を導出する．
+
+\begin{table}[H]
+\centering
+  \begin{tabular}{c|c|c}
+        & ボクシング & バレエ  \\ \hline
+    ボクシング & $2, 1$ & $-1, -1$ \\ \hline
+    バレエ & $-1, -1$ & $1, 2$ \\
+  \end{tabular}
+\end{table}
+
+エージェント2の混合戦略を$x_2 = (x_2^1, 1 - x_2^1)^{\mathrm{T}}$に固定したとき，エージェント1の純粋戦略の期待利得を考える．
+\begin{align}
+  &u_1(e_2^1, x_2) = 2x_2^1 - (1 - x_2^1) \nonumber \\
+  &u_1(e_2^2, x_2) = -x_2^1 + (1 - x_2^1) \nonumber
+\end{align}
+次に，エージェント1の混合戦略を$x_1 = (x_1^1, 1 - x_1^1)^{\mathrm{T}}$に固定したときのエージェント2の純粋戦略の期待利得を考える．
+\begin{align}
+  &u_2(x_1, e_2^1) = x_1^1 - (1 - x_1^1) \nonumber \\
+  &u_2(x_1, e_2^2) = -x_1^1 + 2(1 - x_1^1) \nonumber
+\end{align}
+それぞれ差を取ると，
+\begin{align}
+  &u_1(e_2^2, x_2) - u_1(e_2^1, x_2) = -5x_2^1 + 2 \nonumber \\
+  &u_2(x_1, e_2^2) - u_2(x_1, e_2^2) = -5x_1^1 + 3 \nonumber
+\end{align}
+である．よって，エージェント1, 2の混合戦略最適反応対応は，
+\begin{align}
+  &\tilde{\beta}_1(x) = \begin{cases}
+    \{e_2^1\} & \mbox{if} \; \; x_2^1 > \frac{2}{5} \\
+    X_1 & \mbox{if} \; \; x_2^1 = \frac{2}{5} \\
+    \{e_2^2\} & \mbox{if} \; \; x_2^1 < \frac{2}{5}
+\end{cases} \nonumber \\
+&\tilde{\beta}_2(x) = \begin{cases}
+  \{e_2^1\} & \mbox{if} \; \; x_1^1 > \frac{3}{5} \\
+  X_2 & \mbox{if} \; \; x_1^1 = \frac{3}{5} \\
+  \{e_2^2\} & \mbox{if} \; \; x_1^1 < \frac{3}{5}
+\end{cases} \nonumber
+\end{align}
+である．ナッシュ均衡の定義より，ナッシュ均衡$x^{*}$は，
+\begin{equation}
+  x^{*} \in \left\{(e_2^1, e_2^1), (e_2^2, e_2^2), \left(\left(\frac{3}{5}, \frac{2}{5}\right)^{\mathrm{T}}, \left(\frac{2}{5}, \frac{3}{5}\right)^{\mathrm{T}}\right)\right\} \nonumber
+\end{equation}
+と求められる(図\ref{fig:nash2})．
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[clip, width=7cm]{./fig/nash_2_1.pdf}
+  \caption{最適反応の組}
+  \label{fig:nash2}
+\end{figure}
+
+\subsection{ナッシュ均衡の存在性}
+ナッシュ均衡の存在性を最初に証明したのはNashである．まず，角谷の不動点定理を以下に示す．
+\begin{screen}
+  \begin{theo}[角谷の不動点定理]
+    コンパクトで凸な集合$D \subseteq \mathbb{R}^r$に対し，対応$g:D \to 2^D$が以下の条件を満たすならば，$\exists x^{*} \in g(x^{*})$である．
+    \begin{enumerate}
+      \item 任意の$x \in D$に対し，$g(x)$が非空で凸．
+      \item $g$が上半連続:
+      \begin{equation}
+        \forall x \in D, \forall 開集合 V \supseteq g(x), \exists 開集合 U, \forall x^{\prime} \in U, g(x^{\prime}) \subseteq V \nonumber
+      \end{equation}
+    \end{enumerate}
+  \end{theo}
+\end{screen}
+
+角谷の不動点定理を用いると，ナッシュ均衡の存在性を証明できる．
+\begin{screen}
+  \begin{theo}
+    任意の有限ゲームにおいて，$\exists x^{*} \in \tilde{\beta}(x^{*})$
+  \end{theo}
+\end{screen}
+
+\begin{proof}
+  $X_i$がコンパクトで凸より，$X$もコンパクトで凸．$\forall x \in X$に対して，$\tilde{\beta}_i(x)$は非空で凸より，$\tilde{\beta}(x)$も非空で凸．また，$u_i$の連続性より，$\tilde{\beta}(x)$は上半連続．よって，角谷の不動点定理より，$\exists x \in \tilde{\beta}(x^{*})$．
+\end{proof}
+
+ナッシュ均衡の集合$X^{NE}$は，以下の不等式を満たす混合戦略プロファイルとして表現できる．
+\begin{equation}
+  X^{NE} = \{x \in X \, | \, u_i(x) - u_i(e_i^h, x_{-i}) \geq 0 \; \; \forall i \in \mathcal{N}, \, h \in \mathcal{A}_i\} \label{eq:nash_set}
+\end{equation}
+\eqref{eq:nash_set}式の右辺の集合は，各多項式が非負になるようなベクトル変数$x$の集合の有限個の共通集合である．代数幾何学の古典的結果から，このような集合は有限個の互いに素な，閉で連結な集合からなるということが導かれる．
+これらの集合は，ゲームのナッシュ均衡の成分と呼ばれる．
+
+\begin{theo}
+  集合$X^{NE}$は互いに素な，閉で連結な集合の有限和である．
+\end{theo}
+
+\subsection{ナッシュ均衡の集合の不変性}
+ナッシュ均衡の集合$X^{NE}$は，利得の変化に関して，ある種の不変な性質を持っている．
+\begin{screen}
+  \begin{theo}
+    ナッシュ均衡は，以下の操作に関して不変：
+    \begin{enumerate}
+      \item 利得関数への正のアフィン変換．
+      \item 利得関数の局所シフト．
+    \end{enumerate}
+  \end{theo}
+\end{screen}
+
+
+定数$\mu_i \in \mathbb{R}$と正の定数$\lambda_i \in \mathbb{R}_{++}$に対して，
+\begin{itemize}
+  \item 利得関数への正のアフィン変換
+  \begin{equation}
+    \forall x \in X \; \; \tilde{u}_i(x) = \lambda_i u_i(x) + \mu_i \nonumber
+  \end{equation}
+  \item 利得の局所シフト
+  \begin{equation}
+    \forall x \in X \; \; \tilde{u}_i(x) = \begin{cases}
+      u_i(x) & \mbox{if} \; \; x_{-i} \neq \bar{x}_{-i} \\
+      u_i(x) + \mu_i & \mbox{if} \; \; x_{-i} = \bar{x}_i
+  \end{cases}\nonumber
+  \end{equation}
+\end{itemize}
+いずれの場合も
+\begin{equation}
+  \tilde{u}_i(x_i^{*}, x_{-i}) \geq \tilde{u}_i(x_i, x_{-i}) \Leftrightarrow u_i(x_i^{*}, x_{-i}) \geq u_i(x_i, x_{-i}) \nonumber
+\end{equation}
+である．
+
+この不変な性質により計算が著しく容易になる場合もある．また，外見上異なるゲームも同じ最適反応対応を持つ．
+
+\subsection{戦略の支配関係}
+\begin{screen}
+  \begin{defi}
+    \begin{itemize}
+      \item $x_i^{*} \in X_i$が$x_i \in X_i$を強支配するとは，
+      \begin{equation}
+        \forall z_{-i} \; \; u_i(x_i^{*}, z_{-i}) > u_i(x_i, z_{-i}) \nonumber
+      \end{equation}
+      が成り立つときをいう．
+      \item $x_i^{*} \in X_i$が$x_i \in X_i$を弱支配するとは，
+      \begin{equation}
+        \forall z_{-i} \; \; u_i(x_i^{*}, z_{-i}) \geq u_i(x_i, z_{-i}) \; かつ \; \exists z_{-i} \; \; u_i(x_i^{*}, z_{-i}) > u_i(x_i, z_{-i}) \nonumber
+      \end{equation}
+      が成り立つときをいう．
+    \end{itemize}
+  \end{defi}
+\end{screen}
+
+この定義から，以下のことが分かる．
+\begin{itemize}
+  \item 強支配される戦略は，いついかなるときも最適にはならない．
+  \begin{itemize}
+    \item 合理性: 強支配される戦略は使われない．強支配される純粋戦略の消去．
+  \end{itemize}
+  \item 弱支配される戦略は，最適になることもある．
+  \begin{itemize}
+    \item いかなる戦略に対しても唯一の最適反応とはならない．
+    \item 合理性: 弱支配される戦略の使用は必ずしも否定されない．
+  \end{itemize}
+\end{itemize}
+
+弱支配されている戦略の組がナッシュ均衡になる例を示す．
+\begin{table}[H]
+\centering
+  \begin{tabular}{c|c|c}
+        & L & R  \\ \hline
+    T & $1, 1$ & $2, 0$ \\ \hline
+    B & $0, 2$ & $2, 2$ \\
+  \end{tabular}
+\end{table}
+上の表について．支配関係を考える．
+\begin{itemize}
+  \item BはTに弱支配され，RはLに弱支配されている．
+  \item 弱支配されている戦略の組，(B, R)もナッシュ均衡である．
+\end{itemize}
+最適反応は，
+\begin{itemize}
+  \item Lに対してT，Rに対してTとB．
+  \item Tに対してL，Bに対してLとR．
+\end{itemize}
+である．よって，ナッシュ均衡$x^{*}$は，
+\begin{equation}
+  x^{*} \in \{(e_2^1, e_2^1), (e_2^2, e_2^2)\} \nonumber
+\end{equation}
+である．
+
+戦略の反復消去について述べる．
+
+エージェントが合理的に振る舞うということは，各エージェントは自身の利得が最大になるような戦略を取ろうとするということである．ここで，エージェントの共有知識として，以下のようなものを考える．
+\begin{enumerate}
+  \item 他のエージェントも合理的だと知っている．\label{enu:gr}
+  \item 他のエージェントの戦略や利得関数を知っている．\label{enu:gr2}
+  \item 他のエージェントが\ref{enu:gr}と\ref{enu:gr2}を知っている．\label{enu:gr3}
+  \item 他のエージェントが\ref{enu:gr3}を知っている．
+  \item etc...
+\end{enumerate}
+
+これを利用して，強支配される戦略の反復消去を行う．
+\begin{enumerate}
+  \item 自身の強支配される戦略を消去．\label{enu:strong1}
+  \item \ref{enu:strong1}後のゲームで，他のエージェントの強支配される戦略を消去．\label{enu:strong2}
+  \item \ref{enu:strong2}後のゲームで，自身の強支配される戦略を消去．\label{enu:strong3}
+  \item \ref{enu:strong3}後のゲームで，他のエージェントの強支配される戦略を消去．
+  \item etc...
+\end{enumerate}
+
+これについても具体例で説明する．以下の利得行列を持つ2人ゲームを考える．
+\begin{equation}
+  A = \left(
+  \begin{array}{ccc}
+    3 & 1 & 6 \\
+    0 & 0 & 4 \\
+    1 & 2 & 5
+  \end{array}
+  \right), \; B = \left(
+  \begin{array}{ccc}
+    3 & 0 & 1 \\
+    1 & 0 & 2 \\
+    6 & 4 & 5
+  \end{array}
+  \right) \nonumber
+\end{equation}
+\begin{itemize}
+  \item エージェント1の戦略1が戦略2を強支配しているので，戦略2を消去．
+  \begin{equation}
+    A = \left(
+    \begin{array}{ccc}
+      3 & 1 & 6 \\
+      1 & 2 & 5
+    \end{array}
+    \right), \; B = \left(
+    \begin{array}{ccc}
+      3 & 0 & 1 \\
+      6 & 4 & 5
+    \end{array}
+    \right) \nonumber
+  \end{equation}
+  \item エージェント2の戦略1が戦略2と戦略3を強支配しているので，戦略2と戦略3を消去．
+  \begin{equation}
+    A = \left(
+    \begin{array}{c}
+      3 \\
+      1
+    \end{array}
+    \right), \; \;
+    B = \left(
+    \begin{array}{c}
+      3 \\
+      6
+    \end{array}
+    \right) \nonumber
+  \end{equation}
+  \item エージェント1の戦略1が戦略3を強支配しているので，戦略3を消去．
+  \begin{equation}
+    A = \left(
+    \begin{array}{c}
+      3
+    \end{array}
+    \right), \; \;
+    B = \left(
+    \begin{array}{c}
+      3
+    \end{array}
+    \right)\nonumber
+  \end{equation}
+\end{itemize}
+
+反復消去により，戦略プロファイルが1つだけ残る．このプロファイルは強ナッシュ均衡である\footnote{反復支配戦略均衡と呼ばれることもある．}．
+
+\begin{screen}
+  \begin{defi}
+    \begin{itemize}
+      \item $x_i^{*}$が全ての$x_i \in X_i$を弱支配するとき，$x_i^{*}$を支配戦略という．
+      \item 全ての$i \in \mathcal{N}$に対し，$x_i^{*} \in X_i$が支配戦略ならば，$x^{*} = (x_1^{*}, \ldots, x_m^{*}) \in X$を支配戦略均衡とう．
+    \end{itemize}
+  \end{defi}
+\end{screen}
+
+支配戦略は，他のエージェントの戦略に関わらず合理的である．ただし，存在するとは限らない．支配戦略均衡は，各エージェントが自身の情報のみで到達できるが，存在するとは限らない．支配戦略均衡は明らかにナッシュ均衡の条件を満たす．
+
+\subsection{ナッシュ均衡の特徴}
+ナッシュ均衡の長所と短所は以下に挙げられる．
+\begin{itemize}
+  \item 長所
+  \begin{itemize}
+    \item エージェントの合理性を元にした自然な解である．
+    \item 一旦実現されると，戦略を変更するメリットがない．
+    \item 必ず存在する．
+  \end{itemize}
+  \item 短所
+  \begin{itemize}
+    \item どのようにナッシュ均衡にたどり着くか考えない．
+    \item 複数(時には多数)存在する場合がある．
+  \end{itemize}
+\end{itemize}
+このように考えると，エージェントが選びやすそうなナッシュ均衡であったり，摂動や外乱に対して頑健なナッシュ均衡であるのが好ましい．\ref{sec:refine}節ではナッシュ均衡の精緻化について述べる．
+
+\section{ナッシュ均衡の精緻化}\label{sec:refine}
+精緻化とは，特定の信憑性のないナッシュ均衡や壊れやすいナッシュ均衡を排除することを動機としている．以下で，いくつかの標準形精緻化を定義する．
+
+\subsection{完全性}
+最もよく知られた非協力精緻化は，「震える手」の完全性という精緻化である．この精緻化は，エージェントの戦略の摂動に対し，頑健でないナッシュ均衡を排除するものである．
+
+ゲームを$G = (\mathcal{N}, X, u)$とし，$\mu$を誤差ベクトルとする．
+この誤差ベクトルは，各エージェント$i$と純粋戦略$j \in \mathcal{A}_i$に対して1つの数$\mu_i^j \in (0, 1)$を割り当てる．この数は戦略が「誤って」プレーされる確率であり，$\sum_{j \in \mathcal{A}_i} \mu_i^j < 1$である．
+この誤差ベクトル$\mu$に対し，戦略空間の部分空間$X(\mu) = \{x \in X \, | \, \forall i \in \mathcal{N} \; \forall j \in \mathcal{A}_i \; x_i^j \geq \mu_i^j\} \subseteq \mbox{int}(X)$が定義できる．
+混合戦略を$X(\mu)$に制限したゲーム$G(\mu) = (\mathcal{N}, X(\mu), u)$を$G$の摂動ゲームと呼ぶ．以下に定義として再掲する．
+
+\begin{screen}
+  \begin{defi}
+    ある誤差ベクトル$\mu \in \{\mu \in \mathbb{R}_{++}^m \, | \, \forall i \in \mathcal{N} \; \sum_{j \in \mathcal{A}_i} \mu_i^j < 1\}$
+    に対し，$X$の部分空間
+    \begin{equation}
+      X(\mu) = \{x \in X \, | \, \forall i \in \mathcal{N} \; \forall j \in \mathcal{A}_i \; x_i^j \geq \mu_i^j\} \nonumber
+    \end{equation}
+    を定義する．混合戦略を$X(\mu)$に制限したゲーム
+    $G(\mu) = (\mathcal{N}, X(\mu), u)$
+    を$G$の摂動ゲームと呼ぶ．ただし，$m = \sum_{i \in \mathcal{N}} m_i$ (すべてのエージェントの戦略の総数) である．
+  \end{defi}
+\end{screen}
+
+任意の摂動ゲーム$G(\mu)$は非空のナッシュ均衡の集合$X^{NE}(\mu)$を持つ．全ての誤差確率が小さければ小さいほど$X(\mu)$は大きくなり，また，誤差確率がゼロに近づけば対応する摂動ゲームはもとのゲームに近づく．以下で「震える手」の完全性について定義する．
+
+\begin{screen}
+  \begin{defi}[完全性]
+    ナッシュ均衡$x^{*} \in X^{NE}$が完全であるとは，以下の条件を満たす摂動ゲームの列
+    $\{G(\mu^t)\}_{\mu^t \to 0}$が存在することをいう．
+    \begin{enumerate}
+      \item $x^{t}$が$G(\mu^t)$のナッシュ均衡．
+      \item $x^t \to x^{*}$．
+    \end{enumerate}
+  \end{defi}
+\end{screen}
+
+この定義は，エージェントがある微小な確率で誤った戦略を選択しても，元のゲームのナッシュ均衡に近い結果が実現されることを主張している．特に，任意の内部ナッシュ均衡は完全である．$x \in \mbox{int}(X)$に対し，$x \in X(\mu)$を満たす$\mu$が存在する．
+
+考察しているナッシュ均衡が完全であるためには，それがある低い確率の摂動に関して頑健であれば十分であるから，内部ナッシュ均衡が存在しない場合でも，完全ナッシュ均衡は存在する．
+完全ナッシュ均衡の集合を$X^{PE}$と書くと，以下の定理が成り立つ．
+
+\begin{screen}
+  \begin{theo}
+    任意の有限ゲームに対し，$X^{PE} \neq \emptyset$ (完全ナッシュ均衡は存在する)．
+  \end{theo}
+\end{screen}
+\begin{proof}
+  任意の列$\{G(\mu^t)\}_{\mu^t \to 0}$に対し，各$t$について$x^t \in X^{NE}(\mu^t)$とする．
+  $\{x^t\}_{t = 1}^{\infty}$はコンパクト集合$X$の列なので収束する部分列$\{y^s\}_{s = 1}^{\infty}$をもち，その極限$x^{*}$は$x^{*} \in X$を満たす．
+  各$s$に対し，$G(\mu^s)$は対応する摂動ゲームである．連続性より，$x^{*} \in X^{NE}$である．
+  さらに，$y^s \to x^{*}$かつ，すべての$s$に対して$y^s \in X^{NE}(\mu^s)$であるので，$x^{*}$は完全である．
+\end{proof}
+
+ナッシュ均衡が完全であるための必要十分条件がSeltenにより示されている．それは，$x$のあらゆる均衡について，そのなかに$x$がそれに対する最適反応となる，ある内部戦略プロファイル$y$が存在することである．
+言い換えると，エージェントは，互いに他のエージェントの戦略について，いくぶん確信が持てない状況でも，そして，そのために小さな正の確率をそのゲームの全ての純粋戦略に割り当てるとしても，きっと彼らはその均衡戦略$x_i$を進んで取ることはしないだろうということである．
+さらに，完全ナッシュ均衡が支配されることは決してなく，もしそのゲームにエージェントが2人しかいなければ，その逆も成り立つ．
+
+これを命題として書くと，以下のようになる．
+\begin{screen}
+  \begin{prop}
+    任意の完全ナッシュ均衡$x^{*} \in X^{PE}$は(弱)支配されない．特に2人ゲームでは逆も成り立つ．つまり，2人ゲームの場合は，$x^{*} \in X^{NE}$が支配されないならば，$x^{*} \in X^{PE}$．
+  \end{prop}
+\end{screen}
+
+\subsection{プロパー性}
+完全性の基準は，ある摂動に関してのみ頑健性を要求するが，この摂動が何らかの意味で合理的なものであるという条件は課していない．
+これに対し，ある意味で合理的な誤り方の基準を定義する．
+\begin{screen}
+  \begin{defi}[$\varepsilon$-プロパー性]
+    $x^{*} \in X$が$\varepsilon$-プロパーであるとは，
+    \begin{equation}
+      \forall i \in \mathcal{N}, \; \forall j, \forall k \in \mathcal{A}_i \; \; u_i(e_i^j, x_{-i}^{*}) < u_i(e_i^k, x_{-i}^{*}) \Rightarrow {x_i^{j}}^{*} \leq \varepsilon {x_i^k}^{*} \nonumber
+    \end{equation}
+    が成り立つことをいう．
+  \end{defi}
+\end{screen}
+
+この定義は，コストのかからない誤りほど起こりやすいことを表している．
+これはエージェントがより損害の大きな誤りを警戒するように振る舞う，合理的な誤り方である．
+任意の内部ナッシュ均衡は，任意の$\varepsilon > 0$に対して$\varepsilon$-プロパーである．
+
 
 \end{document}

@@ -13,3 +13,10 @@
 \contentsline {section}{\numberline {1.4}最適反応とナッシュ均衡}{8}%
 \contentsline {subsection}{\numberline {1.4.1}最適反応}{8}%
 \contentsline {subsection}{\numberline {1.4.2}ナッシュ均衡}{8}%
+\contentsline {subsection}{\numberline {1.4.3}ナッシュ均衡の存在性}{10}%
+\contentsline {subsection}{\numberline {1.4.4}ナッシュ均衡の集合の不変性}{11}%
+\contentsline {subsection}{\numberline {1.4.5}戦略の支配関係}{11}%
+\contentsline {subsection}{\numberline {1.4.6}ナッシュ均衡の特徴}{13}%
+\contentsline {section}{\numberline {1.5}ナッシュ均衡の精緻化}{14}%
+\contentsline {subsection}{\numberline {1.5.1}完全性}{14}%
+\contentsline {subsection}{\numberline {1.5.2}プロパー性}{15}%
