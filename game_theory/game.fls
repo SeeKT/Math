@@ -351,4 +351,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT ./fig/nash_2_1.pdf
 INPUT extractbb -B cropbox -O ./fig/nash_2_1.pdf
+INPUT ./fig/space_1.pdf
+INPUT extractbb -B cropbox -O ./fig/space_1.pdf
 INPUT game.aux

@@ -20,3 +20,10 @@
 \contentsline {section}{\numberline {1.5}ナッシュ均衡の精緻化}{14}%
 \contentsline {subsection}{\numberline {1.5.1}完全性}{14}%
 \contentsline {subsection}{\numberline {1.5.2}プロパー性}{15}%
+\contentsline {subsection}{\numberline {1.5.3}強完全性}{16}%
+\contentsline {subsection}{\numberline {1.5.4}エッセンシャリティ}{16}%
+\contentsline {subsection}{\numberline {1.5.5}集合の意味での精緻化}{17}%
+\contentsline {section}{\numberline {1.6}対称2人ゲーム}{18}%
+\contentsline {subsection}{\numberline {1.6.1}定義と記号}{18}%
+\contentsline {subsection}{\numberline {1.6.2}対称ナッシュ均衡}{19}%
+\contentsline {subsection}{\numberline {1.6.3}対称2人ゲームの分類}{19}%

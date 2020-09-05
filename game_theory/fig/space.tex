@@ -1,0 +1,22 @@
+% pdfseparate [オプション] PDFファイル名 出力先ファイル名
+% pdfseparate -l 1 space.pdf space_1.pdf
+\documentclass[dvipdfmx]{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\usetikzlibrary{intersections, calc, arrows}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate[label=below left:{\scriptsize $O$}] (O) at (0,0); %原点O
+  \coordinate (XS) at (-3.0,0); %x軸最小
+  \coordinate (XL) at (3.0,0); %x軸最大
+  \coordinate (YS) at (0,-3.0); %y軸最小
+  \coordinate (YL) at (0,3.0); %y軸最大
+  \draw[thin,->,>=stealth] (XS)--(XL) node[below right] {{\scriptsize $a_1$}}; %x軸
+  \draw[thin,->,>=stealth] (YS)--(YL) node[above right] {{\scriptsize $a_2$}}; %y軸
+  \coordinate[label={\scriptsize $I$}] (I) at (-1.5,1.5);
+  \coordinate[label={\scriptsize $II$}] (II) at (1.5,1.5);
+  \coordinate[label={\scriptsize $III$}] (III) at (-1.5,-1.5);
+  \coordinate[label={\scriptsize $IV$}] (IV) at (1.5,-1.5);
+\end{tikzpicture}
+
+\end{document}
